@@ -1,0 +1,17 @@
+.fadeImage{
+    transition: transform .5s;
+    height:100%;
+    width:90%;
+}
+
+.fadeImage:hover{
+    transform: scale(1.4);
+}
+
+p, li{
+    text-align:center;
+}
+
+ul{
+    list-style-position:inside;
+}

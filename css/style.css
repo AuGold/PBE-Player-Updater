@@ -1,0 +1,61 @@
+body{
+    background-color:#B9C2D3;
+    font-family:Helvetica Neue,Helvetica,Arial,sans-serif;
+    margin: 0 auto;
+}
+
+h1{
+    text-align:center;
+}
+
+p{
+    font-size:120%;
+}
+
+/* Style for every HTML page */
+html, body{
+	height:100%;
+}
+
+/* ID for every page, START WTIH THIS ID */
+.content{
+	min-height:100%;
+	position:relative;
+	width:100%;
+}
+
+/* Class for one column */
+.column{
+	width:35%;
+	display:inline-block;
+	text-align:left;
+	vertical-align:text-top;
+}
+
+/* Class for two column stlye */
+.twoColumns{
+	width:100%;
+	text-align:center;
+	overflow:hidden;
+	padding-bottom:10px;
+}
+
+.column{
+	display:inline-block;
+	padding:5px;
+	width:35%;
+	vertical-align:text-top;
+	text-align:left;
+	margin-bottom:10px;
+}
+
+.column p{
+	margin:0;
+	overflow:hidden;
+	text-align:left;
+}
+
+#footer p{
+    text-align:center;
+    font-size:80%;
+}

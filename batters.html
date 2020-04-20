@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56952330-5"></script>
+	    <script src="js/analytics.js"></script>
+		<!-- Set character encoding -->
+		<meta charset="UTF-8">
+		<!-- Set viewport for mobile devices -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Set keywords for search engines -->
+		<meta name="keywords" content="PBE,Pro Baseball Experience,TPE Updater">
+		<!-- Set description of the website -->
+		<meta name="description" content="Experimental player updater for the Pro Baseball Experience">
+		<!-- Set the author of the page -->
+		<meta name="author" content="Jordan Rodriguez">
+		<!-- import CSS -->
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/updater.css">
+		<!-- Set title of the page -->
+		<title>TPE Updater</title>
+		
+		<script type="application/ld+json">
+		{
+			"@type": "Person",
+			"name": "Jordan Rodriguez",
+			"jobTitle": "Educator",
+			"url": "http://jordanrodriguez.net",
+			"email": "support@jordanrodriguez.net"
+		}
+		</script>
+	</head>
+
+	<body>
+		<!-- content wrapper -->
+		<div class="content">
+			<!-- container for the entire page -->
+			<div class="container">
+			    <ul class="sameline">
+				    <a href="index.html"><li class="batpitch">Home</li></a>
+				    <a href="pitchers.html"><li class="batpitch">Pitcher</li></a>
+				</ul>
+				<h1>TPE Updater - Batters</h1>
+				<div class="step1">
+				    <h2>Step 1: Input your roster page</h2>
+				    <p>Make sure to get the correct link. You should be going to your team's roster, find your batter, and use copy the link from your browser's URL bar.</p>
+				
+    				<!--    TO DO HERE: Sanitize text box to check for error urls -->
+    				<form id="linkSubmit" onsubmit="ajaxCall(); return false">
+        				<label for="link">Link:</label>
+        				<input type="url" form="linkSubmit" id="link" name="link" pattern="http://probaseballexperience.+" required><br><br>
+        				<button type="submit" class="getButton" name="getBatter">Get Link</button>
+        			</form>
+    				<p id="error"></p>
+    			</div>
+    			<div class="step2">
+    				<h2>Step 2: Check your stats</h2>
+    				<p>Make sure your Archetypes, banked TPE, and offense/defense stats look correct!</p>
+    				<p id="putBNK"></p>
+        			<div class="twoColumns">
+        			    <div class="column">
+        				    <p id="putHAR"></p>
+                			<p id="putBVL"></p>
+                			<p id="putBVR"></p>
+                			<p id="putAKL"></p>
+                			<p id="putAKR"></p>
+                			<p id="putGVL"></p>
+                			<p id="putGVR"></p>
+                			<p id="putPVL"></p>
+                			<p id="putPVR"></p>
+                			<p id="putEVL"></p>
+                			<p id="putEVR"></p>
+                		</div>
+                		<div class="column">
+                		    <p id="putFAR"></p>
+                		    <p id="putRNG"></p>
+                		    <p id="putERR"></p>
+                		    <p id="putARM"></p>
+                		    <p id="putTDP"></p>
+                		    <p id="putCAB"></p>
+                		    <p id="putSPD"></p>
+                			<p id="putSTL"></p>
+                			<p id="putBNT"></p>
+                		</div>
+    				</div>
+    				<p>Something look wrong? First, check your link to make sure you are using the correct roster page.</p>
+    				<p>If you are using the correct page, contact your GM to ask if they have updated your roster page recently.</p>
+    				<p>Is your roster page updated but this website is not showing the right information? Contact AuGold on Discord to ask for a fix.</p>
+    				<form id="step2submit" onsubmit="stepThree(); return false">
+    				    <label>Does everything look correct?</label>
+    				    <button type="submit" form="step2submit">Yes</button>
+    				</form>
+    			</div>
+    			<div class="step3">
+    			    <h2>Step 3: TPE earned</h2>
+    			    <p>Now we need to know how much TPE you earned this week.</p>
+    			    <p>Remember to be honest. If an auditor finds any problems in your update, there may be consequences!</p>
+    			    <form id="earnedTPEsubmit" onsubmit="stepFour(); return false">
+    			        <label>TPE Earned:</label>
+    			        <input type="number" id="tpeEarned" name="tpeEarned" value="0" required>
+    			        <button type="submit" form="earnedTPEsubmit">Submit</button>
+    			    </form>
+    			</div>
+    			<div class="step4">
+    			    <h2>Step 4: Create your update!</h2>
+    			    <p>Now the fun part of creating your update!</p>
+    			    <p>There is nothing in this website that stops you from using more TPE than you have available, so make sure you don't go into the negatives!</p>
+    			    <div class="twoColumns">
+        			    <div class="column">
+        				    <p id="bankedTPE"></p>
+        				    <p id="totalTPE"></p>
+                		</div>
+                		<div class="column">
+                		    <p id="tpeEarn"></p>
+                		    <p id="tpeUsed"></p>
+                		</div>
+    				</div>
+    				<p id="tpeToUse"></p>
+    				<table id="countTable">
+    				    <tr>
+    				        <th>Attribute</th>
+    				        <th>Minimum</th>
+    				        <th>Current</th>
+    				        <th>Maximum</th>
+    				        <th>New</th>
+    				        <th>TPE Spent</th>
+    				    </tr>
+    				    <tr>
+    				        <td id="statName1">BABIP vs LHP</td>
+    				        <td id="minStat1"></td>
+    				        <td id="stat1"></td>
+    				        <td id="maxStat1"></td>
+    				        <td><input type="number" id="newStat1" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent1">0</td>
+    				    </tr>
+    				    <tr>
+    				        <td id="statName2">BABIP vs RHP</td>
+    				        <td id="minStat2"></td>
+    				        <td id="stat2"></td>
+    				        <td id="maxStat2"></td>
+    				        <td><input type="number" id="newStat2" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent2">0</td>
+    				    </tr>
+    				    <tr>
+    				        <td id="statName3">Avoid K's vs LHP</td>
+    				        <td id="minStat3"></td>
+    				        <td id="stat3"></td>
+    				        <td id="maxStat3"></td>
+    				        <td><input type="number" id="newStat3" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent3">0</td>
+    				    </tr>
+    				    <tr>
+    				        <td id="statName4">Avoid K's vs RHP</td>
+    				        <td id="minStat4"></td>
+    				        <td id="stat4"></td>
+    				        <td id="maxStat4"></td>
+    				        <td><input type="number" id="newStat4" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent4">0</td>
+    				    </tr>
+    				    <tr>
+    				        <td id="statName5">Gap vs LHP</td>
+    				        <td id="minStat5"></td>
+    				        <td id="stat5"></td>
+    				        <td id="maxStat5"></td>
+    				        <td><input type="number" id="newStat5" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent5">0</td>
+    				    </tr>
+    				    <tr>
+    				        <td id="statName6">Gap vs RHP</td>
+    				        <td id="minStat6"></td>
+    				        <td id="stat6"></td>
+    				        <td id="maxStat6"></td>
+    				        <td><input type="number" id="newStat6" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent6">0</td>
+    				    </tr>
+    				    <tr>
+    				        <td id="statName7">Power vs LHP</td>
+    				        <td id="minStat7"></td>
+    				        <td id="stat7"></td>
+    				        <td id="maxStat7"></td>
+    				        <td><input type="number" id="newStat7" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent7">0</td>
+    				    </tr>
+    				    <tr>
+    				        <td id="statName8">Power vs RHP</td>
+    				        <td id="minStat8"></td>
+    				        <td id="stat8"></td>
+    				        <td id="maxStat8"></td>
+    				        <td><input type="number" id="newStat8" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent8">0</td>
+    				    </tr>
+    				    <tr>
+    				        <td id="statName9">Eye/Patience vs LHP</td>
+    				        <td id="minStat9"></td>
+    				        <td id="stat9"></td>
+    				        <td id="maxStat9"></td>
+    				        <td><input type="number" id="newStat9" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent9">0</td>
+    				    </tr>
+    				    <tr>
+    				        <td id="statName10">Eye/Patience vs RHP</td>
+    				        <td id="minStat10"></td>
+    				        <td id="stat10"></td>
+    				        <td id="maxStat10"></td>
+    				        <td><input type="number" id="newStat10" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent10">0</td>
+    				    </tr>
+    				    <tr>
+    				        <td id="statName11">Speed (Base & Run)</td>
+    				        <td id="minStat11"></td>
+    				        <td id="stat11"></td>
+    				        <td id="maxStat11"></td>
+    				        <td><input type="number" id="newStat11" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent11">0</td>
+    				    </tr>
+    				    <tr>
+    				        <td id="statName12">Stealing Ability</td>
+    				        <td id="minStat12"></td>
+    				        <td id="stat12"></td>
+    				        <td id="maxStat12"></td>
+    				        <td><input type="number" id="newStat12" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent12">0</td>
+    				    </tr>
+    				    <tr>
+    				        <td id="statName13">Bunting (Both)</td>
+    				        <td id="minStat13"></td>
+    				        <td id="stat13"></td>
+    				        <td id="maxStat13"></td>
+    				        <td><input type="number" id="newStat13" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent13">0</td>
+    				    </tr>
+    				    <tr>
+    				        <td id="statName14">Fielding Range</td>
+    				        <td id="minStat14"></td>
+    				        <td id="stat14"></td>
+    				        <td id="maxStat14"></td>
+    				        <td><input type="number" id="newStat14" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent14">0</td>
+    				    </tr>
+    				    <tr>
+    				        <td id="statName15">Fielding Error</td>
+    				        <td id="minStat15"></td>
+    				        <td id="stat15"></td>
+    				        <td id="maxStat15"></td>
+    				        <td><input type="number" id="newStat15" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent15">0</td>
+    				    </tr>
+    				    <tr>
+    				        <td id="statName16">Fielding/Catching Arm</td>
+    				        <td id="minStat16"></td>
+    				        <td id="stat16"></td>
+    				        <td id="maxStat16"></td>
+    				        <td><input type="number" id="newStat16" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent16">0</td>
+    				    </tr>
+    				    <tr>
+    				        <td id="statName17">Turn Double Play</td>
+    				        <td id="minStat17"></td>
+    				        <td id="stat17"></td>
+    				        <td id="maxStat17"></td>
+    				        <td><input type="number" id="newStat17" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent17">0</td>
+    				    </tr>
+    				    <tr>
+    				        <td id="statName18">Catcher Ability</td>
+    				        <td id="minStat18"></td>
+    				        <td id="stat18"></td>
+    				        <td id="maxStat18"></td>
+    				        <td><input type="number" id="newStat18" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent18">0</td>
+    				    </tr>
+    				</table>
+    				<p id="error2"></p>
+    				<p>Ready to update your file? Hit the button below and we will output some text for you to copy to your update page!</p>
+    				<form id="updateThread" onsubmit="stepFive(); return false">
+    			        <button type="submit" form="updateThread">Update me!</button>
+    			    </form>
+    			</div>
+    			<div class="step5">
+    			    <h2>Step 5: Copy to your update thread</h2>
+    			    <p>Copy the text output below and paste it into your update thread!</p>
+    			    <hr>
+    			    <div id="updateText">
+        			    <span id="outputGained"></span><br/>
+        			    <span id="outputUpdate"></span><br/>
+        			    
+        			    <span id="outputSpent"></span><br/>
+        			    
+        			    <span id="outputBanked"></span>
+        			    <span id="outputUsed"></span>
+        			    <span id="outputTotal"></span>
+        			</div>
+    			</div>
+    			<footer id="footer">
+    			</footer>
+			</div><!-- close container div -->
+		</div><!-- close content div -->
+		<!-- import JQuery -->
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+		<!-- import needed JS -->
+	    <script type="text/javascript">
+	        $(document).ready(function(){
+	            $("#footer").load("footer.html");
+	        });
+	    </script>
+		<script src="js/pullData.js"></script>
+		<script src="js/moveSteps.js"></script>
+		<script src="js/tpespent.js"></script>
+		<script src="js/getUpdate.js"></script>
+		<script src="js/batters.js"></script>
+	</body>
+</html>

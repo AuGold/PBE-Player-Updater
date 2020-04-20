@@ -1,0 +1,83 @@
+.sameline{
+    margin:0 auto;
+    text-align:center;
+    padding:0;
+}
+
+.batpitch{
+    display:inline;
+    padding:1%;
+    font-size:150%;
+}
+
+h2{
+    text-align:center;
+    background:#1E64A6;
+    padding:1%;
+}
+
+.step1 p, .step2 p, .step3 p, .step4 p, .step5 p{
+    text-align:center;
+}
+
+.step1 form, .step2 form, .step3 form, .step4 form, .step5 form{
+    text-align:center;
+}
+
+button{
+    background-color: #04529C;
+    border:none;
+    padding:.5%;
+    border-radius: 15px;
+    color:white;
+    text-align:center;
+    text-decoration:none;
+    font-size:120%;
+}
+
+input, select{
+    padding:.2%;
+    font-size:120%;
+}
+
+#tpeEarned{
+    width:5%;
+}
+
+#link{
+    width: 25%;
+}
+
+label{
+    font-size:120%;
+}
+
+.step2, .step3, .step4, .step5{
+    opacity:0;
+    display:none;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+td, th{
+    border: 1px solid #dddddd;
+    text-align:center;
+    padding:5px;
+}
+
+span{
+    font-size:120%;
+    text-align:left;
+    display:block;
+}
+
+#error2, #error{
+    color:red;
+}
+
+#updateText{
+    margin-left:40%;
+}
