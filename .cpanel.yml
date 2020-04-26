@@ -2,4 +2,12 @@
 deployment:
 	tasks:
 		- export DEPLOYPATH=/home/augoeuaa/pbe.rejj.net/
-		- /bin/cp -r * $DEPLOYPATH
+		- /bin/cp -R css $DEPLOYPATH
+        - /bin/cp -R images $DEPLOYPATH
+        - /bin/cp -R js $DEPLOYPATH
+        - /bin/cp ajax.php $DEPLOYPATH
+        - /bin/cp batters.html $DEPLOYPATH
+        - /bin/cp favicon.ico $DEPLOYPATH
+        - /bin/cp footer.html $DEPLOYPATH
+        - /bin/cp index.html $DEPLOYPATH
+        - /bin/cp pitchers.html $DEPLOYPATH
