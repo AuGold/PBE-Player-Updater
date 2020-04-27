@@ -90,17 +90,133 @@
     				    <button type="submit" form="step2submit">Yes</button>
     				</form>
     			</div>
-    			<div class="step3">
+    			<div class="step3" style="display:block !important;opacity:1">
     			    <h2>Step 3: TPE earned</h2>
-					<label for="WT"><input type="url" id="WT" name="WT" pattern="http://probaseballexperience.+">
+                    <div class="tpeInput">
+                        <div>
+                            <input type="checkbox" id="WTCheck" name="WTCheck" value="WT" onchange="countTPE()">
+                            <label for="WTNumber">Weekly Training #</label>
+                            <input type="number" min="0" max="1000" id="WTNumber" name="WTNumber">
+                            <label for="WTLink">Link: </label>
+                            <input type="url" id="WTLink" name="WTLink" pattern="http://probaseballexperience.+">
+                            <label for="WTTPE">TPE: </label>
+                            <input type="number" max="5" min="0" id="WTTPE" name="WTTPE" value="5" onchange="countTPE()">
+                        </div>
+                        <br>
+                        <div>
+                            <input type="checkbox" id="ACCheck" name="ACCheck" value="AC" onchange="countTPE()">
+                            <label for="ACNumber">Activity Check #</label>
+                            <input type="number" min="0" max="1000" id="ACNumber" name="ACNumber">
+                            <label for="ACLink">Link: </label>
+                            <input type="url" id="ACLink" name="ACLink" pattern="http://probaseballexperience.+">
+                            <label for="ACTPE">TPE: </label>
+                            <input type="number" max="3" min="3" id="ACTPE" name="ACTPE" value="3" onchange="countTPE()">
+                        </div>
+                        <br>
+                        <div>
+                            <input type="checkbox" id="PTCheck" name="PTCheck" value="PT" onchange="countTPE()">
+                            <label for="PTNumber">Point Task Season: </label>
+                            <input type="number" min="0" max="100" id="PTNumber" name="PTNumber">
+                            <label for="PTWeek">Point Task Week: </label>
+                            <input type="number" min="0" max="5" id="PTWeek" name="PTWeek">
+                            <label for="PTLink">Link: </label>
+                            <input type="url" id="PTLink" name="PTLink" pattern="http://probaseballexperience.+">
+                            <label for="PTTPE">TPE: </label>
+                            <input type="number" max="3" min="3" id="PTTPE" name="PTTPE" value="3" onchange="countTPE()">
+                        </div>
+                        <br>
+                        <div>
+                            <input type="checkbox" id="JPTCheck" name="JPTCheck" value="JPT" onchange="countTPE()">
+                            <label for="JPTNumber">Journal Point Task Season: </label>
+                            <input type="number" min="0" max="100" id="JPTNumber" name="JPTNumber">
+                            <label for="JPTWeek">Journal Point Task Week: </label>
+                            <input type="number" min="0" max="5" id="JPTWeek" name="JPTWeek">
+                            <label for="JPTLink">Link: </label>
+                            <input type="url" id="JPTLink" name="JPTLink" pattern="http://probaseballexperience.+">
+                            <label for="JPTTPE">TPE: </label>
+                            <input type="number" max="3" min="3" id="JPTTPE" name="JPTTPE" value="3" onchange="countTPE()">
+                        </div>
+                        <br>
+                        <div>
+                            <input type="checkbox" id="PCCheck" name="PCCheck" value="PC" onchange="countTPE()">
+                            <label for="PCNumber">Picture Chain Season: </label>
+                            <input type="number" min="0" max="100" id="PCNumber" name="PCNumber">
+                            <label for="PCWeek">Picture Chain Week: </label>
+                            <input type="number" min="0" max="5" id="PCWeek" name="PCWeek">
+                            <label for="PCLink">Link: </label>
+                            <input type="url" id="PCLink" name="PCLink" pattern="http://probaseballexperience.+">
+                            <label for="PCTPE">TPE: </label>
+                            <input type="number" max="2" min="2" id="PCTPE" name="JPTTPE" value="2" onchange="countTPE()">
+                        </div>
+                        <br>
+                        <div>
+                            <input type="checkbox" id="PrimetimeCheck" name="PrimetimeCheck" value="Primetime" onchange="countTPE()">
+                            <label for="PrimetimeNumber">Primetime Season: </label>
+                            <input type="number" min="0" max="100" id="PrimetimeNumber" name="PrimetimeNumber">
+                            <label for="PrimetimeWeek">Primetime Week: </label>
+                            <input type="number" min="0" max="5" id="PrimetimeWeek" name="PrimetimeWeek">
+                            <label for="PrimetimeLink">Link: </label>
+                            <input type="url" id="PrimetimeLink" name="PrimetimeLink" pattern="http://probaseballexperience.+">
+                            <label for="PrimetimeTPE">TPE: </label>
+                            <input type="number" max="7" min="1" id="PrimetimeTPE" name="PrimetimeTPE" value="1" onchange="countTPE()">
+                        </div>
+                        <br>
+                        <div id="other1">
+                            <input type="checkbox" id="other1Check" name="other1Check" value="other1" onchange="countTPE()">
+                            <label for="other1Name">Other: </label>
+                            <input type="text" id="other1Name" name="other1Name">
+                            <label for="other1Link">Link: </label>
+                            <input type="url" id="other1Link" name="other1Link" pattern="http://probaseballexperience.+">
+                            <label for="other1TPE">TPE: </label>
+                            <input type="number" max="0" min="45" id="other1TPE" name="other1TPE" value="0" onchange="countTPE()">
+                            <button id="button1" onclick="showRow('#other2','#button1')">Add another row</button>
+                        </div>
+                        <br>
+                        <div id="other2">
+                            <input type="checkbox" id="other2Check" name="other2Check" value="other2" onchange="countTPE()">
+                            <label for="other2Name">Other: </label>
+                            <input type="text" id="other2Name" name="other2Name">
+                            <label for="other2Link">Link: </label>
+                            <input type="url" id="other2Link" name="other2Link" pattern="http://probaseballexperience.+">
+                            <label for="other2TPE">TPE: </label>
+                            <input type="number" max="0" min="45" id="other2TPE" name="other2TPE" value="0" onchange="countTPE()">
+                            <button id="button2" onclick="showRow('#other3','#button2')">Add another row</button>
+                        </div>
+                        <br>
+                        <div id="other3">
+                            <input type="checkbox" id="other3Check" name="other3Check" value="other3" onchange="countTPE()">
+                            <label for="other3Name">Other: </label>
+                            <input type="text" id="other3Name" name="other3Name">
+                            <label for="other3Link">Link: </label>
+                            <input type="url" id="other3Link" name="other3Link" pattern="http://probaseballexperience.+">
+                            <label for="other3TPE">TPE: </label>
+                            <input type="number" max="0" min="45" id="other3TPE" name="other3TPE" value="0" onchange="countTPE()">
+                            <button id="button3" onclick="showRow('#other4','#button3')">Add another row</button>
+                        </div>
+                        <br>
+                        <div id="other4">
+                            <input type="checkbox" id="other4Check" name="other4Check" value="other4" onchange="countTPE()">
+                            <label for="other4Name">Other: </label>
+                            <input type="text" id="other4Name" name="other4Name">
+                            <label for="other4Link">Link: </label>
+                            <input type="url" id="other4Link" name="other4Link" pattern="http://probaseballexperience.+">
+                            <label for="other4TPE">TPE: </label>
+                            <input type="number" max="0" min="45" id="other4TPE" name="other4TPE" value="0" onchange="countTPE()">
+                        </div>
+                        <br>
+                    </div>
 					
 					<!-- Setup for TPE earned links -->
 					
     			    <p>Now we need to know how much TPE you earned this week.</p>
     			    <p>Remember to be honest. If an auditor finds any problems in your update, there may be consequences!</p>
     			    <form id="earnedTPEsubmit" onsubmit="stepFour(); return false">
-    			        <label>TPE Earned:</label>
-    			        <input type="number" id="tpeEarned" name="tpeEarned" value="0" required>
+    			        <div>
+                            <label>TPE Earned:</label>
+                            <span id="tpeEarned" style="display:inline">0</span>
+                        </div>
+                        <br>
+    			        <!--<input type="number" id="tpeEarned" name="tpeEarned" value="0" required>-->
     			        <button type="submit" form="earnedTPEsubmit">Submit</button>
     			    </form>
     			</div>
@@ -312,5 +428,6 @@
 		<script src="js/tpespent.js"></script>
 		<script src="js/getUpdate.js"></script>
 		<script src="js/batters.js"></script>
+        <script src="js/countTPE.js"></script>
 	</body>
 </html>

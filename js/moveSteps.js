@@ -21,11 +21,16 @@ function stepFive(){
 }
 
 function stepFour(){
-    tpeEarned = parseInt($('#tpeEarned').val());
+    tpeEarned = parseInt($('#tpeEarned').html());
     $('.step4').css("display","block");
     $('.step4').animate({opacity: 1},1000);
     $(document).scrollTo('.step4',1000);
     
     //calls batters.js or pitchers.js
     fillStats();
+}
+
+function showRow(idToShow,idToHide){
+    $(idToShow).css("display","block");
+    $(idToHide).css("display","none");
 }

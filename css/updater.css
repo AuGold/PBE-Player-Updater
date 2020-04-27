@@ -81,3 +81,15 @@ span{
 #updateText{
     margin-left:40%;
 }
+
+#other2, #other3, #other4{
+    display:none;
+}
+
+.tpeInput{
+    margin-left:20%;
+}
+
+input[type=checkbox]{
+    font-size:150%;
+}
