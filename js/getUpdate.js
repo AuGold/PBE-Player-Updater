@@ -97,16 +97,16 @@ function getUpdate(){
         codeBlock += "URL=" + $("#PrimetimeLink").val() + "]PT " + $("#PrimetimeNumber").val() + "-" + $("#PrimetimeWeek").val() + "[/URL] (+" + $("#PrimetimeTPE").val() + " TPE)\n";
     }
     if(other1Checkbox == true){
-        codeBlock += "URL=" + $("#other1Link").val() + "]" + $("#Other1Name").val() + "[/URL] (+" + $("#Other1TPE").val() + " TPE)\n";
+        codeBlock += "URL=" + $("#other1Link").val() + "]" + $("#other1Name").val() + "[/URL] (+" + $("#other1TPE").val() + " TPE)\n";
     }
     if(other2Checkbox == true){
-        codeBlock += "URL=" + $("#other2Link").val() + "]" + $("#Other2Name").val() + "[/URL] (+" + $("#Other2TPE").val() + " TPE)\n";
+        codeBlock += "URL=" + $("#other2Link").val() + "]" + $("#other2Name").val() + "[/URL] (+" + $("#other2TPE").val() + " TPE)\n";
     }
     if(other3Checkbox == true){
-        codeBlock += "URL=" + $("#other3Link").val() + "]" + $("#Other3Name").val() + "[/URL] (+" + $("#Other3TPE").val() + " TPE)\n";
+        codeBlock += "URL=" + $("#other3Link").val() + "]" + $("#other3Name").val() + "[/URL] (+" + $("#other3TPE").val() + " TPE)\n";
     }
     if(other4Checkbox == true){
-        codeBlock += "URL=" + $("#other4Link").val() + "]" + $("#Other4Name").val() + "[/URL] (+" + $("#Other4TPE").val() + " TPE)\n";
+        codeBlock += "URL=" + $("#other4Link").val() + "]" + $("#other4Name").val() + "[/URL] (+" + $("#other4TPE").val() + " TPE)\n";
     }
             
     $("#outCode").html(codeBlock);
