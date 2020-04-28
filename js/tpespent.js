@@ -33,6 +33,7 @@ function updateTPESpent(){
     for(var i=1;i<tableRows;i++){
         tpeSpentValue = 0;
         tpeSpendingValue = 0;
+		newtpeSpent = 0;
         var minStat = "#minStat" + i;
         var stat = "#stat" + i;
         var maxStat = "#maxStat" + i;
@@ -293,7 +294,6 @@ function updateTPESpent(){
         $(tpeSpent).html(newtpeSpent);
         tpeSpentTotal += newtpeSpent;
 		tpeSpendingValue = 0;
-		console.log(tpeSpendingValue);
 		
     }
     var totalPlusPitches = totalTPE + window.pitchesBought;
