@@ -31,6 +31,6 @@ function stepFour(){
 }
 
 function showRow(idToShow,idToHide){
-    $(idToShow).css("display","block");
+    $(idToShow).css("display","table-row");
     $(idToHide).css("display","none");
 }

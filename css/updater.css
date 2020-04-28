@@ -82,7 +82,7 @@ span{
     margin-left:40%;
 }
 
-#other2, #other3, #other4{
+.other2, .other3, .other4, #button2, #button3{
     display:none;
 }
 
