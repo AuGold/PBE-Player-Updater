@@ -292,6 +292,9 @@ function updateTPESpent(){
         }
         $(tpeSpent).html(newtpeSpent);
         tpeSpentTotal += newtpeSpent;
+		tpeSpendingValue = 0;
+		console.log(tpeSpendingValue);
+		
     }
     var totalPlusPitches = totalTPE + window.pitchesBought;
     var usedPlusPitches = blahUsed + window.pitchesBought;
