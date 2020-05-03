@@ -21,7 +21,7 @@ function stepFive(){
 }
 
 function stepFour(){
-    tpeEarned = parseInt($('#tpeEarned').html());
+    tpeEarned = parseInt($('#tpeEarnedLinks').html());
 	if(tpeEarned == 0){
 		tpeEarned = parseInt($('#tpeEarned').val());
 	}
