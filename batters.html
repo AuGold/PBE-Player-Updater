@@ -94,126 +94,139 @@
     			    <h2>Step 3: TPE earned</h2>
                     
                     <p>Now we need to know how much TPE you earned this week.</p>
-                    <p>Click the checkbox next to the activity you completed and have the link for.</p>
-                    <p>Enter the information for each row (the week number, the season number, how much TPE, and the link of your post).</p>
-                    <table>
-                        <tr>
-                            <td><input type="checkbox" id="WTCheck" name="WTCheck" value="WT" onchange="countTPE()"></td>
-                            <td><label for="WTNumber">Weekly Training #</label></td>
-                            <td><input type="number" min="0" max="1000" id="WTNumber" name="WTNumber"></td>
-                            <td><label for="WTLink">Link: </label></td>
-                            <td><input type="url" id="WTLink" name="WTLink" pattern="http://probaseballexperience.+"></td>
-                            <td><label for="WTTPE">TPE: </label></td>
-                            <td><input type="number" max="5" min="0" id="WTTPE" name="WTTPE" value="5" onchange="countTPE()"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" id="ACCheck" name="ACCheck" value="AC" onchange="countTPE()"></td>
-                            <td><label for="ACNumber">Activity Check #</label></td>
-                            <td><input type="number" min="0" max="1000" id="ACNumber" name="ACNumber"></td>
-                            <td><label for="ACLink">Link: </label></td>
-                            <td><input type="url" id="ACLink" name="ACLink" pattern="http://probaseballexperience.+"></td>
-                            <td><label for="ACTPE">TPE: </label></td>
-                            <td><input type="number" max="3" min="3" id="ACTPE" name="ACTPE" value="3" onchange="countTPE()"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" id="PTCheck" name="PTCheck" value="PT" onchange="countTPE()"></td>
-                            <td><label for="PTNumber">Point Task Season/Week: </label></td>
-                            <td>
-                                <input type="number" min="0" max="100" id="PTNumber" name="PTNumber"> -
-                                <input type="number" min="0" max="5" id="PTWeek" name="PTWeek">
-                            </td>
-                            <td><label for="PTLink">Link: </label></td>
-                            <td><input type="url" id="PTLink" name="PTLink" pattern="http://probaseballexperience.+"></td>
-                            <td><label for="PTTPE">TPE: </label></td>
-                            <td><input type="number" max="3" min="3" id="PTTPE" name="PTTPE" value="3" onchange="countTPE()"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" id="JPTCheck" name="JPTCheck" value="JPT" onchange="countTPE()"></td>
-                            <td><label for="JPTNumber">Journal Point Task Season/Week: </label></td>
-                            <td>
-                                <input type="number" min="0" max="100" id="JPTNumber" name="JPTNumber"> - 
-                                <input type="number" min="0" max="5" id="JPTWeek" name="JPTWeek">
-                            </td>
-                            <td><label for="JPTLink">Link: </label></td>
-                            <td><input type="url" id="JPTLink" name="JPTLink" pattern="http://probaseballexperience.+"></td>
-                            <td><label for="JPTTPE">TPE: </label></td>
-                            <td><input type="number" max="3" min="3" id="JPTTPE" name="JPTTPE" value="3" onchange="countTPE()"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" id="PCCheck" name="PCCheck" value="PC" onchange="countTPE()"></td>
-                            <td><label for="PCNumber">Picture Chain Season/Week: </label></td>
-                            <td>
-                                <input type="number" min="0" max="100" id="PCNumber" name="PCNumber"> - 
-                                <input type="number" min="0" max="5" id="PCWeek" name="PCWeek">
-                            </td>
-                            <td><label for="PCLink">Link: </label></td>
-                            <td><input type="url" id="PCLink" name="PCLink" pattern="http://probaseballexperience.+"></td>
-                            <td><label for="PCTPE">TPE: </label></td>
-                            <td><input type="number" max="2" min="2" id="PCTPE" name="JPTTPE" value="2" onchange="countTPE()"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" id="PrimetimeCheck" name="PrimetimeCheck" value="Primetime" onchange="countTPE()"></td>
-                            <td><label for="PrimetimeNumber">Primetime Season/Week: </label></td>
-                            <td>
-                                <input type="number" min="0" max="100" id="PrimetimeNumber" name="PrimetimeNumber"> - 
-                                <input type="number" min="0" max="5" id="PrimetimeWeek" name="PrimetimeWeek">
-                            </td>
-                            <td><label for="PrimetimeLink">Link: </label></td>
-                            <td><input type="url" id="PrimetimeLink" name="PrimetimeLink" pattern="http://probaseballexperience.+"></td>
-                            <td><label for="PrimetimeTPE">TPE: </label></td>
-                            <td><input type="number" max="7" min="1" id="PrimetimeTPE" name="PrimetimeTPE" value="1" onchange="countTPE()"></td>
-                        </tr>
-                        <tr class="other1">
-                            <td><input type="checkbox" id="other1Check" name="other1Check" value="other1" onchange="countTPE()"></td>
-                            <td><label for="other1Name">Other: </label></td>
-                            <td><input type="text" id="other1Name" name="other1Name"></td>
-                            <td><label for="other1Link">Link: </label></td>
-                            <td><input type="url" id="other1Link" name="other1Link" pattern="http://probaseballexperience.+"></td>
-                            <td><label for="other1TPE">TPE: </label></td>
-                            <td><input type="number" max="0" min="45" id="other1TPE" name="other1TPE" value="0" onchange="countTPE()"></td>
-                        </tr>
-                        <tr class="other2">
-                            <td><input type="checkbox" id="other2Check" name="other2Check" value="other2" onchange="countTPE()"></td>
-                            <td><label for="other2Name">Other: </label></td>
-                            <td><input type="text" id="other2Name" name="other2Name"></td>
-                            <td><label for="other2Link">Link: </label></td>
-                            <td><input type="url" id="other2Link" name="other2Link" pattern="http://probaseballexperience.+"></td>
-                            <td><label for="other2TPE">TPE: </label></td>
-                            <td><input type="number" max="0" min="45" id="other2TPE" name="other2TPE" value="0" onchange="countTPE()"></td>
-                        </tr>
-                        <tr class="other3">
-                            <td><input type="checkbox" id="other3Check" name="other3Check" value="other3" onchange="countTPE()"></td>
-                            <td><label for="other3Name">Other: </label></td>
-                            <td><input type="text" id="other3Name" name="other3Name"></td>
-                            <td><label for="other3Link">Link: </label></td>
-                            <td><input type="url" id="other3Link" name="other3Link" pattern="http://probaseballexperience.+"></td>
-                            <td><label for="other3TPE">TPE: </label></td>
-                            <td><input type="number" max="0" min="45" id="other1TPE" name="other3TPE" value="0" onchange="countTPE()"></td>
-                        </tr>
-                        <tr class="other4">
-                            <td><input type="checkbox" id="other4Check" name="other4Check" value="other4" onchange="countTPE()"></td>
-                            <td><label for="other4Name">Other: </label></td>
-                            <td><input type="text" id="other4Name" name="other4Name"></td>
-                            <td><label for="other4Link">Link: </label></td>
-                            <td><input type="url" id="other4Link" name="other4Link" pattern="http://probaseballexperience.+"></td>
-                            <td><label for="other4TPE">TPE: </label></td>
-                            <td><input type="number" max="0" min="45" id="other4TPE" name="other4TPE" value="0" onchange="countTPE()"></td>
-                        </tr>
-                    </table>
-                    <button class="other1" id="button1" onclick="showRow('.other2','#button1')">Add another row</button>
-                    <button class="other2" id="button2" onclick="showRow('.other3','#button2')">Add another row</button>
-                    <button class="other3" id="button3" onclick="showRow('.other4','#button3')">Add another row</button>
-					
-					<!-- Setup for TPE earned links -->
-					
-                    <p>Check the value of the TPE Earned and make sure it equals the sum of the table above.</p>
-    			    <form id="earnedTPEsubmit" onsubmit="stepFour(); return false">
-    			        <div>
-                            <label>TPE Earned:</label>
-                            <span id="tpeEarned" style="display:inline">0</span>
-                        </div>
-    			        <button type="submit" form="earnedTPEsubmit">Submit</button>
-    			    </form>
+					<P>First, do you want to input your acitivty links into this website?
+					<button type="submit" onclick="makeVisible('.withLinks','.withoutLinks')">Yes</button>
+					<button type="submit" onclick="makeVisible('.withoutLinks','.withLinks')">No</button>
+					<div class="withLinks">
+						<p>Click the checkbox next to the activity you completed and have the link for.</p>
+						<p>Enter the information for each row (the week number, the season number, how much TPE, and the link of your post).</p>
+						<table>
+							<tr>
+								<td><input type="checkbox" id="WTCheck" name="WTCheck" value="WT" onchange="countTPE()"></td>
+								<td><label for="WTNumber">Weekly Training #</label></td>
+								<td><input type="number" min="0" max="1000" id="WTNumber" name="WTNumber"></td>
+								<td><label for="WTLink">Link: </label></td>
+								<td><input type="url" id="WTLink" name="WTLink" pattern="http://probaseballexperience.+"></td>
+								<td><label for="WTTPE">TPE: </label></td>
+								<td><input type="number" max="5" min="0" id="WTTPE" name="WTTPE" value="5" onchange="countTPE()"></td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="ACCheck" name="ACCheck" value="AC" onchange="countTPE()"></td>
+								<td><label for="ACNumber">Activity Check #</label></td>
+								<td><input type="number" min="0" max="1000" id="ACNumber" name="ACNumber"></td>
+								<td><label for="ACLink">Link: </label></td>
+								<td><input type="url" id="ACLink" name="ACLink" pattern="http://probaseballexperience.+"></td>
+								<td><label for="ACTPE">TPE: </label></td>
+								<td><input type="number" max="3" min="3" id="ACTPE" name="ACTPE" value="3" onchange="countTPE()"></td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="PTCheck" name="PTCheck" value="PT" onchange="countTPE()"></td>
+								<td><label for="PTNumber">Point Task Season/Week: </label></td>
+								<td>
+									<input type="number" min="0" max="100" id="PTNumber" name="PTNumber"> -
+									<input type="number" min="0" max="5" id="PTWeek" name="PTWeek">
+								</td>
+								<td><label for="PTLink">Link: </label></td>
+								<td><input type="url" id="PTLink" name="PTLink" pattern="http://probaseballexperience.+"></td>
+								<td><label for="PTTPE">TPE: </label></td>
+								<td><input type="number" max="3" min="3" id="PTTPE" name="PTTPE" value="3" onchange="countTPE()"></td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="JPTCheck" name="JPTCheck" value="JPT" onchange="countTPE()"></td>
+								<td><label for="JPTNumber">Journal Point Task Season/Week: </label></td>
+								<td>
+									<input type="number" min="0" max="100" id="JPTNumber" name="JPTNumber"> - 
+									<input type="number" min="0" max="5" id="JPTWeek" name="JPTWeek">
+								</td>
+								<td><label for="JPTLink">Link: </label></td>
+								<td><input type="url" id="JPTLink" name="JPTLink" pattern="http://probaseballexperience.+"></td>
+								<td><label for="JPTTPE">TPE: </label></td>
+								<td><input type="number" max="3" min="3" id="JPTTPE" name="JPTTPE" value="3" onchange="countTPE()"></td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="PCCheck" name="PCCheck" value="PC" onchange="countTPE()"></td>
+								<td><label for="PCNumber">Picture Chain Season/Week: </label></td>
+								<td>
+									<input type="number" min="0" max="100" id="PCNumber" name="PCNumber"> - 
+									<input type="number" min="0" max="5" id="PCWeek" name="PCWeek">
+								</td>
+								<td><label for="PCLink">Link: </label></td>
+								<td><input type="url" id="PCLink" name="PCLink" pattern="http://probaseballexperience.+"></td>
+								<td><label for="PCTPE">TPE: </label></td>
+								<td><input type="number" max="2" min="2" id="PCTPE" name="JPTTPE" value="2" onchange="countTPE()"></td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="PrimetimeCheck" name="PrimetimeCheck" value="Primetime" onchange="countTPE()"></td>
+								<td><label for="PrimetimeNumber">Primetime Season/Week: </label></td>
+								<td>
+									<input type="number" min="0" max="100" id="PrimetimeNumber" name="PrimetimeNumber"> - 
+									<input type="number" min="0" max="5" id="PrimetimeWeek" name="PrimetimeWeek">
+								</td>
+								<td><label for="PrimetimeLink">Link: </label></td>
+								<td><input type="url" id="PrimetimeLink" name="PrimetimeLink" pattern="http://probaseballexperience.+"></td>
+								<td><label for="PrimetimeTPE">TPE: </label></td>
+								<td><input type="number" max="7" min="1" id="PrimetimeTPE" name="PrimetimeTPE" value="1" onchange="countTPE()"></td>
+							</tr>
+							<tr class="other1">
+								<td><input type="checkbox" id="other1Check" name="other1Check" value="other1" onchange="countTPE()"></td>
+								<td><label for="other1Name">Other: </label></td>
+								<td><input type="text" id="other1Name" name="other1Name"></td>
+								<td><label for="other1Link">Link: </label></td>
+								<td><input type="url" id="other1Link" name="other1Link" pattern="http://probaseballexperience.+"></td>
+								<td><label for="other1TPE">TPE: </label></td>
+								<td><input type="number" max="0" min="45" id="other1TPE" name="other1TPE" value="0" onchange="countTPE()"></td>
+							</tr>
+							<tr class="other2">
+								<td><input type="checkbox" id="other2Check" name="other2Check" value="other2" onchange="countTPE()"></td>
+								<td><label for="other2Name">Other: </label></td>
+								<td><input type="text" id="other2Name" name="other2Name"></td>
+								<td><label for="other2Link">Link: </label></td>
+								<td><input type="url" id="other2Link" name="other2Link" pattern="http://probaseballexperience.+"></td>
+								<td><label for="other2TPE">TPE: </label></td>
+								<td><input type="number" max="0" min="45" id="other2TPE" name="other2TPE" value="0" onchange="countTPE()"></td>
+							</tr>
+							<tr class="other3">
+								<td><input type="checkbox" id="other3Check" name="other3Check" value="other3" onchange="countTPE()"></td>
+								<td><label for="other3Name">Other: </label></td>
+								<td><input type="text" id="other3Name" name="other3Name"></td>
+								<td><label for="other3Link">Link: </label></td>
+								<td><input type="url" id="other3Link" name="other3Link" pattern="http://probaseballexperience.+"></td>
+								<td><label for="other3TPE">TPE: </label></td>
+								<td><input type="number" max="0" min="45" id="other1TPE" name="other3TPE" value="0" onchange="countTPE()"></td>
+							</tr>
+							<tr class="other4">
+								<td><input type="checkbox" id="other4Check" name="other4Check" value="other4" onchange="countTPE()"></td>
+								<td><label for="other4Name">Other: </label></td>
+								<td><input type="text" id="other4Name" name="other4Name"></td>
+								<td><label for="other4Link">Link: </label></td>
+								<td><input type="url" id="other4Link" name="other4Link" pattern="http://probaseballexperience.+"></td>
+								<td><label for="other4TPE">TPE: </label></td>
+								<td><input type="number" max="0" min="45" id="other4TPE" name="other4TPE" value="0" onchange="countTPE()"></td>
+							</tr>
+						</table>
+						<button class="other1" id="button1" onclick="showRow('.other2','#button1')">Add another row</button>
+						<button class="other2" id="button2" onclick="showRow('.other3','#button2')">Add another row</button>
+						<button class="other3" id="button3" onclick="showRow('.other4','#button3')">Add another row</button>
+						
+						<!-- Setup for TPE earned links -->
+						
+						<p>Check the value of the TPE Earned and make sure it equals the sum of the table above.</p>
+						<form id="earnedTPEsubmit" onsubmit="stepFour(); return false">
+							<div>
+								<label>TPE Earned:</label>
+								<span id="tpeEarned" style="display:inline">0</span>
+							</div>
+							<button type="submit" form="earnedTPEsubmit">Submit</button>
+						</form>
+					</div>
+					<div class="withoutLinks">
+						<p>Remember to be honest. If an auditor finds any problems in your update, there may be consequences!</p>
+						<form id="earnedTPEsubmit" onsubmit="stepFour(); return false">
+							<label>TPE Earned:</label>
+							<input type="number" id="tpeEarned" name="tpeEarned" value="0" required>
+							<button type="submit" form="earnedTPEsubmit">Submit</button>
+						</form>
+					</div>
     			</div>
     			<div class="step4">
     			    <h2>Step 4: Create your update!</h2>

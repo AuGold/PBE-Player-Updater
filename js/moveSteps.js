@@ -34,3 +34,8 @@ function showRow(idToShow,idToHide){
     $(idToShow).css("display","table-row");
     $(idToHide).css("display","none");
 }
+
+function makeVisible(classToShow, classToHide){
+	$(classToShow).css("display","block");
+	$(classToHide).css("display","none");
+}

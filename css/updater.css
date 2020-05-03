@@ -89,3 +89,7 @@ span{
 .tpeInput{
     margin-left:20%;
 }
+
+.withoutLinks, .withLinks{
+	display: none;
+}
