@@ -88,13 +88,13 @@ function getUpdate(){
         codeBlock += "[URL=" + $("#PTLink").val() + "]PT " + $("#PTNumber").val() + "-" + $("#PTWeek").val() + "[/URL] (+" + $("#PTTPE").val() + " TPE)<br/>";
     }
     if(journalPointTaskCheckbox == true){
-        codeBlock += "[URL=" + $("#JPTLink").val() + "]PT " + $("#JPTNumber").val() + "-" + $("#JPTWeek").val() + "[/URL] (+" + $("#JPTTPE").val() + " TPE)<br/>";
+        codeBlock += "[URL=" + $("#JPTLink").val() + "]JPT " + $("#JPTNumber").val() + "-" + $("#JPTWeek").val() + "[/URL] (+" + $("#JPTTPE").val() + " TPE)<br/>";
     }
     if(pictureChainCheckbox == true){
         codeBlock += "[URL=" + $("#PCLink").val() + "]PC " + $("#PCNumber").val() + "-" + $("#PCWeek").val() + "[/URL] (+" + $("#PCTPE").val() + " TPE)<br/>";
     }
     if(primetimeCheckbox == true){
-        codeBlock += "[URL=" + $("#PrimetimeLink").val() + "]PT " + $("#PrimetimeNumber").val() + "-" + $("#PrimetimeWeek").val() + "[/URL] (+" + $("#PrimetimeTPE").val() + " TPE)<br/>";
+        codeBlock += "[URL=" + $("#PrimetimeLink").val() + "]Primetime " + $("#PrimetimeNumber").val() + "-" + $("#PrimetimeWeek").val() + "[/URL] (+" + $("#PrimetimeTPE").val() + " TPE)<br/>";
     }
     if(other1Checkbox == true){
         codeBlock += "[URL=" + $("#other1Link").val() + "]" + $("#other1Name").val() + "[/URL] (+" + $("#other1TPE").val() + " TPE)<br/>";
