@@ -22,6 +22,9 @@ function stepFive(){
 
 function stepFour(){
     tpeEarned = parseInt($('#tpeEarned').html());
+	if(tpeEarned == 0){
+		tpeEarned = parseInt($('#tpeEarned').val());
+	}
     $('.step4').css("display","block");
     $('.step4').animate({opacity: 1},1000);
     $(document).scrollTo('.step4',1000);
@@ -38,4 +41,5 @@ function showRow(idToShow,idToHide){
 function makeVisible(classToShow, classToHide){
 	$(classToShow).css("display","block");
 	$(classToHide).css("display","none");
+	$(document).scrollTo(classToShow,1000);
 }
