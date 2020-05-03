@@ -951,7 +951,7 @@ function fillStats(){
             pitchesBought += 50;
         }
     }
-    else if(pitchArch.includes("Starting Balanced Pitcher")){
+    else if(pitchArch.includes("Starting Balanced Pitcher") || pitchArch.includes("Balanced SP")){
         $('#minStat1').html("40");
         $('#minStat2').html("40");
         $('#minStat3').html("40");
