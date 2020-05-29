@@ -1059,7 +1059,7 @@ function fillStats(){
 		$('#maxStat' + goThroughOne).html(max[goThrough]);
 	}
 	$('#minStat12').html(mins[0]);
-	$('#maxStat12'.html(max[0]);
+	$('#maxStat12').html(max[0]);
 	$('#newStat1').attr({min: mins[1],max: max[1],value: moveVsLHB});
     $('#newStat2').attr({min: mins[2],max: max[2],value: moveVsRHB});
     $('#newStat3').attr({min: mins[3],max: max[3],value: conVsLHB});
