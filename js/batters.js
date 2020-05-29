@@ -68,7 +68,7 @@ function minMax(str){
 
 	mins = [];
 	for(var uses = 0 ; uses < indices.length ; uses++){
-		var number = parseInt(str.substring(indices[uses]+4,indices[uses]+7));
+		var number = parseInt(str.substring(indices[uses]+4,indices[uses]+8));
 		mins.push(number);
 	}
 	
@@ -80,7 +80,7 @@ function minMax(str){
 	
 	max = [];
 	for(var uses = 0 ; uses < indices.length ; uses++){
-		var number = parseInt(str.substring(indices[uses]+4,indices[uses]+7));
+		var number = parseInt(str.substring(indices[uses]+4,indices[uses]+8));
 		max.push(number);
 	}
 	
