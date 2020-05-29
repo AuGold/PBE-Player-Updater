@@ -66,13 +66,13 @@ function minMax(str){
 
 	console.log(indices);
 	var mins = [];
-	for(var uses = 0 ; uses<= indices.length ; uses++){
+	for(var uses = 0 ; uses < indices.length ; uses++){
 		console.log(indices[uses]);
 		var number = parseInt(str.substring(indices[uses],indices[uses]+7));
 		mins.push(number);
 	}
 	
-	console.log(number);
+	console.log(mins);
 }
 
 //Function designed to pull fielding and hitting archetypes from the string in getStats()
