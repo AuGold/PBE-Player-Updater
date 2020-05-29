@@ -1090,6 +1090,7 @@ function fillStats(){
     }
     var selectedVelo = '#velo' + currentPitchLocation;
     $(selectedVelo).attr("selected","selected");
+	pitchesBought = 0;
     if(pitchArch.includes("Starting Knuckleball Pitcher") || pitchArch.includes("Knuckleball")){
 		if(pitch5>0){
 			pitchesBought += 50;
