@@ -22,7 +22,8 @@ var pitch3Name = "Pitch 3";
 var pitch4Name = "Pitch 4";
 var pitch5Name = "Pitch 5";
 var pitchesBought = 0;
-
+var mins=[];
+var max=[];
 //receives longString from pullData.js
 //gets Banked TPE in one of three ways
 function getStats(longString){
@@ -48,9 +49,37 @@ function getStats(longString){
 	    $('#error').html("");
 	    $('#putBNK').html("Banked: " + banked);
 	    getStatsPitcher(longString);
+		minMax(longString);
 	    //Launches the smooth scrolling down to Step 2 in moveSteps.js
     	stepTwo();
 	}
+}
+
+//experimental function to get mins/maxes WITHOUT archetype
+
+function minMax(str){
+	var toSearch = "MIN:";
+	var indices = [];
+    for(var pos = str.indexOf(toSearch); pos !== -1; pos = str.indexOf(toSearch, pos + 1)) {
+        indices.push(pos);
+    }
+
+	for(var uses = 0 ; uses < indices.length ; uses++){
+		var number = parseInt(str.substring(indices[uses]+4,indices[uses]+7));
+		mins.push(number);
+	}
+	
+	toSearch = "MAX:";
+	indices = [];
+    for(var pos = str.indexOf(toSearch); pos !== -1; pos = str.indexOf(toSearch, pos + 1)) {
+        indices.push(pos);
+    }
+
+	for(var uses = 0 ; uses < indices.length ; uses++){
+		var number = parseInt(str.substring(indices[uses]+4,indices[uses]+7));
+		max.push(number);
+	}
+	
 }
 
 //Function designed to pull pitching archetype from the string in getStats()

@@ -24,6 +24,8 @@ var bunt;
 var tpeEarned;
 var tpeToSpend;
 var pitchesBought = 0;
+var mins=[];
+var max=[];
 //pitchesBought variable declared to stop NaN on updateStats()
 
 //receives longString from pullData.js
@@ -64,14 +66,22 @@ function minMax(str){
         indices.push(pos);
     }
 
-	console.log(indices);
-	var mins = [];
 	for(var uses = 0 ; uses < indices.length ; uses++){
 		var number = parseInt(str.substring(indices[uses]+4,indices[uses]+7));
 		mins.push(number);
 	}
 	
-	console.log(mins);
+	toSearch = "MAX:";
+	indices = [];
+    for(var pos = str.indexOf(toSearch); pos !== -1; pos = str.indexOf(toSearch, pos + 1)) {
+        indices.push(pos);
+    }
+
+	for(var uses = 0 ; uses < indices.length ; uses++){
+		var number = parseInt(str.substring(indices[uses]+4,indices[uses]+7));
+		max.push(number);
+	}
+	
 }
 
 //Function designed to pull fielding and hitting archetypes from the string in getStats()
