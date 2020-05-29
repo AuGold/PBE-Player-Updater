@@ -258,11 +258,8 @@ function updateTPESpent(){
             var currentPitchLocation;
             var newPitchLocation = 0;
             for(var b = 0;b<=pitchingLevels.length;b++){
-				console.log('Pitching Levels [b]: ' + pitchingLevels[b]);
-				console.log('HTML: ' + $(minStat).html());
                 if($(minStat).html().localeCompare(pitchingLevels[b]) == 0){
                     minPitchLocation = b;
-					console.log("minPitchLocation: " + b);
                 }
             }
             for(var c = 0;c<=pitchingLevels.length;c++){
