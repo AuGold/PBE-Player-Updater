@@ -81,6 +81,7 @@ function minMax(str){
 	
 	var maxVeloStr = str.substring(indices[0]+4,indices[0]+13);
 	maxVeloStr = maxVeloStr.replace(')','');
+	maxVeloStr = maxVeloStr.replace(/[^\d-]/g,'');
 	max.push(maxVeloStr);
 
 	for(var uses = 1 ; uses < indices.length ; uses++){
@@ -1054,7 +1055,6 @@ function fillStats(){
     }*/
 	
 	for(var goThrough = 1; goThrough < mins.length ; goThrough++){
-		var goThroughOne = goThrough + 1;
 		$('#minStat' + goThroughOne).html(mins[goThrough]);
 		$('#maxStat' + goThroughOne).html(max[goThrough]);
 	}
