@@ -252,7 +252,7 @@ function fillStats(){
     $('#stat17').html(turnDP);
     $('#stat18').html(catchAB);
     
-    if(hitArch.includes("Power Hitter")){
+    /*if(hitArch.includes("Power Hitter")){
         $('#minStat1').html("25");
         $('#minStat2').html("25");
         $('#minStat3').html("20");
@@ -530,7 +530,32 @@ function fillStats(){
         $('#newStat18').attr({min: 5,max: 30,value: catchAB});
     }else{
         $('#error2').html("Something went wrong with your archetype import. Contact AuGold on Discord for assistance.");
-    }
+    }*/
+	
+	for(var goThrough = 0; goThrough < mins.length ; goThrough++){
+		var goThroughOne = goThrough + 1;
+		$('#minStat' + goThroughOne).html(mins[goThrough]);
+		$('#maxStat' + goThroughOne).html(max[goThrough]);
+	}
+	$('#newStat1').attr({min: mins[0],max: max[0],value: babipVsLHP});
+    $('#newStat2').attr({min: mins[1],max: max[1],value: babipVsRHP});
+    $('#newStat3').attr({min: mins[2],max: max[2],value: avoidKLHP});
+    $('#newStat4').attr({min: mins[3],max: max[3],value: avoidKRHP});
+    $('#newStat5').attr({min: mins[4],max: max[4],value: gapVsLHP});
+    $('#newStat6').attr({min: mins[5],max: max[5],value: gapVsRHP});
+    $('#newStat7').attr({min: mins[6],max: max[6],value: powerVsLHP});
+    $('#newStat8').attr({min: mins[7],max: max[7],value: powerVsRHP});
+    $('#newStat9').attr({min: mins[8],max: max[8],value: eyeVsLHP});
+    $('#newStat10').attr({min: mins[9],max: max[9],value: eyeVsRHP});
+    $('#newStat11').attr({min: mins[10],max: max[10],value: speed});
+    $('#newStat12').attr({min: mins[11],max: max[11],value: steal});
+    $('#newStat13').attr({min: mins[12],max: max[12],value: bunt});
+	$('#newStat14').attr({min: mins[13],max: max[13],value: range});
+    $('#newStat15').attr({min: mins[14],max: max[14],value: fError});
+    $('#newStat16').attr({min: mins[15],max: max[15],value: arm});
+    $('#newStat17').attr({min: mins[16],max: max[16],value: turnDP});
+    $('#newStat18').attr({min: mins[17],max: max[17],value: catchAB});
+	
     //calls tpespent.js
     updateTPESpent();
 }
