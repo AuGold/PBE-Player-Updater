@@ -64,6 +64,7 @@ function minMax(str){
         indices.push(pos);
     }
 
+	mins = [];
 	var minVeloStr = str.substring(indices[0]+4,indices[0]+13);
 	minVeloStr = minVeloStr.replace(')','');
 	mins.push(minVeloStr);
@@ -79,6 +80,7 @@ function minMax(str){
         indices.push(pos);
     }
 	
+	max = [];
 	var maxVeloStr = str.substring(indices[0]+4,indices[0]+13);
 	maxVeloStr = maxVeloStr.replace(')','');
 	maxVeloStr = maxVeloStr.replace(/[^\d-]/g,'');
