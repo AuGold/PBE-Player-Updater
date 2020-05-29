@@ -42,5 +42,5 @@ function countTPE(){
         tpeToUse += parseInt($(other4TPE).val());
     }
     
-    document.getElementById('tpeEarned').innerHTML = tpeToUse;
+    document.getElementById('tpeEarnedLinks').innerHTML = tpeToUse;
 }

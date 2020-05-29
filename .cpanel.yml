@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/augoeuaa/devpbe.rejj.net/
+    - export DEPLOYPATH=/home/augoeuaa/pbe.rejj.net/
     - /bin/cp -R * $DEPLOYPATH

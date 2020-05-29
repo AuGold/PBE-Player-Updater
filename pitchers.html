@@ -89,7 +89,7 @@
     			    <h2>Step 3: TPE earned</h2>
                     
                     <p>Now we need to know how much TPE you earned this week.</p>
-					<P>First, do you want to input your acitivty links into this website?
+					<P>First, do you want to input your activity links into this website?
 					<button type="submit" onclick="makeVisible('.withLinks','.withoutLinks')">Yes</button>
 					<button type="submit" onclick="makeVisible('.withoutLinks','.withLinks')">No</button>
 					<div class="withLinks">
@@ -169,7 +169,7 @@
 								<td><label for="other1Link">Link: </label></td>
 								<td><input type="url" id="other1Link" name="other1Link" pattern="http://probaseballexperience.+"></td>
 								<td><label for="other1TPE">TPE: </label></td>
-								<td><input type="number" max="0" min="45" id="other1TPE" name="other1TPE" value="0" onchange="countTPE()"></td>
+								<td><input type="number" max="45" min="0" id="other1TPE" name="other1TPE" value="0" onchange="countTPE()"></td>
 							</tr>
 							<tr class="other2">
 								<td><input type="checkbox" id="other2Check" name="other2Check" value="other2" onchange="countTPE()"></td>
@@ -178,7 +178,7 @@
 								<td><label for="other2Link">Link: </label></td>
 								<td><input type="url" id="other2Link" name="other2Link" pattern="http://probaseballexperience.+"></td>
 								<td><label for="other2TPE">TPE: </label></td>
-								<td><input type="number" max="0" min="45" id="other2TPE" name="other2TPE" value="0" onchange="countTPE()"></td>
+								<td><input type="number" max="45" min="0" id="other2TPE" name="other2TPE" value="0" onchange="countTPE()"></td>
 							</tr>
 							<tr class="other3">
 								<td><input type="checkbox" id="other3Check" name="other3Check" value="other3" onchange="countTPE()"></td>
@@ -187,7 +187,7 @@
 								<td><label for="other3Link">Link: </label></td>
 								<td><input type="url" id="other3Link" name="other3Link" pattern="http://probaseballexperience.+"></td>
 								<td><label for="other3TPE">TPE: </label></td>
-								<td><input type="number" max="0" min="45" id="other1TPE" name="other3TPE" value="0" onchange="countTPE()"></td>
+								<td><input type="number" max="45" min="0" id="other3TPE" name="other3TPE" value="0" onchange="countTPE()"></td>
 							</tr>
 							<tr class="other4">
 								<td><input type="checkbox" id="other4Check" name="other4Check" value="other4" onchange="countTPE()"></td>
@@ -196,7 +196,7 @@
 								<td><label for="other4Link">Link: </label></td>
 								<td><input type="url" id="other4Link" name="other4Link" pattern="http://probaseballexperience.+"></td>
 								<td><label for="other4TPE">TPE: </label></td>
-								<td><input type="number" max="0" min="45" id="other4TPE" name="other4TPE" value="0" onchange="countTPE()"></td>
+								<td><input type="number" max="56" min="0" id="other4TPE" name="other4TPE" value="0" onchange="countTPE()"></td>
 							</tr>
 						</table>
 						<button class="other1" id="button1" onclick="showRow('.other2','#button1')">Add another row</button>
@@ -206,7 +206,7 @@
 						<!-- Setup for TPE earned links -->
 						
 						<p>Check the value of the TPE Earned and make sure it equals the sum of the table above.</p>
-						<form id="earnedTPEsubmit" onsubmit="stepFour(); return false">
+						<form id="earnedTPEsubmitLinks" onsubmit="stepFour(); return false">
 							<div>
 								<label>TPE Earned:</label>
 								<span id="tpeEarnedLinks" style="display:inline">0</span>
@@ -377,6 +377,9 @@
     			    <p>Copy the text output below and paste it into your update thread!</p>
     			    <hr>
     			    <div id="updateText">
+                        <span id="outCode"></span><br/>
+                        <span>----------------</span><br/>
+                        
         			    <span id="outputGained"></span><br/>
         			    <span id="outputUpdate"></span><br/>
         			    
@@ -405,5 +408,6 @@
 		<script src="js/tpespent.js"></script>
 		<script src="js/getUpdate.js"></script>
 		<script src="js/pitchers.js"></script>
+		<script src="js/countTPE.js"></script>
 	</body>
 </html>
