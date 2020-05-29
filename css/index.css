@@ -15,3 +15,7 @@ p, li{
 ul{
     list-style-position:inside;
 }
+
+h2{
+	text-align:center;
+}
