@@ -260,6 +260,7 @@ function updateTPESpent(){
             for(var b = 0;b<=pitchingLevels.length;b++){
                 if($(minStat).html().localeCompare(pitchingLevels[b]) == 0){
                     minPitchLocation = b;
+					console.log("minPitchLocation: " + b);
                 }
             }
             for(var c = 0;c<=pitchingLevels.length;c++){
