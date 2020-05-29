@@ -64,7 +64,9 @@ function minMax(str){
         indices.push(pos);
     }
 
-	for(var uses = 0 ; uses < indices.length ; uses++){
+	mins.push(str.substring(indices[0]+4,indices[0]+11));
+
+	for(var uses = 1 ; uses < indices.length ; uses++){
 		var number = parseInt(str.substring(indices[uses]+4,indices[uses]+7));
 		mins.push(number);
 	}
@@ -74,8 +76,10 @@ function minMax(str){
     for(var pos = str.indexOf(toSearch); pos !== -1; pos = str.indexOf(toSearch, pos + 1)) {
         indices.push(pos);
     }
+	
+	max.push(str.substring(indices[0]+4,indices[0]+11));
 
-	for(var uses = 0 ; uses < indices.length ; uses++){
+	for(var uses = 1 ; uses < indices.length ; uses++){
 		var number = parseInt(str.substring(indices[uses]+4,indices[uses]+7));
 		max.push(number);
 	}
@@ -623,7 +627,7 @@ function fillStats(){
     $('#statName10').html(pitch4Name);
     $('#statName11').html(pitch5Name);
     
-    if(pitchArch.includes("Relief Power Pitcher")){
+    /*if(pitchArch.includes("Relief Power Pitcher")){
         $('#minStat1').html("50");
         $('#minStat2').html("50");
         $('#minStat3').html("40");
@@ -1043,7 +1047,54 @@ function fillStats(){
     else{
         $('#error2').html("There appears to be something wrong with your archetype import. Contact AuGold on Discord for assistance.")
         
+    }*/
+	
+	for(var goThrough = 0; goThrough < mins.length ; goThrough++){
+		var goThroughOne = goThrough + 1;
+		$('#minStat' + goThroughOne).html(mins[goThrough]);
+		$('#maxStat' + goThroughOne).html(max[goThrough]);
+	}
+	$('#newStat1').attr({min: mins[0],max: max[0],value: moveVsLHB});
+    $('#newStat2').attr({min: mins[1],max: max[1],value: moveVsRHB});
+    $('#newStat3').attr({min: mins[2],max: max[2],value: conVsLHB});
+    $('#newStat4').attr({min: mins[3],max: max[3],value: conVsRHB});
+    $('#newStat5').attr({min: mins[4],max: max[4],value: stamina});
+    $('#newStat6').attr({min: mins[5],max: max[5],value: holdRun});
+    $('#newStat7').attr({min: mins[6],max: max[6],value: pitch1});
+    $('#newStat8').attr({min: mins[7],max: max[7],value: pitch2});
+    $('#newStat9').attr({min: mins[8],max: max[8],value: pitch3});
+    $('#newStat10').attr({min: mins[9],max: max[9],value: pitch4});
+    $('#newStat11').attr({min: mins[10],max: max[10],value: pitch5});
+	var currentPitchLocation;
+    for(var c = 0;c<=pitchingLevels.length;c++){
+            if($('#stat12').html().trim().localeCompare(pitchingLevels[c]) == 0){
+                currentPitchLocation = c;
+            }
+        }
+    if(typeof currentPitchLocation === 'undefined'){
+        for(var z = 0;z<pitchingLevels.length;z++){
+            var str = pitchingLevels[z];
+            str = str.replace(/\s/g, '');
+            if($('#stat12').html().trim().localeCompare(str) == 0){
+                currentPitchLocation = z;
+            }
+        }
     }
+    var selectedVelo = '#velo' + currentPitchLocation;
+    $(selectedVelo).attr("selected","selected");
+    if(pitchArch.includes("Starting Knuckleball Pitcher") || pitchArch.includes("Knuckleball")){
+		if(pitch5>0){
+			pitchesBought += 50;
+		}
+	}
+	else{
+		if(pitch4>0){
+			pitchesBought += 50;
+		}
+		if(pitch5>0){
+			pitchesBought += 50;
+		}
+	}
     //calls tpespent.js
     updateTPESpent();
 }
