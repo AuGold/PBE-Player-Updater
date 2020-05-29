@@ -58,11 +58,11 @@ function getStats(longString){
 //experimental function to get mins/maxes WITHOUT archetype
 
 function minMax(postGET){
-	var regexp = "MIN:"
+	var regexp = new RegExp("MIN:");
 	var match, matches = [];
 
 	while ((match = regexp.exec(postGET)) != null) {
-	matches.push(match.index);
+		matches.push(match.index);
 	}
 
 	console.log(matches);
