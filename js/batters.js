@@ -48,11 +48,25 @@ function getStats(longString){
 	    $('#putBNK').html("Banked: " + banked);
 	    getStatsBatter(longString);
     	getStatsFielding(longString);
+		minMax(longString);
     	//Launches the smooth scrolling down to Step 2 in moveSteps.js
+		
     	stepTwo();
 	}
 }
 
+//experimental function to get mins/maxes WITHOUT archetype
+
+function minMax(postGET){
+	var regexp = "MIN:"
+	var match, matches = [];
+
+	while ((match = regexp.exec(postGET)) != null) {
+	matches.push(match.index);
+	}
+
+	console.log(matches);
+}
 
 //Function designed to pull fielding and hitting archetypes from the string in getStats()
 //Also pulls all fielding stats
