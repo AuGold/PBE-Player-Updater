@@ -67,7 +67,7 @@ function minMax(str){
 	console.log(indices);
 	var mins = [];
 	for(var uses = 0 ; uses < indices.length ; uses++){
-		var number = str.substring(indices[uses],indices[uses]+7);
+		var number = parseInt(str.substring(indices[uses]+4,indices[uses]+7));
 		mins.push(number);
 	}
 	
