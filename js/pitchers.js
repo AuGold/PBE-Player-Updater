@@ -1055,8 +1055,8 @@ function fillStats(){
     }*/
 	
 	for(var goThrough = 1; goThrough < mins.length ; goThrough++){
-		$('#minStat' + goThroughOne).html(mins[goThrough]);
-		$('#maxStat' + goThroughOne).html(max[goThrough]);
+		$('#minStat' + goThrough).html(mins[goThrough]);
+		$('#maxStat' + goThrough).html(max[goThrough]);
 	}
 	$('#minStat12').html(mins[0]);
 	$('#maxStat12').html(max[0]);
