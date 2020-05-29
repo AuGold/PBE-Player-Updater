@@ -258,6 +258,7 @@ function updateTPESpent(){
             var currentPitchLocation;
             var newPitchLocation = 0;
             for(var b = 0;b<=pitchingLevels.length;b++){
+				console.log(pitchingLevels[b]);
                 if($(minStat).html().localeCompare(pitchingLevels[b]) == 0){
                     minPitchLocation = b;
 					console.log("minPitchLocation: " + b);
