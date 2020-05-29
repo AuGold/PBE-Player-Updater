@@ -1053,22 +1053,24 @@ function fillStats(){
         
     }*/
 	
-	for(var goThrough = 0; goThrough < mins.length ; goThrough++){
+	for(var goThrough = 1; goThrough < mins.length ; goThrough++){
 		var goThroughOne = goThrough + 1;
 		$('#minStat' + goThroughOne).html(mins[goThrough]);
 		$('#maxStat' + goThroughOne).html(max[goThrough]);
 	}
-	$('#newStat1').attr({min: mins[0],max: max[0],value: moveVsLHB});
-    $('#newStat2').attr({min: mins[1],max: max[1],value: moveVsRHB});
-    $('#newStat3').attr({min: mins[2],max: max[2],value: conVsLHB});
-    $('#newStat4').attr({min: mins[3],max: max[3],value: conVsRHB});
-    $('#newStat5').attr({min: mins[4],max: max[4],value: stamina});
-    $('#newStat6').attr({min: mins[5],max: max[5],value: holdRun});
-    $('#newStat7').attr({min: mins[6],max: max[6],value: pitch1});
-    $('#newStat8').attr({min: mins[7],max: max[7],value: pitch2});
-    $('#newStat9').attr({min: mins[8],max: max[8],value: pitch3});
-    $('#newStat10').attr({min: mins[9],max: max[9],value: pitch4});
-    $('#newStat11').attr({min: mins[10],max: max[10],value: pitch5});
+	$('#minStat12').html(mins[0]);
+	$('#maxStat12'.html(max[0]);
+	$('#newStat1').attr({min: mins[1],max: max[1],value: moveVsLHB});
+    $('#newStat2').attr({min: mins[2],max: max[2],value: moveVsRHB});
+    $('#newStat3').attr({min: mins[3],max: max[3],value: conVsLHB});
+    $('#newStat4').attr({min: mins[4],max: max[4],value: conVsRHB});
+    $('#newStat5').attr({min: mins[5],max: max[5],value: stamina});
+    $('#newStat6').attr({min: mins[6],max: max[6],value: holdRun});
+    $('#newStat7').attr({min: mins[7],max: max[7],value: pitch1});
+    $('#newStat8').attr({min: mins[8],max: max[8],value: pitch2});
+    $('#newStat9').attr({min: mins[9],max: max[9],value: pitch3});
+    $('#newStat10').attr({min: mins[10],max: max[10],value: pitch4});
+    $('#newStat11').attr({min: mins[11],max: max[11],value: pitch5});
 	var currentPitchLocation;
     for(var c = 0;c<=pitchingLevels.length;c++){
             if($('#stat12').html().trim().localeCompare(pitchingLevels[c]) == 0){
