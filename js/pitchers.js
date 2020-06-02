@@ -87,7 +87,7 @@ function minMax(str){
 	max.push(maxVeloStr);
 
 	for(var uses = 1 ; uses < indices.length ; uses++){
-		var number = parseInt(str.substring(indices[uses]+4,indices[uses]+7));
+		var number = parseInt(str.substring(indices[uses]+4,indices[uses]+8));
 		max.push(number);
 	}
 	
