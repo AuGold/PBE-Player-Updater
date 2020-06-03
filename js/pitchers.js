@@ -1097,7 +1097,6 @@ function fillStats(){
 	if(pitch5>0){
 		pitchesBought += 50;
 	}
-	}
     //calls tpespent.js
     updateTPESpent();
 }
