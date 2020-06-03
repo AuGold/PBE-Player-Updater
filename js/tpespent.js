@@ -293,7 +293,7 @@ function updateTPESpent(){
         }else if($(stat).html() == 0){
 			if(parseInt($(minStat).html())<=40){
                 if(parseInt($(stat).html())<=40){
-                    tpeSpentValue = 10 + update1to40 * (parseInt($(stat).html()) - parseInt($(minStat).html()));
+                    tpeSpentValue = update1to40 * (parseInt($(stat).html()) - parseInt($(minStat).html()));
                 }
             }
             if(parseInt($(minStat).html())<=40){
