@@ -291,13 +291,12 @@ function updateTPESpent(){
             blahUsed += tpeSpendingValue;
             newtpeSpent = tpeSpendingValue - tpeSpentValue;
         }else if($(stat).html() == 0){
-			if(parseInt($(minStat).html())<=40){
-                if(parseInt($(stat).html())<=40){
-                    tpeSpentValue = update1to40 * (parseInt($(stat).html()) - parseInt($(minStat).html()));
-                }
-            }
+			tpeSpentValue = 0;
             if(parseInt($(minStat).html())<=40){
-                if(parseInt($(newStat).val())<=50 && parseInt($(newStat).val())>=40){
+				if(parseInt($(newStat).val()) == 40){
+					tpeSpendingValue = 50;
+				}
+                if(parseInt($(newStat).val())<=50 && parseInt($(newStat).val())>40){
                     tpeSpendingValue = 10 + update1to40 * (40 - parseInt($(minStat).html()));
                     tpeSpendingValue += update40to50 * (parseInt($(newStat).val()) - 40);
                 }
