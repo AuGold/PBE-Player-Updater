@@ -1091,18 +1091,12 @@ function fillStats(){
     var selectedVelo = '#velo' + currentPitchLocation;
     $(selectedVelo).attr("selected","selected");
 	pitchesBought = 0;
-    if(pitchArch.includes("Starting Knuckleball Pitcher") || pitchArch.includes("Knuckleball")){
-		if(pitch5>0){
-			pitchesBought += 50;
-		}
+	if(pitch4>0){
+		pitchesBought += 50;
 	}
-	else{
-		if(pitch4>0){
-			pitchesBought += 50;
-		}
-		if(pitch5>0){
-			pitchesBought += 50;
-		}
+	if(pitch5>0){
+		pitchesBought += 50;
+	}
 	}
     //calls tpespent.js
     updateTPESpent();
