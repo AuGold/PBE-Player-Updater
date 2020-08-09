@@ -2,7 +2,6 @@
 
 var banked;
 var hitArch;
-var fieldArch;
 var fError;
 var range;
 var arm;
@@ -109,28 +108,6 @@ function getStatsFielding(postGET){
     }
 	
 	$('#putHAR').html("Hitting Archetype: " + hitArch);
-	
-	n = postGET.search("Fielding Archetype:</b>");
-    var splitFieldArch = postGET.slice(n);
-    newN = splitFieldArch.indexOf("(eg");
-    if(newN==-1){
-        newN = splitFieldArch.indexOf("<br");
-    }
-	fieldArch = splitFieldArch.substring("Fielding Archetype:</b>".length+1,newN);
-	if(newN==-1){
-	    n = postGET.search("Fielding Archetype: ");
-        splitFieldArch = postGET.slice(n);
-        newN = splitFieldArch.indexOf("Fielder");
-        fieldArch = splitFieldArch.substring("Fielding Archetype:".length+1,newN);
-        fieldArch += "Fielder";
-	}
-	if(newN>50){
-	    n = postGET.search("Fielding Archetype:");
-        splitFieldArch = postGET.slice(n);
-        newN = splitFieldArch.indexOf("(eg");
-        fieldArch = splitFieldArch.substring("Fielding Archetype:".length+1,newN);
-	}
-	$('#putFAR').html("Fielding Archetype: " + fieldArch);
 		     
 	n = postGET.search("Fielding Error: ");
 	fError = parseInt(postGET.substring(n+"Fielding Error: ".length,n+"Fielding Error: ".length+3));
