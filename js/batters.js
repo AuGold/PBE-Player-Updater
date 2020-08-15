@@ -40,7 +40,7 @@ function getStats(longString){
 	var n = longString.search("Last Name:</b>");
     var splitLastName = longString.slice(n);
     var newN = splitLastName.indexOf("Number:</b>");
-    LastName = splitLastName.substring("Last Name:</b>".length+1,newN);
+    lastName = splitLastName.substring("Last Name:</b>".length+1,newN);
 	
 	var n = longString.search('Banked: ');
 	banked = parseInt(longString.substring(n+"Banked: ".length,n+"Banked: ".length+3));
