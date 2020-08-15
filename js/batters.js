@@ -61,6 +61,7 @@ function getStats(longString){
 	    $('#putBNK').html("Banked: " + banked);
 		$('#putFirst').html("First Name: " + firstName);
 		$('#putLast').html("Last Name: " + lastName);
+		console.log("firstName");
 	    getStatsBatter(longString);
     	getStatsFielding(longString);
 		minMax(longString);
