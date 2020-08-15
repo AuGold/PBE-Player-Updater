@@ -24,10 +24,22 @@ var pitch5Name = "Pitch 5";
 var pitchesBought = 0;
 var mins=[];
 var max=[];
+var firstName;
+var lastName;
 //receives longString from pullData.js
 //gets Banked TPE in one of three ways
 function getStats(longString){
-    var n = longString.search('Banked: ');
+    var n = longString.search("First Name:</b>");
+    var splitFirstName = longString.slice(n);
+    var newN = splitFirstName.indexOf("Last Name:</b>");
+    firstName = splitFirstName.substring("First Name:</b>".length+1,newN);
+	
+	var n = longString.search("Last Name:</b>");
+    var splitLastName = longString.slice(n);
+    var newN = splitLastName.indexOf("Number:</b>");
+    LastName = splitLastName.substring("Last Name:</b>".length+1,newN);
+	
+	var n = longString.search('Banked: ');
 	banked = parseInt(longString.substring(n+"Banked: ".length,n+"Banked: ".length+3));
 	
 	if(isNaN(banked)){
@@ -48,6 +60,8 @@ function getStats(longString){
 	if(!isNaN(banked)){
 	    $('#error').html("");
 	    $('#putBNK').html("Banked: " + banked);
+		$('#putFirst').html("First Name: " + firstName);
+		$('#putLast').html("Last Name: " + lastName);
 	    getStatsPitcher(longString);
 		minMax(longString);
 	    //Launches the smooth scrolling down to Step 2 in moveSteps.js
@@ -99,11 +113,11 @@ function minMax(str){
 function getStatsPitcher(postGET){
     var n = postGET.search("Archetype: ");
     var splitPitchArch = postGET.slice(n);
-    var newN = splitPitchArch.indexOf("(eg");
+    var newN = splitPitchArch.indexOf("(MI");
     if(n==-1){
         n = postGET.search("Archetype:</b> ");
         splitPitchArch = postGET.slice(n);
-        newN = splitPitchArch.indexOf("(eg");
+        newN = splitPitchArch.indexOf("(MI");
     }
     if(newN==-1){
         newN = splitPitchArch.indexOf("<br");

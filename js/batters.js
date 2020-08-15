@@ -25,12 +25,24 @@ var tpeToSpend;
 var pitchesBought = 0;
 var mins=[];
 var max=[];
+var firstName;
+var lastName;
 //pitchesBought variable declared to stop NaN on updateStats()
 
 //receives longString from pullData.js
 //gets Banked TPE in one of three ways
 function getStats(longString){
-    var n = longString.search('Banked: ');
+    var n = longString.search("First Name:</b>");
+    var splitFirstName = longString.slice(n);
+    var newN = splitFirstName.indexOf("Last Name:</b>");
+    firstName = splitFirstName.substring("First Name:</b>".length+1,newN);
+	
+	var n = longString.search("Last Name:</b>");
+    var splitLastName = longString.slice(n);
+    var newN = splitLastName.indexOf("Number:</b>");
+    LastName = splitLastName.substring("Last Name:</b>".length+1,newN);
+	
+	var n = longString.search('Banked: ');
 	banked = parseInt(longString.substring(n+"Banked: ".length,n+"Banked: ".length+3));
 	
 	if(isNaN(banked)){
@@ -47,6 +59,8 @@ function getStats(longString){
 	if(!isNaN(banked)){
 	    $('#error').html("");
 	    $('#putBNK').html("Banked: " + banked);
+		$('#putFirst').html("First Name: " + firstName);
+		$('#putLast').html("Last Name: " + lastName);
 	    getStatsBatter(longString);
     	getStatsFielding(longString);
 		minMax(longString);
@@ -91,20 +105,13 @@ function minMax(str){
 function getStatsFielding(postGET){
     var n = postGET.search("Archetype:</b>");
     var splitHitArch = postGET.slice(n);
-    var newN = splitHitArch.indexOf("(eg");
+    var newN = splitHitArch.indexOf("(MI");
     hitArch = splitHitArch.substring("Archetype:</b>".length+1,newN);
     if(newN == -1){
         n = postGET.search("Archetype: ");
         splitHitArch = postGET.slice(n);
-        newN = splitHitArch.indexOf("(eg");
+        newN = splitHitArch.indexOf("(MI");
         hitArch = splitHitArch.substring("Archetype:".length+1,newN);
-    }
-    if(newN == -1){
-        n = postGET.search("Archetype: ");
-        splitHitArch = postGET.slice(n);
-        newN = splitHitArch.indexOf("Hitter");
-        hitArch = splitHitArch.substring("Archetype".length+1,newN);
-        hitArch += "Batter";
     }
 	
 	$('#putHAR').html("Hitting Archetype: " + hitArch);
