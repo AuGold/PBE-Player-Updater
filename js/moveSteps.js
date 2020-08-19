@@ -16,8 +16,14 @@ function stepFive(){
     $('.step5').css("display","block");
     $('.step5').animate({opacity: 1},1000);
     $(document).scrollTo('.step5',1000);
-    //calls tpespent.js
-    getUpdate();
+	var tpeCheck = $("#tpeToUse").html().match(/\d+/)[0];
+	if(tpeCheck < 0){
+		$("#outCode").html("You have tried updating with more TPE to use than you own! Please try again!");
+	}
+	else{
+		//calls tpespent.js
+		getUpdate();
+	}
 }
 
 function stepFour(){

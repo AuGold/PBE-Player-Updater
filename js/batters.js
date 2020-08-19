@@ -31,17 +31,7 @@ var lastName;
 
 //receives longString from pullData.js
 //gets Banked TPE in one of three ways
-function getStats(longString){
-    var n = longString.search("First Name:</b>");
-    var splitFirstName = longString.slice(n);
-    var newN = splitFirstName.indexOf("Last Name:</b>");
-    firstName = splitFirstName.substring("First Name:</b>".length+1,newN);
-	
-	var n = longString.search("Last Name:</b>");
-    var splitLastName = longString.slice(n);
-    var newN = splitLastName.indexOf("Number:</b>");
-    lastName = splitLastName.substring("Last Name:</b>".length+1,newN);
-	
+function getStats(longString){	
 	var n = longString.search('Banked: ');
 	banked = parseInt(longString.substring(n+"Banked: ".length,n+"Banked: ".length+3));
 	
@@ -59,9 +49,6 @@ function getStats(longString){
 	if(!isNaN(banked)){
 	    $('#error').html("");
 	    $('#putBNK').html("Banked: " + banked);
-		$('#putFirst').html("First Name: " + firstName);
-		$('#putLast').html("Last Name: " + lastName);
-		console.log("firstName");
 	    getStatsBatter(longString);
     	getStatsFielding(longString);
 		minMax(longString);
