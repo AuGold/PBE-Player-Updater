@@ -17,8 +17,14 @@ function stepFive(){
     $('.step5').animate({opacity: 1},1000);
     $(document).scrollTo('.step5',1000);
 	var tpeCheck = $("#tpeToUse").html().search("-");
-	$("#updateText").html("");
 	if(tpeCheck > 0){
+		$("#outCode").html("");
+		$("#outputGained").html("");
+		$("#outputUpdate").html("");
+		$("#outputSpent").html("");
+		$("#outputBanked").html("");
+		$("#outputUsed").html("");
+		$("#outputTotal").html("");
 		$("#outCode").html("You have tried updating with more TPE to use than you own! Please try again!");
 	}
 	else{
