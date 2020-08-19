@@ -17,7 +17,7 @@ function stepFive(){
     $('.step5').animate({opacity: 1},1000);
     $(document).scrollTo('.step5',1000);
 	var tpeCheck = $("#tpeToUse").html().search("-");
-	console.log(tpeCheck);
+	$("#outCode").html("");
 	if(tpeCheck > 0){
 		$("#outCode").html("You have tried updating with more TPE to use than you own! Please try again!");
 	}
