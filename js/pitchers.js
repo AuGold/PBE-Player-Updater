@@ -84,11 +84,11 @@ function minMax(str){
 	
 	max = [];
 	var maxVeloStr = str.substring(indices[0]+5,indices[0]+13);
-	console.log(maxVeloStr);
 	maxVeloStr = maxVeloStr.replace(')','');
-	console.log(maxVeloStr);
 	maxVeloStr = maxVeloStr.replace(/[^\d-]/g,'');
-	console.log(maxVeloStr);
+	if(maxVeloStr.contains("100")){
+		maxVeloStr = "100+";
+	}
 	max.push(maxVeloStr);
 
 	for(var uses = 1 ; uses < indices.length ; uses++){
@@ -708,7 +708,6 @@ function fillStats(){
             }
         }
     }
-	console.log("velo position: " + c);
     var selectedVelo = '#velo' + currentPitchLocation;
     $(selectedVelo).attr("selected","selected");
 	pitchesBought = 0;
