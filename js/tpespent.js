@@ -259,31 +259,29 @@ function updateTPESpent(){
             var newPitchLocation = 0;
             for(var b = 0;b<=pitchingLevels.length;b++){
                 if($(minStat).html().localeCompare(pitchingLevels[b]) == 0){
-					console.log("minPitchLocation = " + b);
                     minPitchLocation = b;
                 }
             }
             for(var c = 0;c<=pitchingLevels.length;c++){
                 if($(stat).html().trim().localeCompare(pitchingLevels[c]) == 0){
-					console.log("currentPitchLocation = " + c);
                     currentPitchLocation = c;
                 }
             }
-			console.log("typeof #18 = " + typeof(currentPitchLocation));
             if(typeof currentPitchLocation === 'undefined'){
                 for(var z = 0;z<pitchingLevels.length;z++){
                     var str = pitchingLevels[z];
                     str = str.replace(/\s/g, '');
                     if($('#stat12').html().trim().localeCompare(str) == 0){
-						console.log("currentPitchLocation = " + z);
                         currentPitchLocation = z;
                     }
                 }
             }
             for(var a = minPitchLocation;a<currentPitchLocation;a++){
+				console.log("a < currentPitchLocation");
                 tpeSpentValue += pitchingCost[a];
             }
             for(var f = 0;f<=pitchingLevels.length;f++){
+				console.log("thing is = " + $(newStat).val().trim().localeCompare(pitchingLevels[f]));
                 if($(newStat).val().trim().localeCompare(pitchingLevels[f]) == 0){
 					console.log("newPitchLocation = " + f);
                     newPitchLocation = f;
