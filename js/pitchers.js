@@ -705,6 +705,7 @@ function fillStats(){
             }
         }
     }
+	console.log("velo position: " + c);
     var selectedVelo = '#velo' + currentPitchLocation;
     $(selectedVelo).attr("selected","selected");
 	pitchesBought = 0;
