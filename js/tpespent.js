@@ -277,15 +277,14 @@ function updateTPESpent(){
                 }
             }
             for(var a = minPitchLocation;a<currentPitchLocation;a++){
-				console.log("a < currentPitchLocation");
                 tpeSpentValue += pitchingCost[a];
             }
-			console.log("newStat val = " + $(newStat).html());
-			console.log("newStat val trim = " + $(newStat).html().trim());
             for(var f = 0;f<pitchingLevels.length;f++){
-				console.log("thing is = " + $(newStat).html().localeCompare(pitchingLevels[f]));
-                if($(newStat).html.localeCompare(pitchingLevels[f]) == 0){
-					console.log("newPitchLocation = " + f);
+				var useThisOneHere = $(newStat).val().trim();
+				if(useThisOneHere.includes("100"){
+					useThisOneHere = "100+");
+				}
+                if($(newStat).val().localeCompare(pitchingLevels[f]) == 0){
                     newPitchLocation = f;
                 }
             }
