@@ -284,7 +284,7 @@ function updateTPESpent(){
 				if(useThisOneHere.includes("100")){
 					useThisOneHere = "100+");
 				}
-                if($(newStat).val().localeCompare(pitchingLevels[f]) == 0){
+                if(useThisOneHere.localeCompare(pitchingLevels[f]) == 0){
                     newPitchLocation = f;
                 }
             }
