@@ -83,7 +83,7 @@ function minMax(str){
     }
 	
 	max = [];
-	var maxVeloStr = str.substring(indices[0]+5,indices[0]+13);
+	var maxVeloStr = str.substring(indices[0]+5,indices[0]+14);
 	maxVeloStr = maxVeloStr.replace(')','');
 	maxVeloStr = maxVeloStr.replace(/[^\d-]/g,'');
 	max.push(maxVeloStr);
