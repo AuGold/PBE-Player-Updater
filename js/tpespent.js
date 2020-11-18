@@ -280,8 +280,10 @@ function updateTPESpent(){
 				console.log("a < currentPitchLocation");
                 tpeSpentValue += pitchingCost[a];
             }
+			console.log("newStat val = " + $(newStat).val());
+			console.log("newStat val trim = " + $(newStat).val().trim());
             for(var f = 0;f<pitchingLevels.length;f++){
-				console.log("thing is = " + $(newStat).val().localeCompare(pitchingLevels[f]));
+				console.log("thing is = " + $(newStat).val().trim().localeCompare(pitchingLevels[f]));
                 if($(newStat).val().trim().localeCompare(pitchingLevels[f]) == 0){
 					console.log("newPitchLocation = " + f);
                     newPitchLocation = f;
