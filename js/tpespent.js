@@ -282,7 +282,7 @@ function updateTPESpent(){
             for(var f = 0;f<pitchingLevels.length;f++){
 				var useThisOneHere = $(newStat).val().trim();
 				if(useThisOneHere.includes("100")){
-					useThisOneHere = "100+");
+					useThisOneHere = "100+";
 				}
                 if(useThisOneHere.localeCompare(pitchingLevels[f]) == 0){
                     newPitchLocation = f;
