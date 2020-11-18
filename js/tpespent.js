@@ -269,7 +269,7 @@ function updateTPESpent(){
                     currentPitchLocation = c;
                 }
             }
-			console.log("typeof #18 = " + typeof(currentPitchLocation);
+			console.log("typeof #18 = " + typeof(currentPitchLocation));
             if(typeof currentPitchLocation === 'undefined'){
                 for(var z = 0;z<pitchingLevels.length;z++){
                     var str = pitchingLevels[z];
