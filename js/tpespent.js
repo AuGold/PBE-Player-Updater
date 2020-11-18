@@ -274,6 +274,7 @@ function updateTPESpent(){
                     var str = pitchingLevels[z];
                     str = str.replace(/\s/g, '');
                     if($('#stat12').html().trim().localeCompare(str) == 0){
+						console.log("currentPitchLocation = " + z);
                         currentPitchLocation = z;
                     }
                 }
@@ -283,6 +284,7 @@ function updateTPESpent(){
             }
             for(var f = 0;f<=pitchingLevels.length;f++){
                 if($(newStat).val().trim().localeCompare(pitchingLevels[f]) == 0){
+					console.log("newPitchLocation = " + f);
                     newPitchLocation = f;
                 }
             }
