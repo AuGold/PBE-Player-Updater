@@ -86,7 +86,7 @@ function minMax(str){
 	var maxVeloStr = str.substring(indices[0]+5,indices[0]+13);
 	maxVeloStr = maxVeloStr.replace(')','');
 	maxVeloStr = maxVeloStr.replace(/[^\d-]/g,'');
-	if(maxVeloStr.includes("100")){
+	if(maxVeloStr === "100"){
 		maxVeloStr = "100+";
 	}
 	max.push(maxVeloStr);
