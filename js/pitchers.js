@@ -83,9 +83,12 @@ function minMax(str){
     }
 	
 	max = [];
-	var maxVeloStr = str.substring(indices[0]+5,indices[0]+14);
+	var maxVeloStr = str.substring(indices[0]+5,indices[0]+13);
+	console.log(maxVeloStr);
 	maxVeloStr = maxVeloStr.replace(')','');
+	console.log(maxVeloStr);
 	maxVeloStr = maxVeloStr.replace(/[^\d-]/g,'');
+	console.log(maxVeloStr);
 	max.push(maxVeloStr);
 
 	for(var uses = 1 ; uses < indices.length ; uses++){
