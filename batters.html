@@ -167,6 +167,17 @@
 								<td><label for="PrimetimeTPE">TPE: </label></td>
 								<td><input type="number" max="7" min="1" id="PrimetimeTPE" name="PrimetimeTPE" value="1" onchange="countTPE()"></td>
 							</tr>
+							<tr>
+								<td><input type="checkbox" id="RegressionCheck" name="RegressionCheck" value="Regression" onchange="countTPE()"></td>
+								<td><label for="RegressionNumber">Regression Season: </label></td>
+								<td>
+									<input type="number" min="0" max="100" id="RegressionNumber" name="RegressionNumber">
+								</td>
+								<td><label for="RegressionLink">Link: </label></td>
+								<td><input type="url" id="RegressionLink" name="RegressionLink" pattern="http://probaseballexperience.+"></td>
+								<td><label for="RegressionTPE">TPE Loss: </label></td>
+								<td><input type="number" max="-1" id="RegressionTPE" name="RegressionTPE" value="-1" onchange="countTPE()"></td>
+							</tr>
 							<tr class="other1">
 								<td><input type="checkbox" id="other1Check" name="other1Check" value="other1" onchange="countTPE()"></td>
 								<td><label for="other1Name">Other: </label></td>
@@ -174,7 +185,7 @@
 								<td><label for="other1Link">Link: </label></td>
 								<td><input type="url" id="other1Link" name="other1Link" pattern="http://probaseballexperience.+"></td>
 								<td><label for="other1TPE">TPE: </label></td>
-								<td><input type="number" max="45" min="0" id="other1TPE" name="other1TPE" value="0" onchange="countTPE()"></td>
+								<td><input type="number" max="56" min="0" id="other1TPE" name="other1TPE" value="0" onchange="countTPE()"></td>
 							</tr>
 							<tr class="other2">
 								<td><input type="checkbox" id="other2Check" name="other2Check" value="other2" onchange="countTPE()"></td>
@@ -183,7 +194,7 @@
 								<td><label for="other2Link">Link: </label></td>
 								<td><input type="url" id="other2Link" name="other2Link" pattern="http://probaseballexperience.+"></td>
 								<td><label for="other2TPE">TPE: </label></td>
-								<td><input type="number" max="45" min="0" id="other2TPE" name="other2TPE" value="0" onchange="countTPE()"></td>
+								<td><input type="number" max="56" min="0" id="other2TPE" name="other2TPE" value="0" onchange="countTPE()"></td>
 							</tr>
 							<tr class="other3">
 								<td><input type="checkbox" id="other3Check" name="other3Check" value="other3" onchange="countTPE()"></td>
@@ -192,7 +203,7 @@
 								<td><label for="other3Link">Link: </label></td>
 								<td><input type="url" id="other3Link" name="other3Link" pattern="http://probaseballexperience.+"></td>
 								<td><label for="other3TPE">TPE: </label></td>
-								<td><input type="number" max="45" min="0" id="other3TPE" name="other3TPE" value="0" onchange="countTPE()"></td>
+								<td><input type="number" max="56" min="0" id="other3TPE" name="other3TPE" value="0" onchange="countTPE()"></td>
 							</tr>
 							<tr class="other4">
 								<td><input type="checkbox" id="other4Check" name="other4Check" value="other4" onchange="countTPE()"></td>
@@ -201,12 +212,62 @@
 								<td><label for="other4Link">Link: </label></td>
 								<td><input type="url" id="other4Link" name="other4Link" pattern="http://probaseballexperience.+"></td>
 								<td><label for="other4TPE">TPE: </label></td>
-								<td><input type="number" max="45" min="0" id="other4TPE" name="other4TPE" value="0" onchange="countTPE()"></td>
+								<td><input type="number" max="56" min="0" id="other4TPE" name="other4TPE" value="0" onchange="countTPE()"></td>
+							</tr>
+							<tr class="other5">
+								<td><input type="checkbox" id="other5Check" name="other5Check" value="other5" onchange="countTPE()"></td>
+								<td><label for="other5Name">Other: </label></td>
+								<td><input type="text" id="other5Name" name="other5Name"></td>
+								<td><label for="other5Link">Link: </label></td>
+								<td><input type="url" id="other5Link" name="other5Link" pattern="http://probaseballexperience.+"></td>
+								<td><label for="other5TPE">TPE: </label></td>
+								<td><input type="number" max="56" min="0" id="other5TPE" name="other5TPE" value="0" onchange="countTPE()"></td>
+							</tr>
+							<tr class="other6">
+								<td><input type="checkbox" id="other6Check" name="other6Check" value="other6" onchange="countTPE()"></td>
+								<td><label for="other6Name">Other: </label></td>
+								<td><input type="text" id="other6Name" name="other6Name"></td>
+								<td><label for="other6Link">Link: </label></td>
+								<td><input type="url" id="other6Link" name="other6Link" pattern="http://probaseballexperience.+"></td>
+								<td><label for="other6TPE">TPE: </label></td>
+								<td><input type="number" max="56" min="0" id="other6TPE" name="other6TPE" value="0" onchange="countTPE()"></td>
+							</tr>
+							<tr class="other7">
+								<td><input type="checkbox" id="other7Check" name="other7Check" value="other7" onchange="countTPE()"></td>
+								<td><label for="other7Name">Other: </label></td>
+								<td><input type="text" id="other7Name" name="other7Name"></td>
+								<td><label for="other7Link">Link: </label></td>
+								<td><input type="url" id="other7Link" name="other7Link" pattern="http://probaseballexperience.+"></td>
+								<td><label for="other7TPE">TPE: </label></td>
+								<td><input type="number" max="56" min="0" id="other7TPE" name="other7TPE" value="0" onchange="countTPE()"></td>
+							</tr>
+							<tr class="other8">
+								<td><input type="checkbox" id="other8Check" name="other8Check" value="other8" onchange="countTPE()"></td>
+								<td><label for="other8Name">Other: </label></td>
+								<td><input type="text" id="other8Name" name="other8Name"></td>
+								<td><label for="other8Link">Link: </label></td>
+								<td><input type="url" id="other8Link" name="other8Link" pattern="http://probaseballexperience.+"></td>
+								<td><label for="other8TPE">TPE: </label></td>
+								<td><input type="number" max="56" min="0" id="other8TPE" name="other8TPE" value="0" onchange="countTPE()"></td>
+							</tr>
+							<tr class="other9">
+								<td><input type="checkbox" id="other9Check" name="other9Check" value="other9" onchange="countTPE()"></td>
+								<td><label for="other9Name">Other: </label></td>
+								<td><input type="text" id="other9Name" name="other9Name"></td>
+								<td><label for="other9Link">Link: </label></td>
+								<td><input type="url" id="other9Link" name="other9Link" pattern="http://probaseballexperience.+"></td>
+								<td><label for="other9TPE">TPE: </label></td>
+								<td><input type="number" max="56" min="0" id="other9TPE" name="other9TPE" value="0" onchange="countTPE()"></td>
 							</tr>
 						</table>
 						<button class="other1" id="button1" onclick="showRow('.other2','#button1')">Add another row</button>
 						<button class="other2" id="button2" onclick="showRow('.other3','#button2')">Add another row</button>
 						<button class="other3" id="button3" onclick="showRow('.other4','#button3')">Add another row</button>
+						<button class="other4" id="button4" onclick="showRow('.other5','#button4')">Add another row</button>
+						<button class="other5" id="button5" onclick="showRow('.other6','#button5')">Add another row</button>
+						<button class="other6" id="button6" onclick="showRow('.other7','#button6')">Add another row</button>
+						<button class="other7" id="button7" onclick="showRow('.other8','#button7')">Add another row</button>
+						<button class="other8" id="button8" onclick="showRow('.other9','#button8')">Add another row</button>
 						
 						<!-- Setup for TPE earned links -->
 						
