@@ -73,12 +73,21 @@ function getUpdate(){
     var journalPointTaskCheckbox = document.getElementById('JPTCheck').checked;
     var pictureChainCheckbox = document.getElementById('PCCheck').checked;
     var primetimeCheckbox = document.getElementById('PrimetimeCheck').checked;
+	var regressionCheckbox = document.getElementById('RegressionCheck').checked;
     var other1Checkbox = document.getElementById('other1Check').checked;
     var other2Checkbox = document.getElementById('other2Check').checked;
     var other3Checkbox = document.getElementById('other3Check').checked;
     var other4Checkbox = document.getElementById('other4Check').checked;
+	var other5Checkbox = document.getElementById('other5Check').checked;
+    var other6Checkbox = document.getElementById('other6Check').checked;
+    var other7Checkbox = document.getElementById('other7Check').checked;
+    var other8Checkbox = document.getElementById('other8Check').checked;
+	var other9Checkbox = document.getElementById('other9Check').checked;
     
-    if(weeklyTrainingCheckbox == true){
+    if(regressionCheckbox == true){
+        codeBlock += "[colorred][b]-" + $("#RegressionTPE").val() + " TPE[/b][/color] | [URL=" + $("#RegressionLink").val() + "]Regression S" + $("#RegressionNumber").val() + "[/URL]<br/>";
+    }
+	if(weeklyTrainingCheckbox == true){
         codeBlock += "[color=green][b]+" + $("#WTTPE").val() + " TPE[/b][/color] | [URL=" + $("#WTLink").val() + "]WT #" + $("#WTNumber").val() + "[/URL]<br/>";
     }
     if(activityCheckCheckbox == true){
@@ -107,6 +116,21 @@ function getUpdate(){
     }
     if(other4Checkbox == true){
         codeBlock += "[color=green][b]+" + $("#other4TPE").val() + " TPE[/b][/color] | [URL=" + $("#other4Link").val() + "]" + $("#other4Name").val() + "[/URL]<br/>";
+    }
+	if(other5Checkbox == true){
+        codeBlock += "[color=green][b]+" + $("#other5TPE").val() + " TPE[/b][/color] | [URL=" + $("#other5Link").val() + "]" + $("#other5Name").val() + "[/URL]<br/>";
+    }
+	if(other6Checkbox == true){
+        codeBlock += "[color=green][b]+" + $("#other6TPE").val() + " TPE[/b][/color] | [URL=" + $("#other6Link").val() + "]" + $("#other6Name").val() + "[/URL]<br/>";
+    }
+	if(other7Checkbox == true){
+        codeBlock += "[color=green][b]+" + $("#other7TPE").val() + " TPE[/b][/color] | [URL=" + $("#other7Link").val() + "]" + $("#other7Name").val() + "[/URL]<br/>";
+    }
+	if(other8Checkbox == true){
+        codeBlock += "[color=green][b]+" + $("#other8TPE").val() + " TPE[/b][/color] | [URL=" + $("#other8Link").val() + "]" + $("#other8Name").val() + "[/URL]<br/>";
+    }
+	if(other9Checkbox == true){
+        codeBlock += "[color=green][b]+" + $("#other9TPE").val() + " TPE[/b][/color] | [URL=" + $("#other9Link").val() + "]" + $("#other9Name").val() + "[/URL]<br/>";
     }
             
     $("#outCode").html(codeBlock);
