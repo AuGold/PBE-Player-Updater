@@ -41,7 +41,11 @@ function getStats(longString){
     	    n = longString.search('Banked TPE: ');
 	        banked = parseInt(longString.substring(n+"Banked TPE: ".length,n+"Banked TPE: ".length+3));
     	    if(isNaN(banked)){
-    	        banked = 0;
+    	        n = longString.search('TPE Available: ');
+	            banked = parseInt(longString.substring(n+"TPE Available: ".length,n+"TPE Available: ".length+3));
+    	        if(isNaN(banked)){
+    	            banked = 0;
+    	        }
     	    }
     	}
 	}
