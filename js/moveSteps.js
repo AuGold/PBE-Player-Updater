@@ -6,7 +6,7 @@ function stepTwo(){
     $(document).scrollTo('.step2',1000);
 	var d = new Date();
 	d.setTime(d.getTime() + (14 * 24 * 60 * 60 * 1000));
-	document.cookie = "rosterPage="+document.getElementById("link").value + "expires=" + d.toUTCString();
+	document.cookie = "rosterPage="+document.getElementById("link").value + ";expires=" + d.toUTCString();
 }
 
 function stepThree(){
