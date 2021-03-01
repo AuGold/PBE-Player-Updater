@@ -110,6 +110,9 @@ function getStatsPitcher(postGET){
     var splitVelocity = postGET.slice(n);
     newN = splitVelocity.indexOf("<br");
 	velo = splitVelocity.substring("Velocity:".length,newN);
+	if(velo == "100"){
+		velo = "100+";
+	}
 	
 	//Look for Mvmt vs LHB
 	//Splits postGET where the TPE value should below
