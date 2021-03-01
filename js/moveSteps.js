@@ -4,6 +4,9 @@ function stepTwo(){
     $('.step2').css("display","block");
     $('.step2').show().animate({opacity: 1},1000);
     $(document).scrollTo('.step2',1000);
+	var d = new Date();
+	d.setTime(d.getTime() + (14 * 24 * 60 * 60 * 1000));
+	document.cookie = "rosterPage="+document.getElementById("link").value + "expires=" + d.toUTCString();
 }
 
 function stepThree(){
@@ -55,4 +58,27 @@ function makeVisible(classToShow, classToHide){
 	$(classToShow).css("display","block");
 	$(classToHide).css("display","none");
 	$(document).scrollTo(classToShow,1000);
+}
+
+function getCookie(cname){
+	var name = cname + "=";
+	var decodedCookie = decodeURIComponent(document.cookie);
+	var ca = decodedCookie.split(';');
+	for(var i = 0; i < ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0) == ' ') {
+		  c = c.substring(1);
+		}
+		if (c.indexOf(name) == 0) {
+		  return c.substring(name.length, c.length);
+		}
+	}
+	return "";
+}
+
+function checkCookie() {
+  var linkPage=getCookie("rosterPage");
+  if (linkPage != "") {
+    document.getElementById("link").value = linkPage
+  }
 }
