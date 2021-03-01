@@ -110,7 +110,7 @@ function getStatsPitcher(postGET){
     var splitVelocity = postGET.slice(n);
     newN = splitVelocity.indexOf("<br");
 	velo = splitVelocity.substring("Velocity:".length,newN);
-	if(velo == "100"){
+	if(parseInt(velo) == "100"){
 		velo = "100+";
 	}
 	
