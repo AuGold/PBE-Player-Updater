@@ -76,7 +76,7 @@ function getCookie(cname){
 	return "";
 }
 
-function checkCookie() {
+function cookiePlace() {
   var linkPage=getCookie("rosterPage");
   if (linkPage != "") {
     document.getElementById("link").value = linkPage
