@@ -1,7 +1,6 @@
 //declare global variables
 
 var banked;
-var hitArch;
 var fError;
 var range;
 var arm;
@@ -93,18 +92,6 @@ function minMax(str){
 function getStatsFielding(postGET){
 	//postGET is the roster page info
 	
-	//Look for Player Archetype
-    var n = postGET.search("Archetype:</b>");
-    var splitHitArch = postGET.slice(n);
-    var newN = splitHitArch.indexOf("(MI");
-    hitArch = splitHitArch.substring("Archetype:</b>".length+1,newN);
-    if(newN == -1){
-        n = postGET.search("Archetype: ");
-        splitHitArch = postGET.slice(n);
-        newN = splitHitArch.indexOf("(MI");
-        hitArch = splitHitArch.substring("Archetype:".length+1,newN);
-    }
-	
 	//Look for Fielding Error
 	//Splits postGET where the TPE value should below
 	//Saves it to a variable for later
@@ -154,7 +141,6 @@ function getStatsFielding(postGET){
 	catchAB = parseInt(postGET.substring(n+"Catcher Ability: ".length,n+"Catcher Ability: ".length+3));
 	
 	//HTML part to place all values correctly
-	$('#putHAR').html("Hitting Archetype: " + hitArch);
 	$('#putERR').html("Fielding Error: " + fError);
 	$('#putRNG').html("Fielding Range: " + range);
 	$('#putARM').html("Fielding/Catching Arm: " + arm);

@@ -1,7 +1,6 @@
 //declare global variables
 
 var banked;
-var pitchArch;
 var velo;
 var moveVsLHB;
 var moveVsRHB;
@@ -104,20 +103,6 @@ function minMax(str){
 function getStatsPitcher(postGET){
     //postGET is the roster page info
 	
-	//Look for Player Archetype	
-	var n = postGET.search("Archetype: ");
-    var splitPitchArch = postGET.slice(n);
-    var newN = splitPitchArch.indexOf("(MI");
-    if(n==-1){
-        n = postGET.search("Archetype:</b> ");
-        splitPitchArch = postGET.slice(n);
-        newN = splitPitchArch.indexOf("(MI");
-    }
-    if(newN==-1){
-        newN = splitPitchArch.indexOf("<br");
-    }
-    pitchArch = splitPitchArch.substring("Archetype:".length,newN);
-	
 	//Look for Velocity
 	//Splits postGET where the TPE value should below
 	//Saves it to a variable for later
@@ -199,7 +184,6 @@ function getStatsPitcher(postGET){
 	pitch5 = parseInt(postGET.substring(n+"Pitch 5: ".length,n+"Pitch 5: ".length+3));
 	
 	//Put things into HTML
-	$('#putPAR').html("Pitching Archetype: " + pitchArch);
 	$('#putVEL').html("Velocity: " + velo);
 	$('#putMVL').html("Movement vs LHB: " + moveVsLHB);
 	$('#putMVR').html("Movement vs RHB: " + moveVsRHB);
