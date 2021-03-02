@@ -96,12 +96,23 @@ function minMax(str){
 //if the length of the number is less than 3 then parseInt will remove any extra information
 
 function findString(htmlCode, stringToFind, secondaryString){
-	n = htmlCode.search(stringToFind);
-	value = parseInt(htmlCode.substring(n+stringToFind.length,n+stringToFind.length+3));
-	if(isNaN(value) && secondaryString != null){
-		n = htmlCode.search(secondaryString);
-		value = parseInt(htmlCode.substring(n+secondaryString.length,n+secondaryString.length+3));
+	if(stringToFind.includes("(") == true){
+		n = htmlCode.indexOf(stringToFind);
+		value = parseInt(htmlCode.substring(n+stringToFind.length,n+stringToFind.length+3));
+		if(isNaN(value) && secondaryString != null){
+			n = htmlCode.indexOf(secondaryString);
+			value = parseInt(htmlCode.substring(n+secondaryString.length,n+secondaryString.length+3));
+		}
 	}
+	else{
+		n = htmlCode.search(stringToFind);
+		value = parseInt(htmlCode.substring(n+stringToFind.length,n+stringToFind.length+3));
+		if(isNaN(value) && secondaryString != null){
+			n = htmlCode.search(secondaryString);
+			value = parseInt(htmlCode.substring(n+secondaryString.length,n+secondaryString.length+3));
+		}
+	}
+	
 	return value;
 }
 
