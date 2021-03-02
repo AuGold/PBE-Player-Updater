@@ -28,24 +28,14 @@ var lastName;
 //receives longString from pullData.js
 //gets Banked TPE in one of three ways
 function getStats(longString){
-	var n = longString.search('Banked: ');
-	banked = parseInt(longString.substring(n+"Banked: ".length,n+"Banked: ".length+3));
-	
+	banked = findString(longString, "Banked: ", "Bank: ");
 	if(isNaN(banked)){
-	    n = longString.search('Bank: ');
-	    banked = parseInt(longString.substring(n+"Bank: ".length,n+"Bank: ".length+3));
-    	if(isNaN(banked)){
-    	    n = longString.search('Banked TPE: ');
-	        banked = parseInt(longString.substring(n+"Banked TPE: ".length,n+"Banked TPE: ".length+3));
-    	    if(isNaN(banked)){
-    	        n = longString.search('TPE Available: ');
-	            banked = parseInt(longString.substring(n+"TPE Available: ".length,n+"TPE Available: ".length+3));
-    	        if(isNaN(banked)){
-    	            banked = 0;
-    	        }
-    	    }
-    	}
+		banked = findString(longString, "Banked TPE: ", "TPE Available: ");
+		if(isNaN(banked)){
+			banked = 0;
+		}
 	}
+	
 	if(!isNaN(banked)){
 	    $('#error').html("");
 	    $('#putBNK').html("Banked: " + banked);
@@ -97,6 +87,24 @@ function minMax(str){
 	
 }
 
+//htmlCode is the roster page info
+//stringToFind is the main string used in roster pages
+//secondaryString is a different version I've found randomly throughout
+//Splits postGET where the TPE value should below
+//Saves it to a variable for later
+//length of 3 is chosen for even if a value is 100 it will still be grabbed
+//if the length of the number is less than 3 then parseInt will remove any extra information
+
+function findString(htmlCode, stringToFind, secondaryString){
+	n = htmlCode.search(stringToFind);
+	value = parseInt(htmlCode.substring(n+stringToFind.length,n+stringToFind.length+3));
+	if(isNaN(value)){
+		n = htmlCode.search(secondaryString);
+		value = parseInt(htmlCode.substring(n+secondaryString.length,n+secondaryString.length+3));
+	}
+	return value;
+}
+
 //Function designed to pull pitching archetype from the string in getStats()
 //Also gets pitches and in the order that user has selected them
 
@@ -114,77 +122,17 @@ function getStatsPitcher(postGET){
 		velo = "100+";
 	}
 	
-	//Look for Mvmt vs LHB
-	//Splits postGET where the TPE value should below
-	//Saves it to a variable for later	     
-	n = postGET.search("Movement vs. LHB: ");
-	moveVsLHB = parseInt(postGET.substring(n+"Movement vs. LHB: ".length,n+"Movement vs. LHB: ".length+3));
-	if(n==-1){
-	    n = postGET.search("Movement vs LHB: ");
-	    moveVsLHB = parseInt(postGET.substring(n+"Movement vs LHB: ".length,n+"Movement vs LHB: ".length+3));
-	}
-	
-	//Look for Mvmt vs RHB
-	//Splits postGET where the TPE value should below
-	//Saves it to a variable for later	
-	n = postGET.search("Movement vs. RHB: ");
-	moveVsRHB = parseInt(postGET.substring(n+"Movement vs. RHB: ".length,n+"Movement vs RHB: ".length+3));
-	if(n==-1){
-	    n = postGET.search("Movement vs RHB: ");
-	    moveVsRHB = parseInt(postGET.substring(n+"Movement vs RHB: ".length,n+"Movement vs RHB: ".length+3));
-	}
-	
-	//Look for Control vs LHB
-	//Splits postGET where the TPE value should below
-	//Saves it to a variable for later
-	n = postGET.search("Control vs. LHB: ");
-	conVsLHB = parseInt(postGET.substring(n+"Control vs. LHB: ".length,n+"Control vs. LHB: ".length+3));
-	if(n==-1){
-	    n = postGET.search("Control vs LHB: ");
-	    conVsLHB = parseInt(postGET.substring(n+"Control vs LHB: ".length,n+"Control vs LHB: ".length+3));
-	}
-		
-	//Look for Control vs RHB
-	//Splits postGET where the TPE value should below
-	//Saves it to a variable for later		
-	n = postGET.search("Control vs. RHB: ");
-	conVsRHB = parseInt(postGET.substring(n+"Control vs. RHB: ".length,n+"Control vs RHB: ".length+3));
-	if(n==-1){
-	    n = postGET.search("Control vs RHB: ");
-	    moveVsRHB = parseInt(postGET.substring(n+"Control vs RHB: ".length,n+"Control vs RHB: ".length+3));
-	}
-	
-	//Look for Stamina
-	//Splits postGET where the TPE value should below
-	//Saves it to a variable for later
-	n = postGET.search("Stamina: ");
-	stamina = parseInt(postGET.substring(n+"Stamina: ".length,n+"Stamina: ".length+3));
-	
-	//Look for Holding Runners
-	//Splits postGET where the TPE value should below
-	//Saves it to a variable for later
-	n = postGET.search("Holding Runners: ");
-	holdRun = parseInt(postGET.substring(n+"Holding Runners: ".length,n+"Holding Runners: ".length+3));
-	
-	//Look for Pitches
-	//Splits postGET where the TPE value should below
-	//Saves it to a variable for later
-	
-	//This gets expanded on later
-	n = postGET.search("Pitch 1: ");
-	pitch1 = parseInt(postGET.substring(n+"Pitch 1: ".length,n+"Pitch 1: ".length+3));
-	
-	n = postGET.search("Pitch 2: ");
-	pitch2 = parseInt(postGET.substring(n+"Pitch 2: ".length,n+"Pitch 2: ".length+3));
-	
-	n = postGET.search("Pitch 3: ");
-	pitch3 = parseInt(postGET.substring(n+"Pitch 3: ".length,n+"Pitch 3: ".length+3));
-	
-	n = postGET.search("Pitch 4: ");
-	pitch4 = parseInt(postGET.substring(n+"Pitch 4: ".length,n+"Pitch 4: ".length+3));
-	
-	n = postGET.search("Pitch 5: ");
-	pitch5 = parseInt(postGET.substring(n+"Pitch 5: ".length,n+"Pitch 5: ".length+3));
+	moveVsLHB = findString(postGET, "Movement vs. LHB: ", "Movement vs LHB: ");
+	moveVsRHB = findString(postGET, "Movement vs. RHB: ", "Movement vs RHB: ");
+	conVsLHB = findString(postGET, "Control vs. LHB: ", "Control vs LHB: ");
+	conVsRHB = findString(postGET, "Control vs. RHB: ", "Control vs RHB: ");
+	stamina = findString(postGET, "Stamina: ", null);
+	holdRun = findString(postGET, "Holding Runners: ", null);
+	pitch1 = findString(postGET, "Pitch 1:", null);
+	pitch2 = findString(postGET, "Pitch 2:", null);
+	pitch3 = findString(postGET, "Pitch 3:", null);
+	pitch4 = findString(postGET, "Pitch 4:", null);
+	pitch5 = findString(postGET, "Pitch 5:", null);
 	
 	//Put things into HTML
 	$('#putVEL').html("Velocity: " + velo);
@@ -635,7 +583,6 @@ function getStatsPitcher(postGET){
 
 //Using the data pulled from getStatsPitcher() fills in the table for step4
 //Also fills in minimums and maximums for each archetype
-//EDIT THIS SECTION IF ARCHETYPE MINS/MAXS ARE CHANGED
 //Also used to determine if a user has purchased a pitch in the past (add 50 tpe)
 
 function fillStats(){

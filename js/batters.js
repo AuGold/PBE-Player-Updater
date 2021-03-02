@@ -31,24 +31,14 @@ var lastName;
 //receives longString from pullData.js
 //gets Banked TPE in one of three ways
 function getStats(longString){	
-	var n = longString.search('Banked: ');
-	banked = parseInt(longString.substring(n+"Banked: ".length,n+"Banked: ".length+3));
-	
+	banked = findString(longString, "Banked: ", "Bank: ");
 	if(isNaN(banked)){
-	    n = longString.search('Bank: ');
-	    banked = parseInt(longString.substring(n+"Bank: ".length,n+"Bank: ".length+3));
-    	if(isNaN(banked)){
-    	    n = longString.search('Banked TPE: ');
-	        banked = parseInt(longString.substring(n+"Banked TPE: ".length,n+"Banked TPE: ".length+3));
-    	    if(isNaN(banked)){
-    	        n = longString.search('TPE Available: ');
-	            banked = parseInt(longString.substring(n+"TPE Available: ".length,n+"TPE Available: ".length+3));
-    	        if(isNaN(banked)){
-    	            banked = 0;
-    	        }
-    	    }
-    	}
+		banked = findString(longString, "Banked TPE: ", "TPE Available: ");
+		if(isNaN(banked)){
+			banked = 0;
+		}
 	}
+	
 	if(!isNaN(banked)){
 	    $('#error').html("");
 	    $('#putBNK').html("Banked: " + banked);
@@ -90,59 +80,35 @@ function minMax(str){
 	
 }
 
+//htmlCode is the roster page info
+//stringToFind is the main string used in roster pages
+//secondaryString is a different version I've found randomly throughout
+//Splits postGET where the TPE value should below
+//Saves it to a variable for later
+//length of 3 is chosen for even if a value is 100 it will still be grabbed
+//if the length of the number is less than 3 then parseInt will remove any extra information
+
+function findString(htmlCode, stringToFind, secondaryString){
+	n = htmlCode.search(stringToFind);
+	value = parseInt(htmlCode.substring(n+stringToFind.length,n+stringToFind.length+3));
+	if(isNaN(value)){
+		n = htmlCode.search(secondaryString);
+		value = parseInt(htmlCode.substring(n+secondaryString.length,n+secondaryString.length+3));
+	}
+	return value;
+}
+
 //Function designed to pull fielding and hitting archetypes from the string in getStats()
 //Also pulls all fielding stats
 
 function getStatsFielding(postGET){
 	//postGET is the roster page info
 	
-	//Look for Fielding Error
-	//Splits postGET where the TPE value should below
-	//Saves it to a variable for later
-	n = postGET.search("Fielding Error: ");
-	//length of 3 is chosen for even if a value is 100 it will still be grabbed
-	//if the length of the number is less than 3 then parseInt will remove any extra information
-	fError = parseInt(postGET.substring(n+"Fielding Error: ".length,n+"Fielding Error: ".length+3));
-	if(isNaN(fError)){
-	    n = postGET.search("Error: ");
-	fError = parseInt(postGET.substring(n+"Error: ".length,n+"Error: ".length+3));
-	}
-	
-	//Look for Fielding Range
-	//Splits postGET where the TPE value should below
-	//Saves it to a variable for later
-    n = postGET.search('Fielding Range: ');
-	range = parseInt(postGET.substring(n+"Fielding Range: ".length,n+"Fielding Range: ".length+3));
-	if(isNaN(range)){
-	    n = postGET.search('Range: ');
-	    range = parseInt(postGET.substring(n+"Range: ".length,n+"Range: ".length+3));
-	}
-	
-	//Look for Fielding Arm
-	//Splits postGET where the TPE value should below
-	//Saves it to a variable for later
-	n = postGET.search("Fielding/Catching Arm: ");
-	arm = parseInt(postGET.substring(n+"Fielding/Catching Arm: ".length,n+"Fielding/Catching Arm: ".length+3));
-	if(isNaN(arm)){
-	    n = postGET.search("Arm: ");
-	    arm = parseInt(postGET.substring(n+"Arm: ".length,n+"Arm: ".length+3));
-	}
-		    
-	//Look for Turn Double Play
-	//Splits postGET where the TPE value should below
-	//Saves it to a variable for later			
-	n = postGET.search("Turn Double Play: ");
-	turnDP = parseInt(postGET.substring(n+"Turn Double Play ".length,n+"Turn Double Play ".length+3));
-	if(isNaN(turnDP)){
-	    n = postGET.search("Turn Double Play ");
-    	turnDP = parseInt(postGET.substring(n+"Turn Double Play: ".length,n+"Turn Double Play: ".length+3));
-	}
-	
-	//Look for Catcher Ability
-	//Splits postGET where the TPE value should below
-	//Saves it to a variable for later
-	n = postGET.search("Catcher Ability: ");
-	catchAB = parseInt(postGET.substring(n+"Catcher Ability: ".length,n+"Catcher Ability: ".length+3));
+	fError = findString(postGET, "Fielding Error: ", "Error: ");
+	range = findString(postGET, "Fielding Range: ", "Range: ");
+	arm = findString(postGET, "Fielding/Catching Arm: ", "Arm: ");
+	turnDP = findString(postGET, "Turn Double Play: ", "Turn Double Play ");	    
+	catchAB = findString(postGET, "Catcher Ability: ", null);
 	
 	//HTML part to place all values correctly
 	$('#putERR').html("Fielding Error: " + fError);
@@ -159,44 +125,19 @@ function getStatsBatter(postGET){
 	//Look for attribute, look for a range of 3 values
 	//save to variable
 	
-	var n = postGET.search('BABIP vs LHP: ');
-	babipVsLHP = parseInt(postGET.substring(n+"BABIP vs LHP: ".length,n+"BABIP vs LHP: ".length+3));
-		     
-	n = postGET.search("BABIP vs RHP: ");
-	babipVsRHP = parseInt(postGET.substring(n+"BABIP vs RHP: ".length,n+"BABIP vs RHP: ".length+3));
-		     
-	n = postGET.search("Avoid K&#39;s vs LHP: ");
-	avoidKLHP = parseInt(postGET.substring(n+"Avoid K&#39;s vs LHP: ".length,n+"Avoid K&#39;s vs LHP: ".length+3));
-		     
-	n = postGET.search("Avoid K&#39;s vs RHP: ");
-	avoidKRHP = parseInt(postGET.substring(n+"Avoid K&#39;s vs RHP: ".length,n+"Avoid K&#39;s vs RHP: ".length+3));
-	
-	n = postGET.search("Gap vs LHP: ");
-	gapVsLHP = parseInt(postGET.substring(n+"Gap vs LHP: ".length,n+"Gap vs LHP: ".length+3));
-	
-	n = postGET.search("Gap vs RHP: ");
-	gapVsRHP = parseInt(postGET.substring(n+"Gap vs RHP: ".length,n+"Gap vs RHP: ".length+3));
-	
-	n = postGET.search("Power vs LHP: ");
-	powerVsLHP = parseInt(postGET.substring(n+"Power vs LHP: ".length,n+"Power vs LHP: ".length+3));
-	
-	n = postGET.search("Power vs RHP: ");
-	powerVsRHP = parseInt(postGET.substring(n+"Power vs RHP: ".length,n+"Power vs RHP: ".length+3));
-	
-	n = postGET.search("Eye/Patience vs LHP: ");
-	eyeVsLHP = parseInt(postGET.substring(n+"Eye/Patience vs LHP: ".length,n+"Eye/Patience vs LHP: ".length+3));
-	
-	n = postGET.search("Eye/Patience vs RHP: ");
-	eyeVsRHP = parseInt(postGET.substring(n+"Eye/Patience vs RHP: ".length,n+"Eye/Patience vs RHP: ".length+3));
-	
-	n = postGET.indexOf("Speed (Base &amp; Run): ");
-	speed = parseInt(postGET.substring(n+"Speed (Base &amp; Run): ".length,n+"Speed (Base &amp; Run): ".length+3));
-	
-	n = postGET.search("Stealing Ability: ");
-	steal = parseInt(postGET.substring(n+"Stealing Ability: ".length,n+"Stealing Ability: ".length+3));
-	
-	n = postGET.indexOf("Bunting (Both): ");
-	bunt = parseInt(postGET.substring(n+"Bunting (Both): ".length,n+"Bunting (Both): ".length+3));
+	babipVsLHP = findString(postGET, "BABIP vs LHP: ", null);
+	babipVsRHP = findString(postGET, "BABIP vs RHP: ", null);
+	avoidKLHP = findString(postGET, "Avoid K&#39;s vs LHP: ", null);
+	avoidKRHP = findString(postGET, "Avoid K&#39;s vs RHP: ", null);
+	gapVsLHP = findString(postGET, "Gap vs LHP: ", null);
+	gapVsRHP = findString(postGET, "Gap vs RHP: ", null);
+	powerVsLHP = findString(postGET, "Power vs LHP: ", null);
+	powerVsRHP = findString(postGET, "Power vs RHP: ", null);
+	eyeVsLHP = findString(postGET, "Eye/Patience vs LHP: ", null);
+	eyeVsRHP = findString(postGET, "Eye/Patience vs RHP: ", null);
+	speed = findString(postGET, "Speed (Base &amp; Run): ", null);
+	steal = findString(postGET, "Stealing Ability: ", null);
+	bunt = findString(postGET, "Bunting (Both): ", null);
 	
 	//HTML part to place all values correctly
 	$('#putBVL').html("BABIP VS LHP: " + babipVsLHP);
@@ -215,8 +156,7 @@ function getStatsBatter(postGET){
 }
 
 //Using the data pulled from getStatsFielding() and getStatsBatter() fills in the table for step4
-//Also fills in minimums and maximums for each archetype
-//EDIT THIS SECTION IF ARCHETYPE MINS/MAXS ARE CHANGED
+//Also fills in minimums and maximums from the roster page
 
 function fillStats(){
     $('#bankedTPE').html("Banked TPE: " + banked);
