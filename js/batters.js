@@ -91,7 +91,7 @@ function minMax(str){
 function findString(htmlCode, stringToFind, secondaryString){
 	n = htmlCode.search(stringToFind);
 	value = parseInt(htmlCode.substring(n+stringToFind.length,n+stringToFind.length+3));
-	if(isNaN(value)){
+	if(isNaN(value) && secondaryString != null){
 		n = htmlCode.search(secondaryString);
 		value = parseInt(htmlCode.substring(n+secondaryString.length,n+secondaryString.length+3));
 	}
