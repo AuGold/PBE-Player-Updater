@@ -24,7 +24,7 @@ h2{
     text-align:center;
 }
 
-/*button{
+button{
     background-color: #04529C;
     border:none;
     padding:.5%;
@@ -33,7 +33,7 @@ h2{
     text-align:center;
     text-decoration:none;
     font-size:120%;
-}*/
+}
 
 input, select{
     padding:.2%;
