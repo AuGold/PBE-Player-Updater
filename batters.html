@@ -48,7 +48,7 @@
     				<form id="linkSubmit" onsubmit="ajaxCall(); return false">
         				<label for="link">Link:</label>
         				<input type="url" form="linkSubmit" id="link" name="link" pattern="https?://probaseballexperience.+" required><br><br>
-        				<button type="submit" class="getButton" name="getBatter">Get Link</button>
+        				<button variant="primary" type="submit" class="getButton" name="getBatter">Get Link</button>
         			</form>
     				<p id="error"></p>
     			</div>
@@ -500,5 +500,9 @@
 		<script src="js/getUpdate.js"></script>
 		<script src="js/batters.js"></script>
         <script src="js/countTPE.js"></script>
+		<!-- Load React. -->
+		<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+		<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+		<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 	</body>
 </html>
