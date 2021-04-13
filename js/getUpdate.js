@@ -1,5 +1,5 @@
 function getUpdate(){
-    var outputGained = $("#tpeEarn").html().match(/\d+/)[0];
+    var outputGained = $("#tpeEarn").html().match(/-?\d+/g)[0];
     var outputTotal = $("#totalTPE").html().match(/\d+/)[0];
     var outputBanked = $("#tpeToUse").html().match(/\d+/)[0];
     var outputSpent = 0;
