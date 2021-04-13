@@ -85,7 +85,7 @@ function getUpdate(){
 	var other9Checkbox = document.getElementById('other9Check').checked;
     
     if(regressionCheckbox == true){
-        codeBlock += "[colorred][b]-" + $("#RegressionTPE").val() + " TPE[/b][/color] | [URL=" + $("#RegressionLink").val() + "]Regression S" + $("#RegressionNumber").val() + "[/URL]<br/>";
+        codeBlock += "[color=red][b]" + $("#RegressionTPE").val() + " TPE[/b][/color] | [URL=" + $("#RegressionLink").val() + "]Regression S" + $("#RegressionNumber").val() + "[/URL]<br/>";
     }
 	if(weeklyTrainingCheckbox == true){
         codeBlock += "[color=green][b]+" + $("#WTTPE").val() + " TPE[/b][/color] | [URL=" + $("#WTLink").val() + "]WT #" + $("#WTNumber").val() + "[/URL]<br/>";
