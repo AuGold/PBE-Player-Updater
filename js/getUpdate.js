@@ -100,7 +100,7 @@ function getUpdate(){
         codeBlock += "[color=green][b]+" + $("#JPTTPE").val() + " TPE[/b][/color] | [URL=" + $("#JPTLink").val() + "]JPT " + $("#JPTNumber").val() + "-" + $("#JPTWeek").val() + "[/URL]<br/>";
     }
     if(pictureChainCheckbox == true){
-        codeBlock += "[color=green][b]+" + $("#PCTPE").val() + " TPE[/b][/color] | [URL=" + $("#PCLink").val() + "]Trivia " + $("#PCNumber").val() + "-" + $("#PCWeek").val() + "[/URL]<br/>";
+        codeBlock += "[color=green][b]+" + $("#PCTPE").val() + " TPE[/b][/color] | [URL=" + $("#PCLink").val() + "]Forum Game " + $("#PCNumber").val() + "-" + $("#PCWeek").val() + "[/URL]<br/>";
     }
     if(primetimeCheckbox == true){
         codeBlock += "[color=green][b]+" + $("#PrimetimeTPE").val() + " TPE[/b][/color] | [URL=" + $("#PrimetimeLink").val() + "]Primetime " + $("#PrimetimeNumber").val() + "-" + $("#PrimetimeWeek").val() + "[/URL]<br/>";
