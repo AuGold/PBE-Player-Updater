@@ -38,10 +38,13 @@ function getStats(longString){
 			banked = 0;
 		}
 	}
+
+	const username = findStringButActuallyString(longString, "<b>Username:</b> ");
 	
 	if(!isNaN(banked)){
 	    $('#error').html("");
-	    $('#putBNK').html("Banked: " + banked);
+		$('#putBNK').html("Banked: " + banked);
+	    $('#putUSN').html("Username: " + username);
 	    getStatsBatter(longString);
     	getStatsFielding(longString);
 		minMax(longString);
@@ -107,6 +110,14 @@ function findString(htmlCode, stringToFind, secondaryString){
 	}
 	
 	return value;
+}
+
+// Return the rest of the first line containing the specified string
+function findStringButActuallyString(htmlCode, stringToFind) {
+	htmlCode = htmlCode.replaceAll("<br />", "\n");
+	const re = new RegExp(`(?<=${stringToFind}).+`);
+	const match = re.exec(htmlCode);
+	return match ? match[0] : "nopity nope";
 }
 
 //Function designed to pull fielding and hitting archetypes from the string in getStats()
