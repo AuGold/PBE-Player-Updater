@@ -36,9 +36,12 @@ function getStats(longString){
 		}
 	}
 	
+	const username = findStringButActuallyString(longString, "<b>Username:</b> ");
+	
 	if(!isNaN(banked)){
 	    $('#error').html("");
 	    $('#putBNK').html("Banked: " + banked);
+		$('#putUSN').html("Username: " + username);
 	    getStatsPitcher(longString);
 		minMax(longString);
 	    //Launches the smooth scrolling down to Step 2 in moveSteps.js
@@ -115,6 +118,14 @@ function findString(htmlCode, stringToFind, secondaryString){
 	
 	return value;
 }
+
+// Return the rest of the first line containing the specified string
+// Provided by Khuldraeseth
+function findStringButActuallyString(htmlCode, stringToFind) {
+	htmlCode = htmlCode.replaceAll("<br />", "\n");
+	const re = new RegExp(`(?<=${stringToFind}).+`);
+	const match = re.exec(htmlCode);
+	return match ? match[0] : "nopity nope";
 
 //Function designed to pull pitching archetype from the string in getStats()
 //Also gets pitches and in the order that user has selected them
