@@ -126,6 +126,7 @@ function findStringButActuallyString(htmlCode, stringToFind) {
 	const re = new RegExp(`(?<=${stringToFind}).+`);
 	const match = re.exec(htmlCode);
 	return match ? match[0] : "nopity nope";
+}
 
 //Function designed to pull pitching archetype from the string in getStats()
 //Also gets pitches and in the order that user has selected them
