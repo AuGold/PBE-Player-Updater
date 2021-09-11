@@ -473,5 +473,21 @@
 		<script src="js/getUpdate.js"></script>
 		<script src="js/pitchers.js"></script>
 		<script src="js/countTPE.js"></script>
+		<script>
+			function copyText(){
+				/* Get the text we want */
+				var textToCopy = document.getElementById("updateText");
+				
+				/* select dat text */
+				textToCopy.select();
+				textToCopy.setSelectionRange(0,99999); /* For mobile devices? */
+				
+				/* copy text to clip board */
+				navigator.clipboard.writeText(textToCopy.value);
+				
+				/* alert the user */
+				alert("Your update has been copied.")
+			}
+		</script>
 	</body>
 </html>
