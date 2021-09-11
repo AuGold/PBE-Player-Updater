@@ -123,9 +123,9 @@ function findString(htmlCode, stringToFind, secondaryString){
 // Provided by Khuldraeseth
 function findStringButActuallyString(htmlCode, stringToFind) {
 	htmlCode = htmlCode.replaceAll("<br />", "\n");
-	const re = new RegExp(`(?<=${stringToFind}).+`);
+	const re = new RegExp(`${stringToFind}(.+)`);
 	const match = re.exec(htmlCode);
-	return match ? match[0] : "nopity nope";
+	return match ? match[1] : "nopity nope";
 }
 
 //Function designed to pull pitching archetype from the string in getStats()

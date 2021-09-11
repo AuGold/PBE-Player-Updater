@@ -2,7 +2,8 @@
 // Works for both `&view=findpost&p=XXXXXX` and `#entryXXXXXX` links
 // freaking Rabid and Simo with their periods still break things
 function addHighlight(username, url) {
-    return url.replace(/&?(?=(#entry\d+)?$)/, `&hl=${username.replaceAll(" ", "%20")}`);
+    const hl = `&hl=${username.replaceAll(" ", "%20")}`;
+    return url.replace(/(?:#entry\d+)?$/, (m) => `${hl}${m}`);
 }
 
 function getUpdate(){
