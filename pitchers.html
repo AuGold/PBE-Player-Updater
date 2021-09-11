@@ -478,10 +478,10 @@
 		<script>
 			function copyText(){
 				/* Get the text we want */
-				var textToCopy = $("#updateText").text();
+				var textToCopy = $("#updateText").html();
 				
 				/* copy text to clip board */
-				navigator.clipboard.writeText(textToCopy);
+				navigator.clipboard.writeText(textToCopy.text());
 				
 				/* alert the user */
 				alert("Your update has been copied.")
