@@ -480,12 +480,8 @@
 				/* Get the text we want */
 				var textToCopy = $("#updateText").html();
 				
-				/* select dat text
-				textToCopy.select();
-				textToCopy.setSelectionRange(0,99999); /* For mobile devices? */
-				
 				/* copy text to clip board */
-				navigator.clipboard.writeText(textToCopy.value);
+				navigator.clipboard.writeText(textToCopy);
 				
 				/* alert the user */
 				alert("Your update has been copied.")
