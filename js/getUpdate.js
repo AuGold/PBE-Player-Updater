@@ -79,8 +79,6 @@ function getUpdate(){
     var codeBlock = "";
     var weeklyTrainingCheckbox = document.getElementById('WTCheck').checked;
     var activityCheckCheckbox = document.getElementById('ACCheck').checked;
-    var pointTaskCheckbox = document.getElementById('PTCheck').checked;
-    var journalPointTaskCheckbox = document.getElementById('JPTCheck').checked;
     var pictureChainCheckbox = document.getElementById('PCCheck').checked;
     var primetimeCheckbox = document.getElementById('PrimetimeCheck').checked;
 	var regressionCheckbox = document.getElementById('RegressionCheck').checked;
@@ -103,17 +101,11 @@ function getUpdate(){
     if(activityCheckCheckbox == true){
         codeBlock += "[color=green][b]+" + $("#ACTPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#ACLink").val()) + "]AC #" + $("#ACNumber").val() + "[/URL]<br/>";
     }
-    if(pointTaskCheckbox == true){
-        codeBlock += "[color=green][b]+" + $("#PTTPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#PTLink").val()) + "]PT " + $("#PTNumber").val() + "-" + $("#PTWeek").val() + "[/URL]<br/>";
-    }
-    if(journalPointTaskCheckbox == true){
-        codeBlock += "[color=green][b]+" + $("#JPTTPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#JPTLink").val()) + "]JPT " + $("#JPTNumber").val() + "-" + $("#JPTWeek").val() + "[/URL]<br/>";
-    }
     if(pictureChainCheckbox == true){
         codeBlock += "[color=green][b]+" + $("#PCTPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#PCLink").val()) + "]Forum Game " + $("#PCNumber").val() + "-" + $("#PCWeek").val() + "[/URL]<br/>";
     }
     if(primetimeCheckbox == true){
-        codeBlock += "[color=green][b]+" + $("#PrimetimeTPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#PrimetimeLink").val()) + "]Primetime " + $("#PrimetimeNumber").val() + "-" + $("#PrimetimeWeek").val() + "[/URL]<br/>";
+        codeBlock += "[color=green][b]+" + $("#PrimetimeTPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#PrimetimeLink").val()) + "]PT Claim " + $("#PrimetimeNumber").val() + "-" + $("#PrimetimeWeek").val() + "[/URL]<br/>";
     }
     if(other1Checkbox == true){
         codeBlock += "[color=green][b]+" + $("#other1TPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#other1Link").val()) + "]" + $("#other1Name").val() + "[/URL]<br/>";
