@@ -1,8 +1,6 @@
 function countTPE(){
     var weeklyTrainingCheckbox = document.getElementById('WTCheck').checked;
     var activityCheckCheckbox = document.getElementById('ACCheck').checked;
-    var pointTaskCheckbox = document.getElementById('PTCheck').checked;
-    var journalPointTaskCheckbox = document.getElementById('JPTCheck').checked;
     var pictureChainCheckbox = document.getElementById('PCCheck').checked;
     var primetimeCheckbox = document.getElementById('PrimetimeCheck').checked;
 	var regressionCheckbox = document.getElementById('RegressionCheck').checked;
@@ -22,12 +20,6 @@ function countTPE(){
     }
     if(activityCheckCheckbox == true){
         tpeToUse += parseInt($(ACTPE).val());
-    }
-    if(pointTaskCheckbox == true){
-        tpeToUse += parseInt($(PTTPE).val());
-    }
-    if(journalPointTaskCheckbox == true){
-        tpeToUse += parseInt($(JPTTPE).val());
     }
     if(pictureChainCheckbox == true){
         tpeToUse += parseInt($(PCTPE).val());
