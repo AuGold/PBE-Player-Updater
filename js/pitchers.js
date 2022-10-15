@@ -659,7 +659,7 @@ function fillStats(){
 	$('#newStat12').attr({min: mins[12],max: max[12], value: gbPer});
 	var currentPitchLocation;
     for(var c = 0;c<=pitchingLevels.length;c++){
-            if($('#stat12').html().trim().localeCompare(pitchingLevels[c]) == 0){
+            if($('#stat13').html().trim().localeCompare(pitchingLevels[c]) == 0){
                 currentPitchLocation = c;
             }
         }
@@ -667,7 +667,7 @@ function fillStats(){
         for(var z = 0;z<pitchingLevels.length;z++){
             var str = pitchingLevels[z];
             str = str.replace(/\s/g, '');
-            if($('#stat12').html().trim().localeCompare(str) == 0){
+            if($('#stat13').html().trim().localeCompare(str) == 0){
                 currentPitchLocation = z;
             }
         }
