@@ -95,11 +95,11 @@ function getUpdate(){
     if(regressionCheckbox == true){
         codeBlock += "[color=red][b]" + $("#RegressionTPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#RegressionLink").val()) + "]Regression S" + $("#RegressionNumber").val() + "[/URL]<br/>";
     }
+	if(activityCheckCheckbox == true){
+        codeBlock += "[color=green][b]+" + $("#ACTPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#ACLink").val()) + "]AC #" + $("#ACNumber").val() + "[/URL]<br/>";
+    }
 	if(weeklyTrainingCheckbox == true){
         codeBlock += "[color=green][b]+" + $("#WTTPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#WTLink").val()) + "]WT #" + $("#WTNumber").val() + "[/URL]<br/>";
-    }
-    if(activityCheckCheckbox == true){
-        codeBlock += "[color=green][b]+" + $("#ACTPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#ACLink").val()) + "]AC #" + $("#ACNumber").val() + "[/URL]<br/>";
     }
     if(pictureChainCheckbox == true){
         codeBlock += "[color=green][b]+" + $("#PCTPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#PCLink").val()) + "]Forum Game " + $("#PCNumber").val() + "-" + $("#PCWeek").val() + "[/URL]<br/>";
