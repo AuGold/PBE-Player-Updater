@@ -613,7 +613,7 @@ function getStatsPitcher(postGET){
 
 function fillStats(){
     
-	log(mins);
+	console.log(mins);
 	
     $('#bankedTPE').html("Banked TPE: " + banked);
     $('#tpeEarn').html("Earned TPE: " + tpeEarned);
