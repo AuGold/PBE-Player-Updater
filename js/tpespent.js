@@ -42,7 +42,6 @@ function updateTPESpent(){
 		if(parseInt($(stat).html())!== 0 && $(stat).html().length<=3){
             if(parseInt($(minStat).html()) == 44 || parseInt($(minStat).html()) == 43 || parseInt($(minStat).html()) == 51 || parseInt($(minStat).html()) == 54 || parseInt($(minStat).html()) == 53){
 				tpeSpentValue = 25 * (parseInt($(stat).html()) - parseInt($(minStat).html()));
-				console.log("Spent TPE = " + (parseInt($(stat).html()) - parseInt($(minStat).html())));
 			}else if(parseInt($(minStat).html())<=40){
                 if(parseInt($(stat).html())<=40){
                     tpeSpentValue = update1to40 * (parseInt($(stat).html()) - parseInt($(minStat).html()));
@@ -148,8 +147,7 @@ function updateTPESpent(){
                 }
             }
             if(parseInt($(minStat).html()) == 44 || parseInt($(minStat).html()) == 43 || parseInt($(minStat).html()) == 51 || parseInt($(minStat).html()) == 54 || parseInt($(minStat).html()) == 53){
-				tpeSpendingValue = 25 * (parseInt($(newStat).html()) - parseInt($(minStat).html()));
-				console.log("Spending TPE = " + (parseInt($(newStat).html()) - parseInt($(minStat).html())));
+				tpeSpendingValue = 25 * (parseInt($(newStat).val()) - parseInt($(minStat).html()));
 			}else if(parseInt($(minStat).html())<=40){
                 if(parseInt($(newStat).val())<=40){
                     tpeSpendingValue = update1to40 * (parseInt($(newStat).val()) - parseInt($(minStat).html()));
