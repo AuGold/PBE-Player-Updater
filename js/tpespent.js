@@ -40,7 +40,7 @@ function updateTPESpent(){
         var newStat = "#newStat" + i;
         var tpeSpent = "#tpeSpent" + i;
 		var statName = "#statName" + i;
-        if($(statName:contains("GB"){
+        if($(statName:contains("GB")){
 			tpeSpentValue = 25 * parseInt($(stat).html()) - parseInt($minStat.html());
 		}		
 		else if(parseInt($(stat).html())!== 0 && $(stat).html().length<=3){
