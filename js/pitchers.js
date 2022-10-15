@@ -612,8 +612,6 @@ function getStatsPitcher(postGET){
 //Also used to determine if a user has purchased a pitch in the past (add 50 tpe)
 
 function fillStats(){
-    
-	console.log(mins);
 	
     $('#bankedTPE').html("Banked TPE: " + banked);
     $('#tpeEarn').html("Earned TPE: " + tpeEarned);
