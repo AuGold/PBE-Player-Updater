@@ -299,7 +299,7 @@ function updateTPESpent(){
             totalTPE += tpeSpentValue;
             blahUsed += tpeSpendingValue;
             newtpeSpent = tpeSpendingValue - tpeSpentValue;
-        }else if($(statName).html() === "*GB*"){
+        }else if($(statName).html().includes("*GB*")){
 			console.log("Entered spending TPE for GB");
 			tpeSpentValue = 0;
 			tpeSpendingValue = 25 * (parseInt($(newStat).val()) - parseInt($(minStat).html()));
