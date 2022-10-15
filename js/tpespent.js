@@ -40,11 +40,7 @@ function updateTPESpent(){
         var newStat = "#newStat" + i;
         var tpeSpent = "#tpeSpent" + i;
 		var statName = "#statName" + i;
-        if($(statName).html().includes("*GB*")){
-			console.log("Entered spent TPE for GB");
-			tpeSpentValue = 25 * (parseInt($(stat).html()) - parseInt($(minStat).html()));
-		}		
-		else if(parseInt($(stat).html())!== 0 && $(stat).html().length<=3){
+		if(parseInt($(stat).html())!== 0 && $(stat).html().length<=3){
             if(parseInt($(minStat).html())<=40){
                 if(parseInt($(stat).html())<=40){
                     tpeSpentValue = update1to40 * (parseInt($(stat).html()) - parseInt($(minStat).html()));
@@ -297,13 +293,6 @@ function updateTPESpent(){
                 tpeSpendingValue += pitchingCost[g];
             }
             totalTPE += tpeSpentValue;
-            blahUsed += tpeSpendingValue;
-            newtpeSpent = tpeSpendingValue - tpeSpentValue;
-        }else if($(statName).html().includes("*GB*")){
-			console.log("Entered spending TPE for GB");
-			tpeSpentValue = 0;
-			tpeSpendingValue = 25 * (parseInt($(newStat).val()) - parseInt($(minStat).html()));
-			totalTPE += tpeSpentValue;
             blahUsed += tpeSpendingValue;
             newtpeSpent = tpeSpendingValue - tpeSpentValue;
 		}else if($(stat).html() == 0){
