@@ -613,6 +613,8 @@ function getStatsPitcher(postGET){
 
 function fillStats(){
     
+	log(mins);
+	
     $('#bankedTPE').html("Banked TPE: " + banked);
     $('#tpeEarn').html("Earned TPE: " + tpeEarned);
     tpeToSpend = banked + tpeEarned;
@@ -654,7 +656,7 @@ function fillStats(){
     $('#newStat9').attr({min: mins[9],max: max[9],value: pitch3});
     $('#newStat10').attr({min: mins[10],max: max[10],value: pitch4});
     $('#newStat11').attr({min: mins[11],max: max[11],value: pitch5});
-	$('#newStat13').attr({min: mins[12],max: max[12], value: gbPer});
+	$('#newStat13').attr({min: mins[13],max: max[13], value: gbPer});
 	var currentPitchLocation;
     for(var c = 0;c<=pitchingLevels.length;c++){
             if($('#stat12').html().trim().localeCompare(pitchingLevels[c]) == 0){
