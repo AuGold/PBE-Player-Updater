@@ -631,20 +631,20 @@ function fillStats(){
     $('#stat9').html(pitch3);
     $('#stat10').html(pitch4);
     $('#stat11').html(pitch5);
-    $('#stat12').html(velo);
+    $('#stat12').html(gbPer);
     $('#statName7').html(pitch1Name);
     $('#statName8').html(pitch2Name);
     $('#statName9').html(pitch3Name);
     $('#statName10').html(pitch4Name);
     $('#statName11').html(pitch5Name);
-	$('#stat13').html(gbPer);
+	$('#stat13').html(velo);
     
 	for(var goThrough = 1; goThrough < mins.length ; goThrough++){
 		$('#minStat' + goThrough).html(mins[goThrough]);
 		$('#maxStat' + goThrough).html(max[goThrough]);
 	}
-	$('#minStat12').html(mins[0]);
-	$('#maxStat12').html(max[0]);
+	$('#minStat13').html(mins[0]);
+	$('#maxStat13').html(max[0]);
 	$('#newStat1').attr({min: mins[1],max: max[1],value: moveVsLHB});
     $('#newStat2').attr({min: mins[2],max: max[2],value: moveVsRHB});
     $('#newStat3').attr({min: mins[3],max: max[3],value: conVsLHB});
@@ -656,7 +656,7 @@ function fillStats(){
     $('#newStat9').attr({min: mins[9],max: max[9],value: pitch3});
     $('#newStat10').attr({min: mins[10],max: max[10],value: pitch4});
     $('#newStat11').attr({min: mins[11],max: max[11],value: pitch5});
-	$('#newStat13').attr({min: mins[13],max: max[13], value: gbPer});
+	$('#newStat12').attr({min: mins[12],max: max[12], value: gbPer});
 	var currentPitchLocation;
     for(var c = 0;c<=pitchingLevels.length;c++){
             if($('#stat12').html().trim().localeCompare(pitchingLevels[c]) == 0){
