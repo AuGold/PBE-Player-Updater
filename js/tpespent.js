@@ -31,7 +31,6 @@ function updateTPESpent(){
     var tableRows = document.getElementById("countTable").rows.length;
     
     for(var i=1;i<tableRows;i++){
-        console.log(tableRows);
 		tpeSpentValue = 0;
         tpeSpendingValue = 0;
 		newtpeSpent = 0;
@@ -42,8 +41,8 @@ function updateTPESpent(){
         var tpeSpent = "#tpeSpent" + i;
 		if(parseInt($(stat).html())!== 0 && $(stat).html().length<=3){
             if(parseInt($(minStat).html()) == 44 || parseInt($(minStat).html()) == 43 || parseInt($(minStat).html()) == 51 || parseInt($(minStat).html()) == 54 || parseInt($(minStat).html()) == 53){
-				console.log("Did I do it for spent?");
 				tpeSpentValue = 25 * (parseInt($(stat).html()) - parseInt($(minStat).html()));
+				console.log("Spent TPE = " + (parseInt($(stat).html()) - parseInt($(minStat).html())));
 			}else if(parseInt($(minStat).html())<=40){
                 if(parseInt($(stat).html())<=40){
                     tpeSpentValue = update1to40 * (parseInt($(stat).html()) - parseInt($(minStat).html()));
