@@ -31,7 +31,8 @@ function updateTPESpent(){
     var tableRows = document.getElementById("countTable").rows.length;
     
     for(var i=1;i<tableRows;i++){
-        tpeSpentValue = 0;
+        console.log(tableRows);
+		tpeSpentValue = 0;
         tpeSpendingValue = 0;
 		newtpeSpent = 0;
         var minStat = "#minStat" + i;
@@ -39,7 +40,6 @@ function updateTPESpent(){
         var maxStat = "#maxStat" + i;
         var newStat = "#newStat" + i;
         var tpeSpent = "#tpeSpent" + i;
-		var statName = "#statName" + i;
 		if(parseInt($(stat).html())!== 0 && $(stat).html().length<=3){
             if(parseInt($(minStat).html())<=40){
                 if(parseInt($(stat).html())<=40){
