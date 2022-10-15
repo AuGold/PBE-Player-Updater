@@ -307,6 +307,7 @@ function updateTPESpent(){
 				}
                 if(parseInt($(newStat).val())<=50 && parseInt($(newStat).val())>40){
                     tpeSpendingValue = 50
+					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
                     tpeSpendingValue += update40to50 * (parseInt($(newStat).val()) - 40);
                 }
                 if(parseInt($(newStat).val())<=60 && parseInt($(newStat).val())>50){
