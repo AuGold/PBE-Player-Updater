@@ -68,6 +68,7 @@
                 			<p id="putCVL"></p>
                 			<p id="putCVR"></p>
                 			<p id="putSTA"></p>
+							<p id="putGB"></p>
                 		</div>
                 		<div class="column">
                 		    <p id="putHRN"></p>
@@ -98,15 +99,6 @@
 						<p>Enter the information for each row (the week number, the season number, how much TPE, and the link of your post).</p>
 						<table>
 							<tr>
-								<td><input type="checkbox" id="WTCheck" name="WTCheck" value="WT" onchange="countTPE()"></td>
-								<td><label for="WTNumber">Weekly Training #</label></td>
-								<td><input type="number" min="0" max="1000" id="WTNumber" name="WTNumber"></td>
-								<td><label for="WTLink">Link: </label></td>
-								<td><input type="url" id="WTLink" name="WTLink" pattern="http://probaseballexperience.+"></td>
-								<td><label for="WTTPE">TPE: </label></td>
-								<td><input type="number" max="5" min="0" id="WTTPE" name="WTTPE" value="5" onchange="countTPE()"></td>
-							</tr>
-							<tr>
 								<td><input type="checkbox" id="ACCheck" name="ACCheck" value="AC" onchange="countTPE()"></td>
 								<td><label for="ACNumber">Activity Check #</label></td>
 								<td><input type="number" min="0" max="1000" id="ACNumber" name="ACNumber"></td>
@@ -114,6 +106,15 @@
 								<td><input type="url" id="ACLink" name="ACLink" pattern="http://probaseballexperience.+"></td>
 								<td><label for="ACTPE">TPE: </label></td>
 								<td><input type="number" max="3" min="3" id="ACTPE" name="ACTPE" value="3" onchange="countTPE()"></td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="WTCheck" name="WTCheck" value="WT" onchange="countTPE()"></td>
+								<td><label for="WTNumber">Weekly Training #</label></td>
+								<td><input type="number" min="0" max="1000" id="WTNumber" name="WTNumber"></td>
+								<td><label for="WTLink">Link: </label></td>
+								<td><input type="url" id="WTLink" name="WTLink" pattern="http://probaseballexperience.+"></td>
+								<td><label for="WTTPE">TPE: </label></td>
+								<td><input type="number" max="5" min="0" id="WTTPE" name="WTTPE" value="5" onchange="countTPE()"></td>
 							</tr>
 							<tr>
 								<td><input type="checkbox" id="PCCheck" name="PCCheck" value="PC" onchange="countTPE()"></td>
@@ -371,6 +372,14 @@
     				        <td id="maxStat11"></td>
     				        <td><input type="number" id="newStat11" onchange="updateTPESpent();"></td>
     				        <td id="tpeSpent11">0</td>
+    				    </tr>
+						<tr>
+    				        <td id="statName13">GB%</td>
+    				        <td id="minStat13"></td>
+    				        <td id="stat13"></td>
+    				        <td id="maxStat13"></td>
+    				        <td><input type="number" id="newStat13" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent13">0</td>
     				    </tr>
     				    <tr>
     				        <td id="statName12">Velocity</td>

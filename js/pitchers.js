@@ -20,6 +20,7 @@ var pitch2Name = "Pitch 2";
 var pitch3Name = "Pitch 3";
 var pitch4Name = "Pitch 4";
 var pitch5Name = "Pitch 5";
+var gbPer;
 var pitchesBought = 0;
 var mins=[];
 var max=[];
@@ -156,6 +157,7 @@ function getStatsPitcher(postGET){
 	pitch3 = findString(postGET, "Pitch 3:", null);
 	pitch4 = findString(postGET, "Pitch 4:", null);
 	pitch5 = findString(postGET, "Pitch 5:", null);
+	gbPer = findString(postGET, "GB%: ", "GB: ");
 	
 	//Put things into HTML
 	$('#putVEL').html("Velocity: " + velo);
@@ -165,6 +167,7 @@ function getStatsPitcher(postGET){
 	$('#putCVR').html("Control vs RHB: " + conVsRHB);
 	$('#putSTA').html("Stamina: " + stamina);
 	$('#putHRN').html("Holding Runners: " + holdRun);
+	$('#putGB').html("GB%: " + gbPer);
 	
 	$('#putPI5').html("Pitch 5: " + pitch5);
 	$('#putPI1').html("Pitch 1: " + pitch1);
@@ -632,6 +635,7 @@ function fillStats(){
     $('#statName9').html(pitch3Name);
     $('#statName10').html(pitch4Name);
     $('#statName11').html(pitch5Name);
+	$('#stat13').html(gbPer);
     
 	for(var goThrough = 1; goThrough < mins.length ; goThrough++){
 		$('#minStat' + goThrough).html(mins[goThrough]);
@@ -650,6 +654,7 @@ function fillStats(){
     $('#newStat9').attr({min: mins[9],max: max[9],value: pitch3});
     $('#newStat10').attr({min: mins[10],max: max[10],value: pitch4});
     $('#newStat11').attr({min: mins[11],max: max[11],value: pitch5});
+	$('#newStat13').attr({min: mins[12],max: max[12], value: gbPer});
 	var currentPitchLocation;
     for(var c = 0;c<=pitchingLevels.length;c++){
             if($('#stat12').html().trim().localeCompare(pitchingLevels[c]) == 0){

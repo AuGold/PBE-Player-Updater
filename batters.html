@@ -104,15 +104,6 @@
 						<p>Enter the information for each row (the week number, the season number, how much TPE, and the link of your post).</p>
 						<table>
 							<tr>
-								<td><input type="checkbox" id="WTCheck" name="WTCheck" value="WT" onchange="countTPE()"></td>
-								<td><label for="WTNumber">Weekly Training #</label></td>
-								<td><input type="number" min="0" max="1000" id="WTNumber" name="WTNumber"></td>
-								<td><label for="WTLink">Link: </label></td>
-								<td><input type="url" id="WTLink" name="WTLink" pattern="http://probaseballexperience.+"></td>
-								<td><label for="WTTPE">TPE: </label></td>
-								<td><input type="number" max="5" min="0" id="WTTPE" name="WTTPE" value="5" onchange="countTPE()"></td>
-							</tr>
-							<tr>
 								<td><input type="checkbox" id="ACCheck" name="ACCheck" value="AC" onchange="countTPE()"></td>
 								<td><label for="ACNumber">Activity Check #</label></td>
 								<td><input type="number" min="0" max="1000" id="ACNumber" name="ACNumber"></td>
@@ -120,6 +111,15 @@
 								<td><input type="url" id="ACLink" name="ACLink" pattern="http://probaseballexperience.+"></td>
 								<td><label for="ACTPE">TPE: </label></td>
 								<td><input type="number" max="3" min="3" id="ACTPE" name="ACTPE" value="3" onchange="countTPE()"></td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="WTCheck" name="WTCheck" value="WT" onchange="countTPE()"></td>
+								<td><label for="WTNumber">Weekly Training #</label></td>
+								<td><input type="number" min="0" max="1000" id="WTNumber" name="WTNumber"></td>
+								<td><label for="WTLink">Link: </label></td>
+								<td><input type="url" id="WTLink" name="WTLink" pattern="http://probaseballexperience.+"></td>
+								<td><label for="WTTPE">TPE: </label></td>
+								<td><input type="number" max="5" min="0" id="WTTPE" name="WTTPE" value="5" onchange="countTPE()"></td>
 							</tr>
 							<tr>
 								<td><input type="checkbox" id="PCCheck" name="PCCheck" value="PC" onchange="countTPE()"></td>
