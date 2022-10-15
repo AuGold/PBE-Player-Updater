@@ -41,6 +41,7 @@ function updateTPESpent(){
         var tpeSpent = "#tpeSpent" + i;
 		var statName = "#statName" + i;
         if($(statName).html() === "*GB*"){
+			console.log("Entered spent TPE for GB");
 			tpeSpentValue = 25 * (parseInt($(stat).html()) - parseInt($(minStat).html()));
 		}		
 		else if(parseInt($(stat).html())!== 0 && $(stat).html().length<=3){
@@ -299,6 +300,7 @@ function updateTPESpent(){
             blahUsed += tpeSpendingValue;
             newtpeSpent = tpeSpendingValue - tpeSpentValue;
         }else if($(statName).html() === "*GB*"){
+			console.log("Entered spending TPE for GB");
 			tpeSpentValue = 0;
 			tpeSpendingValue = 25 * (parseInt($(newStat).val()) - parseInt($(minStat).html()));
 			totalTPE += tpeSpentValue;
