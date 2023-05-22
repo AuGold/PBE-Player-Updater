@@ -146,7 +146,7 @@ function updateTPESpent(){
                     tpeSpentValue += update90to115 * (parseInt($(stat).html()) - 90);
                 }
             }
-            if(parseInt($(minStat).html()) == 44 || parseInt($(minStat).html()) == 43 || parseInt($(minStat).html()) == 51 || parseInt($(minStat).html()) == 54 || parseInt($(minStat).html()) == 53){
+            if(parseInt($(minStat).html()) == 44 || parseInt($(minStat).html()) == 43 || parseInt($(minStat).html()) == 51 || parseInt($(minStat).html()) == 54 || parseInt($(minStat).html()) == 53 || parseInt($(maxStat).html()) == 64){
 				tpeSpendingValue = 25 * (parseInt($(newStat).val()) - parseInt($(minStat).html()));
 			}else if(parseInt($(minStat).html())<=40){
                 if(parseInt($(newStat).val())<=40){
