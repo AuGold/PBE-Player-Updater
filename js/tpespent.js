@@ -353,25 +353,25 @@ function updateTPESpent(){
             }
 			if(parseInt($(minStat).html())==45){
 				if(parseInt($(newStat).val())<=50 && parseInt($(newStat).val())>40){
-					tpeSpendingValue = 55
+					tpeSpendingValue = 45
 					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
                     tpeSpendingValue += update40to50 * (parseInt($(newStat).val()) - 40);
                 }
                 if(parseInt($(newStat).val())<=60 && parseInt($(newStat).val())>50){
-                    tpeSpendingValue = 55
+                    tpeSpendingValue = 45
 					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
                     tpeSpendingValue += update40to50 * (50 - 40);
                     tpeSpendingValue += update50to60 * (parseInt($(newStat).val()) - 50);
                 }
                 if(parseInt($(newStat).val())<=70 && parseInt($(newStat).val())>60){
-                    tpeSpendingValue = 55
+                    tpeSpendingValue = 45
 					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
                     tpeSpendingValue += update40to50 * (50 - 40);
                     tpeSpendingValue += update50to60 * (60 - 50);
                     tpeSpendingValue += update60to70 * (parseInt($(newStat).val()) - 60);
                 }
                 if(parseInt($(newStat).val())<=80 && parseInt($(newStat).val())>70){
-                    tpeSpendingValue = 55
+                    tpeSpendingValue = 45
 					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
                     tpeSpendingValue += update40to50 * (50 - 40);
                     tpeSpendingValue += update50to60 * (60 - 50);
@@ -379,7 +379,7 @@ function updateTPESpent(){
                     tpeSpendingValue += update70to80 * (parseInt($(newStat).val()) - 70);
                 }
                 if(parseInt($(newStat).val())<=90 && parseInt($(newStat).val())>80){
-                    tpeSpendingValue = 55
+                    tpeSpendingValue = 45
 					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
                     tpeSpendingValue += update40to50 * (50 - 40);
                     tpeSpendingValue += update50to60 * (60 - 50);
@@ -388,7 +388,7 @@ function updateTPESpent(){
                     tpeSpendingValue += update80to90 * (parseInt($(newStat).val()) - 80);
                 }
                 if(parseInt($(newStat).val())<=115 && parseInt($(newStat).val())>90){
-                    tpeSpendingValue = 55
+                    tpeSpendingValue = 45
 					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
                     tpeSpendingValue += update40to50 * (50 - 40);
                     tpeSpendingValue += update50to60 * (60 - 50);
