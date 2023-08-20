@@ -39,7 +39,6 @@ function updateTPESpent(){
         var maxStat = "#maxStat" + i;
         var newStat = "#newStat" + i;
         var tpeSpent = "#tpeSpent" + i;
-		if( parseInt($(stat).html())!== 0 && $(stat).html().length<3 && (
 		if(parseInt($(stat).html())!== 0 && $(stat).html().length<=3){
             if(parseInt($(minStat).html()) == 44 || parseInt($(minStat).html()) == 43 || parseInt($(minStat).html()) == 51 || parseInt($(minStat).html()) == 54 || parseInt($(minStat).html()) == 53 || parseInt($(maxStat).html()) == 64){
 				tpeSpentValue = 25 * (parseInt($(stat).html()) - parseInt($(minStat).html()));
