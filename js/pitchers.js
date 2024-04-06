@@ -20,6 +20,7 @@ var pitch2Name = "Pitch 2";
 var pitch3Name = "Pitch 3";
 var pitch4Name = "Pitch 4";
 var pitch5Name = "Pitch 5";
+var gbPer;
 var pitchesBought = 0;
 var mins=[];
 var max=[];
@@ -36,9 +37,12 @@ function getStats(longString){
 		}
 	}
 	
+	const username = findStringButActuallyString(longString, "<b>Username:</b> ");
+	
 	if(!isNaN(banked)){
 	    $('#error').html("");
 	    $('#putBNK').html("Banked: " + banked);
+		$('#putUSN').html("Username: " + username);
 	    getStatsPitcher(longString);
 		minMax(longString);
 	    //Launches the smooth scrolling down to Step 2 in moveSteps.js
@@ -116,6 +120,15 @@ function findString(htmlCode, stringToFind, secondaryString){
 	return value;
 }
 
+// Return the rest of the first line containing the specified string
+// Provided by Khuldraeseth
+function findStringButActuallyString(htmlCode, stringToFind) {
+	htmlCode = htmlCode.replaceAll("<br />", "\n");
+	const re = new RegExp(`${stringToFind}(.+)`);
+	const match = re.exec(htmlCode);
+	return match ? match[1] : "nopity nope";
+}
+
 //Function designed to pull pitching archetype from the string in getStats()
 //Also gets pitches and in the order that user has selected them
 
@@ -144,6 +157,7 @@ function getStatsPitcher(postGET){
 	pitch3 = findString(postGET, "Pitch 3:", null);
 	pitch4 = findString(postGET, "Pitch 4:", null);
 	pitch5 = findString(postGET, "Pitch 5:", null);
+	gbPer = findString(postGET, "GB%: ", "GB: ");
 	
 	//Put things into HTML
 	$('#putVEL').html("Velocity: " + velo);
@@ -153,6 +167,7 @@ function getStatsPitcher(postGET){
 	$('#putCVR').html("Control vs RHB: " + conVsRHB);
 	$('#putSTA').html("Stamina: " + stamina);
 	$('#putHRN').html("Holding Runners: " + holdRun);
+	$('#putGB').html("GB%: " + gbPer);
 	
 	$('#putPI5').html("Pitch 5: " + pitch5);
 	$('#putPI1').html("Pitch 1: " + pitch1);
@@ -597,7 +612,7 @@ function getStatsPitcher(postGET){
 //Also used to determine if a user has purchased a pitch in the past (add 50 tpe)
 
 function fillStats(){
-    
+	
     $('#bankedTPE').html("Banked TPE: " + banked);
     $('#tpeEarn').html("Earned TPE: " + tpeEarned);
     tpeToSpend = banked + tpeEarned;
@@ -614,19 +629,20 @@ function fillStats(){
     $('#stat9').html(pitch3);
     $('#stat10').html(pitch4);
     $('#stat11').html(pitch5);
-    $('#stat12').html(velo);
+    $('#stat12').html(gbPer);
     $('#statName7').html(pitch1Name);
     $('#statName8').html(pitch2Name);
     $('#statName9').html(pitch3Name);
     $('#statName10').html(pitch4Name);
     $('#statName11').html(pitch5Name);
+	$('#stat13').html(velo);
     
 	for(var goThrough = 1; goThrough < mins.length ; goThrough++){
 		$('#minStat' + goThrough).html(mins[goThrough]);
 		$('#maxStat' + goThrough).html(max[goThrough]);
 	}
-	$('#minStat12').html(mins[0]);
-	$('#maxStat12').html(max[0]);
+	$('#minStat13').html(mins[0]);
+	$('#maxStat13').html(max[0]);
 	$('#newStat1').attr({min: mins[1],max: max[1],value: moveVsLHB});
     $('#newStat2').attr({min: mins[2],max: max[2],value: moveVsRHB});
     $('#newStat3').attr({min: mins[3],max: max[3],value: conVsLHB});
@@ -638,9 +654,10 @@ function fillStats(){
     $('#newStat9').attr({min: mins[9],max: max[9],value: pitch3});
     $('#newStat10').attr({min: mins[10],max: max[10],value: pitch4});
     $('#newStat11').attr({min: mins[11],max: max[11],value: pitch5});
+	$('#newStat12').attr({min: mins[12],max: max[12], value: gbPer});
 	var currentPitchLocation;
     for(var c = 0;c<=pitchingLevels.length;c++){
-            if($('#stat12').html().trim().localeCompare(pitchingLevels[c]) == 0){
+            if($('#stat13').html().trim().localeCompare(pitchingLevels[c]) == 0){
                 currentPitchLocation = c;
             }
         }
@@ -648,7 +665,7 @@ function fillStats(){
         for(var z = 0;z<pitchingLevels.length;z++){
             var str = pitchingLevels[z];
             str = str.replace(/\s/g, '');
-            if($('#stat12').html().trim().localeCompare(str) == 0){
+            if($('#stat13').html().trim().localeCompare(str) == 0){
                 currentPitchLocation = z;
             }
         }

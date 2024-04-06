@@ -28,6 +28,8 @@
 			"email": "support@jordanrodriguez.net"
 		}
 		</script>
+		<!-- include ads -->
+		<script data-ad-client="ca-pub-6234953616915503" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	</head>
 
 	<body onload="cookiePlace()">
@@ -55,6 +57,7 @@
     			<div class="step2">
     				<h2>Step 2: Check your stats</h2>
     				<p>Make sure your banked TPE and offense/defense stats look correct!</p>
+					<p id="putUSN"></p>
     				<p id="putBNK"></p>
         			<div class="twoColumns">
         			    <div class="column">
@@ -101,15 +104,6 @@
 						<p>Enter the information for each row (the week number, the season number, how much TPE, and the link of your post).</p>
 						<table>
 							<tr>
-								<td><input type="checkbox" id="WTCheck" name="WTCheck" value="WT" onchange="countTPE()"></td>
-								<td><label for="WTNumber">Weekly Training #</label></td>
-								<td><input type="number" min="0" max="1000" id="WTNumber" name="WTNumber"></td>
-								<td><label for="WTLink">Link: </label></td>
-								<td><input type="url" id="WTLink" name="WTLink" pattern="http://probaseballexperience.+"></td>
-								<td><label for="WTTPE">TPE: </label></td>
-								<td><input type="number" max="5" min="0" id="WTTPE" name="WTTPE" value="5" onchange="countTPE()"></td>
-							</tr>
-							<tr>
 								<td><input type="checkbox" id="ACCheck" name="ACCheck" value="AC" onchange="countTPE()"></td>
 								<td><label for="ACNumber">Activity Check #</label></td>
 								<td><input type="number" min="0" max="1000" id="ACNumber" name="ACNumber"></td>
@@ -119,32 +113,17 @@
 								<td><input type="number" max="3" min="3" id="ACTPE" name="ACTPE" value="3" onchange="countTPE()"></td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="PTCheck" name="PTCheck" value="PT" onchange="countTPE()"></td>
-								<td><label for="PTNumber">Point Task Season/Week: </label></td>
-								<td>
-									<input type="number" min="0" max="100" id="PTNumber" name="PTNumber"> -
-									<input type="number" min="0" max="5" id="PTWeek" name="PTWeek">
-								</td>
-								<td><label for="PTLink">Link: </label></td>
-								<td><input type="url" id="PTLink" name="PTLink" pattern="http://probaseballexperience.+"></td>
-								<td><label for="PTTPE">TPE: </label></td>
-								<td><input type="number" max="3" min="3" id="PTTPE" name="PTTPE" value="3" onchange="countTPE()"></td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" id="JPTCheck" name="JPTCheck" value="JPT" onchange="countTPE()"></td>
-								<td><label for="JPTNumber">Journal Point Task Season/Week: </label></td>
-								<td>
-									<input type="number" min="0" max="100" id="JPTNumber" name="JPTNumber"> - 
-									<input type="number" min="0" max="5" id="JPTWeek" name="JPTWeek">
-								</td>
-								<td><label for="JPTLink">Link: </label></td>
-								<td><input type="url" id="JPTLink" name="JPTLink" pattern="http://probaseballexperience.+"></td>
-								<td><label for="JPTTPE">TPE: </label></td>
-								<td><input type="number" max="2" min="2" id="JPTTPE" name="JPTTPE" value="2" onchange="countTPE()"></td>
+								<td><input type="checkbox" id="WTCheck" name="WTCheck" value="WT" onchange="countTPE()"></td>
+								<td><label for="WTNumber">Weekly Training #</label></td>
+								<td><input type="number" min="0" max="1000" id="WTNumber" name="WTNumber"></td>
+								<td><label for="WTLink">Link: </label></td>
+								<td><input type="url" id="WTLink" name="WTLink" pattern="http://probaseballexperience.+"></td>
+								<td><label for="WTTPE">TPE: </label></td>
+								<td><input type="number" max="5" min="0" id="WTTPE" name="WTTPE" value="5" onchange="countTPE()"></td>
 							</tr>
 							<tr>
 								<td><input type="checkbox" id="PCCheck" name="PCCheck" value="PC" onchange="countTPE()"></td>
-								<td><label for="PCNumber">Picture Chain Season/Week: </label></td>
+								<td><label for="PCNumber">Forum Game Season/Week: </label></td>
 								<td>
 									<input type="number" min="0" max="100" id="PCNumber" name="PCNumber"> - 
 									<input type="number" min="0" max="5" id="PCWeek" name="PCWeek">
@@ -156,7 +135,7 @@
 							</tr>
 							<tr>
 								<td><input type="checkbox" id="PrimetimeCheck" name="PrimetimeCheck" value="Primetime" onchange="countTPE()"></td>
-								<td><label for="PrimetimeNumber">Primetime Season/Week: </label></td>
+								<td><label for="PrimetimeNumber">PT Claim Season/Week: </label></td>
 								<td>
 									<input type="number" min="0" max="100" id="PrimetimeNumber" name="PrimetimeNumber"> - 
 									<input type="number" min="0" max="5" id="PrimetimeWeek" name="PrimetimeWeek">
@@ -164,7 +143,7 @@
 								<td><label for="PrimetimeLink">Link: </label></td>
 								<td><input type="url" id="PrimetimeLink" name="PrimetimeLink" pattern="http://probaseballexperience.+"></td>
 								<td><label for="PrimetimeTPE">TPE: </label></td>
-								<td><input type="number" max="7" min="1" id="PrimetimeTPE" name="PrimetimeTPE" value="1" onchange="countTPE()"></td>
+								<td><input type="number" max="15" min="1" id="PrimetimeTPE" name="PrimetimeTPE" value="1" onchange="countTPE()"></td>
 							</tr>
 							<tr>
 								<td><input type="checkbox" id="RegressionCheck" name="RegressionCheck" value="Regression" onchange="countTPE()"></td>
@@ -291,7 +270,6 @@
     			<div class="step4">
     			    <h2>Step 4: Create your update!</h2>
     			    <p>Now the fun part of creating your update!</p>
-    			    <p>There is nothing in this website that stops you from using more TPE than you have available, so make sure you don't go into the negatives!</p>
     			    <div class="twoColumns">
         			    <div class="column">
         				    <p id="bankedTPE"></p>
@@ -477,7 +455,9 @@
         			    <span id="outputSpent"></span><br/>
         			    
         			    <span id="outputBanked"></span>
+						
         			    <span id="outputUsed"></span>
+						
         			    <span id="outputTotal"></span>
         			</div>
     			</div>
