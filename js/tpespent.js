@@ -427,17 +427,17 @@ function updateTPESpent(){
 }
 
 function tpeSpent1to40(currentValue, minValue){
-	returnSpent += update1to40 * (currentValue - minValue);
+	returnSpent = update1to40 * (currentValue - minValue);
 	return returnSpent;
 }
 
 function tpeSpent40to50(currentValue, minValue){
 	if(minValue <= 40){
-		returnspent += tpeSpent1to40(40, minValue);
+		returnspent = tpeSpent1to40(40, minValue);
 		returnSpent += update40to50 * (currentValue - 40);
 	}
 	else{
-		returnSpent += update40to50 * (currentValue - minValue);
+		returnSpent = update40to50 * (currentValue - minValue);
 	}
 	return returnSpent;
 }
