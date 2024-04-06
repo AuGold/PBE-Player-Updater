@@ -441,3 +441,19 @@ function tpeSpent40to50(currentValue, minValue){
 	}
 	return returnSpent;
 }
+
+function tpeSpent50to60(currentValue, minValue){
+	if(minValue <= 40){
+		//returnspent = tpeSpent1to40(40, minValue);
+		returnSpent = tpeSpent40to50(50, minValue);
+		returnSpent += update50to60 * (currentValue - 50);
+	}
+	else if(minValue <= 50){
+		returnSpent = tpeSpent40to50(50, minValue);
+		returnSpent += update50to60 * (currentValue - 50);
+	}
+	else{
+		returnSpent = update50to60 * (currentValue - minValue);
+	}
+	return returnspent;
+}
