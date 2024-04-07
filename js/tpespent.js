@@ -42,64 +42,10 @@ function updateTPESpent(){
 		if(parseInt($(stat).html())!== 0 && $(stat).html().length<=3){
             if(parseInt($(minStat).html()) == 44 || parseInt($(minStat).html()) == 43 || parseInt($(minStat).html()) == 51 || parseInt($(minStat).html()) == 54 || parseInt($(minStat).html()) == 53 || parseInt($(maxStat).html()) == 64){
 				tpeSpentValue = 25 * (parseInt($(stat).html()) - parseInt($(minStat).html()));
-			}else if(parseInt($(minStat).html())<=40){
-                if(parseInt($(stat).html())<=40){
-                    tpeSpentValue += tpeSpent1to40(parseInt($(stat).html()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(stat).html())<=50 && parseInt($(stat).html())>40){
-                    tpeSpentValue += tpeSpent40to50(parseInt($(stat).html()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(stat).html())<=60 && parseInt($(stat).html())>50){
-                    tpeSpentValue += tpeSpent50to60(parseInt($(stat).html()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(stat).html())<=70 && parseInt($(stat).html())>60){
-                    tpeSpentValue += tpeSpent60to70(parseInt($(stat).html()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(stat).html())<=80 && parseInt($(stat).html())>70){
-                    tpeSpentValue += tpeSpent70to80(parseInt($(stat).html()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(stat).html())<=90 && parseInt($(stat).html())>80){
-                    tpeSpentValue += tpeSpent80to90(parseInt($(stat).html()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(stat).html())<=115 && parseInt($(stat).html())>90){
-                    tpeSpentValue += tpeSpent90to115(parseInt($(stat).html()), parseInt($(minStat).html()));
-                }
-            }else if(parseInt($(minStat).html())<=50 && parseInt($(minStat).html())>40){
-                if(parseInt($(stat).html())<=50 && parseInt($(stat).html())>40){
-                    tpeSpentValue += tpeSpent40to50(parseInt($(stat).html()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(stat).html())<=60 && parseInt($(stat).html())>50){
-                    tpeSpentValue += tpeSpent50to60(parseInt($(stat).html()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(stat).html())<=70 && parseInt($(stat).html())>60){
-                    tpeSpentValue += tpeSpent60to70(parseInt($(stat).html()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(stat).html())<=80 && parseInt($(stat).html())>70){
-                    tpeSpentValue += tpeSpent70to80(parseInt($(stat).html()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(stat).html())<=90 && parseInt($(stat).html())>80){
-                    tpeSpentValue += tpeSpent80to90(parseInt($(stat).html()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(stat).html())<=115 && parseInt($(stat).html())>90){
-                    tpeSpentValue += tpeSpent90to115(parseInt($(stat).html()), parseInt($(minStat).html()));
-                }
-            }else if(parseInt($(minStat).html())<=60 && parseInt($(minStat).html())>50){
-                if(parseInt($(stat).html())<=60 && parseInt($(stat).html())>50){
-                    tpeSpentValue += tpeSpent50to60(parseInt($(stat).html()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(stat).html())<=70 && parseInt($(stat).html())>60){
-                    tpeSpentValue += tpeSpent60to70(parseInt($(stat).html()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(stat).html())<=80 && parseInt($(stat).html())>70){
-                    tpeSpentValue += tpeSpent70to80(parseInt($(stat).html()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(stat).html())<=90 && parseInt($(stat).html())>80){
-                    tpeSpentValue += tpeSpent80to90(parseInt($(stat).html()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(stat).html())<=115 && parseInt($(stat).html())>90){
-                    tpeSpentValue += tpeSpent90to115(parseInt($(stat).html()), parseInt($(minStat).html()));
-                }
-            }
+			}
+			else{
+				tpeSpentValue += checkingSpendage(parseInt($(stat).html()), parseInt($(minStat).html()));
+			}
             if(parseInt($(minStat).html()) == 44 || parseInt($(minStat).html()) == 43 || parseInt($(minStat).html()) == 51 || parseInt($(minStat).html()) == 54 || parseInt($(minStat).html()) == 53 || parseInt($(maxStat).html()) == 64){
 				tpeSpendingValue = 25 * (parseInt($(newStat).val()) - parseInt($(minStat).html()));
 			}else if(parseInt($(minStat).html())<=40){
@@ -362,4 +308,71 @@ function tpeSpent90to115(currentValue, minValue){
 		returnSpent = update90to115 * (currentValue - minValue);
 	}
 	return returnSpent;
+}
+
+function checkingSpendage(checkValue, minValue){
+	returnSpendage = 0;
+	
+	if(minValue <= 40){
+		if(checkValue <= 40){
+			returnSpendage = tpeSpent1to40(checkValue, minValue);
+		}
+		else if(checkValue <= 50 && checkValue > 40){
+			returnSpendage = tpeSpent40to50(checkValue, minValue);
+		}
+		else if(checkValue <= 60 && checkValue > 50){
+			returnSpendage = tpeSpent50to60(checkValue, minValue);
+		}
+		else if(checkValue <= 70 && checkValue > 60){
+			returnSpendage = tpeSpent60to70(checkValue, minValue);
+		}
+		else if(checkValue <= 80 && checkValue > 70){
+			returnSpendage = tpeSpent70to80(checkValue, minValue);
+		}
+		else if(checkValue <= 90 && checkValue > 80){
+			returnSpendage = tpeSpent80to90(checkValue, minValue);
+		}
+		else if(checkValue <= 115 && checkValue > 90){
+			returnSpendage = tpeSpent90t0115(checkValue, minValue);
+		}
+	}
+	else if(minValue <= 50 && minValue > 40){
+		if(checkValue <= 50 && checkValue > 40){
+			returnSpendage = tpeSpent40to50(checkValue, minValue);
+		}
+		else if(checkValue <= 60 && checkValue > 50){
+			returnSpendage = tpeSpent50to60(checkValue, minValue);
+		}
+		else if(checkValue <= 70 && checkValue > 60){
+			returnSpendage = tpeSpent60to70(checkValue, minValue);
+		}
+		else if(checkValue <= 80 && checkValue > 70){
+			returnSpendage = tpeSpent70to80(checkValue, minValue);
+		}
+		else if(checkValue <= 90 && checkValue > 80){
+			returnSpendage = tpeSpent80to90(checkValue, minValue);
+		}
+		else if(checkValue <= 115 && checkValue > 90){
+			returnSpendage = tpeSpent90t0115(checkValue, minValue);
+		}
+	}
+	else if(minValue <= 60 && minValue > 50){
+		if(checkValue <= 60 && checkValue > 50){
+			returnSpendage = tpeSpent50to60(checkValue, minValue);
+		}
+		else if(checkValue <= 70 && checkValue > 60){
+			returnSpendage = tpeSpent60to70(checkValue, minValue);
+		}
+		else if(checkValue <= 80 && checkValue > 70){
+			returnSpendage = tpeSpent70to80(checkValue, minValue);
+		}
+		else if(checkValue <= 90 && checkValue > 80){
+			returnSpendage = tpeSpent80to90(checkValue, minValue);
+		}
+		else if(checkValue <= 115 && checkValue > 90){
+			returnSpendage = tpeSpent90t0115(checkValue, minValue);
+		}
+	}
+	
+	return returnSpendage;
 }
