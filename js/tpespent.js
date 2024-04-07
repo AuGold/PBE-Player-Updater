@@ -108,7 +108,7 @@ function updateTPESpent(){
             blahUsed += tpeSpendingValue;
             newtpeSpent = tpeSpendingValue - tpeSpentValue;
 			
-		}else if($(stat).html() == 0 && parseInt($(newStat).val()) > 0{
+		}else if($(stat).html() == 0 && parseInt($(newStat).val()) > 0){
 			tpeSpentValue = 0;
             if(parseInt($(minStat).html())<=40){
 				tpeSpendingValue = 50;
