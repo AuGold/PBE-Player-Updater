@@ -317,7 +317,7 @@ function tpeSpent50to60(currentValue, minValue){
 	else{
 		returnSpent = update50to60 * (currentValue - minValue);
 	}
-	return returnspent;
+	return returnSpent;
 }
 
 function tpeSpent60to70(currentValue, minValue){
@@ -328,7 +328,7 @@ function tpeSpent60to70(currentValue, minValue){
 	else{
 		returnSpent = update60to70 * (currentValue - minValue);
 	}
-	return returnspent;
+	return returnSpent;
 }
 
 function tpeSpent70to80(currentValue, minValue){
@@ -339,7 +339,7 @@ function tpeSpent70to80(currentValue, minValue){
 	else{
 		returnSpent = update70to80 * (currentValue - minValue);
 	}
-	return returnspent;
+	return returnSpent;
 }
 
 function tpeSpent80to90(currentValue, minValue){
@@ -350,7 +350,7 @@ function tpeSpent80to90(currentValue, minValue){
 	else{
 		returnSpent = update80to90 * (currentValue - minValue);
 	}
-	return returnspent;
+	return returnSpent;
 }
 
 function tpeSpent90to115(currentValue, minValue){
@@ -361,5 +361,5 @@ function tpeSpent90to115(currentValue, minValue){
 	else{
 		returnSpent = update90to115 * (currentValue - minValue);
 	}
-	return returnspent;
+	return returnSpent;
 }
