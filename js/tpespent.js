@@ -39,10 +39,19 @@ function updateTPESpent(){
         var maxStat = "#maxStat" + i;
         var newStat = "#newStat" + i;
         var tpeSpent = "#tpeSpent" + i;
-		if(parseInt($(stat).html())!== 0 && $(stat).html().length<=3){
+		if($(stat).html().length<=3){
             tpeSpentValue += checkingSpendage(parseInt($(stat).html()), parseInt($(minStat).html()));
 			
-			if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==40){
+			if($(stat).html() == 0 && parseInt($(newStat).val()) > 0){
+				tpeSpentValue = 0;
+				if(parseInt($(minStat).html())<=40){
+					tpeSpendingValue = 50;
+				}
+				if(parseInt($(minStat).html())==45){
+					tpeSpendingValue = 45;
+				}
+			}
+			else if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==40){
                 tpeSpendingValue += -10;
             }
             else if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==35){
@@ -98,21 +107,8 @@ function updateTPESpent(){
             blahUsed += tpeSpendingValue;
             newtpeSpent = tpeSpendingValue - tpeSpentValue;
 			
-		}else if($(stat).html() == 0 && parseInt($(newStat).val()) > 0){
-			tpeSpentValue = 0;
-            if(parseInt($(minStat).html())<=40){
-				tpeSpendingValue = 50;
-				tpeSpendingValue += checkingSpendage(parseInt($(newStat).val()), parseInt($(minStat).html()));
-            }
-			if(parseInt($(minStat).html())==45){
-				tpeSpendingValue = 45;
-				tpeSpendingValue += checkingSpendage(parseInt($(newStat).val()), parseInt($(minStat).html()));
-			}
-			
-            totalTPE += tpeSpentValue;
-            blahUsed += tpeSpendingValue;
-            newtpeSpent = tpeSpendingValue - tpeSpentValue;
 		}
+		
         $(tpeSpent).html(newtpeSpent);
         tpeSpentTotal += newtpeSpent;
 		tpeSpendingValue = 0;
