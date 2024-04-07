@@ -40,25 +40,15 @@ function updateTPESpent(){
         var newStat = "#newStat" + i;
         var tpeSpent = "#tpeSpent" + i;
 		if(parseInt($(stat).html())!== 0 && $(stat).html().length<=3){
-            if(parseInt($(minStat).html()) == 44 || parseInt($(minStat).html()) == 43 || parseInt($(minStat).html()) == 51 || parseInt($(minStat).html()) == 54 || parseInt($(minStat).html()) == 53 || parseInt($(maxStat).html()) == 64){
-				tpeSpentValue = 25 * (parseInt($(stat).html()) - parseInt($(minStat).html()));
-			}
-			else{
-				tpeSpentValue += checkingSpendage(parseInt($(stat).html()), parseInt($(minStat).html()));
-			}
+            tpeSpentValue += checkingSpendage(parseInt($(stat).html()), parseInt($(minStat).html()));
 			
-            if(parseInt($(minStat).html()) == 44 || parseInt($(minStat).html()) == 43 || parseInt($(minStat).html()) == 51 || parseInt($(minStat).html()) == 54 || parseInt($(minStat).html()) == 53 || parseInt($(maxStat).html()) == 64){
-				tpeSpendingValue = 25 * (parseInt($(newStat).val()) - parseInt($(minStat).html()));
-			}
-			else{
-				if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==40){
-                    tpeSpendingValue += -10;
-                }
-                else if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==35){
-                    tpeSpendingValue += -15;
-                }
-				tpeSpendingValue += checkingSpendage(parseInt($(newStat).val()), parseInt($(minStat).html()));
-			}
+			if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==40){
+                tpeSpendingValue += -10;
+            }
+            else if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==35){
+                tpeSpendingValue += -15;
+            }
+			tpeSpendingValue += checkingSpendage(parseInt($(newStat).val()), parseInt($(minStat).html()));
 			
             totalTPE += tpeSpentValue;
             blahUsed += tpeSpendingValue;
@@ -208,9 +198,10 @@ function tpeSpent90to115(currentValue, minValue){
 }
 
 function checkingSpendage(checkValue, minValue){
-	returnSpendage = 0;
-	
-	if(minValue <= 40){
+	if(minValue == 44 || minValue == 43 || minValue == 51 || minValue == 45 || minValue == 53 || minValue == 64){
+		returnSpendage = 25 * (checkValue - minValue);
+	}
+	else if(minValue <= 40){
 		if(checkValue <= 40){
 			returnSpendage = tpeSpent1to40(checkValue, minValue);
 		}
