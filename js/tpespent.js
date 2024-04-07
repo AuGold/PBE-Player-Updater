@@ -40,10 +40,14 @@ function updateTPESpent(){
         var newStat = "#newStat" + i;
         var tpeSpent = "#tpeSpent" + i;
 		if($(stat).html().length<=3){
-            tpeSpentValue += checkingSpendage(parseInt($(stat).html()), parseInt($(minStat).html()));
+            if($(stat).html() == 0){
+				tpeSpentValue = 0;
+			}
+			else{
+				tpeSpentValue += checkingSpendage(parseInt($(stat).html()), parseInt($(minStat).html()));
+			}
 			
 			if($(stat).html() == 0 && parseInt($(newStat).val()) > 0){
-				tpeSpentValue = 0;
 				if(parseInt($(minStat).html())<=40){
 					tpeSpendingValue = 50;
 				}
