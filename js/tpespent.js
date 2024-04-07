@@ -300,7 +300,7 @@ function tpeSpent1to40(currentValue, minValue){
 
 function tpeSpent40to50(currentValue, minValue){
 	if(minValue <= 40){
-		returnspent = tpeSpent1to40(40, minValue);
+		returnSpent = tpeSpent1to40(40, minValue);
 		returnSpent += update40to50 * (currentValue - 40);
 	}
 	else{
