@@ -50,99 +50,54 @@ function updateTPESpent(){
                     tpeSpentValue += tpeSpent40to50(parseInt($(stat).html()), parseInt($(minStat).html()));
                 }
                 if(parseInt($(stat).html())<=60 && parseInt($(stat).html())>50){
-                    tpeSpentValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpentValue += update40to50 * (50 - 40);
-                    tpeSpentValue += update50to60 * (parseInt($(stat).html()) - 50);
+                    tpeSpentValue += tpeSpent50to60(parseInt($(stat).html()), parseInt($(minStat).html()));
                 }
                 if(parseInt($(stat).html())<=70 && parseInt($(stat).html())>60){
-                    tpeSpentValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpentValue += update40to50 * (50 - 40);
-                    tpeSpentValue += update50to60 * (60 - 50);
-                    tpeSpentValue += update60to70 * (parseInt($(stat).html()) - 60);
+                    tpeSpentValue += tpeSpent60to70(parseInt($(stat).html()), parseInt($(minStat).html()));
                 }
                 if(parseInt($(stat).html())<=80 && parseInt($(stat).html())>70){
-                    tpeSpentValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpentValue += update40to50 * (50 - 40);
-                    tpeSpentValue += update50to60 * (60 - 50);
-                    tpeSpentValue += update60to70 * (70 - 60);
-                    tpeSpentValue += update70to80 * (parseInt($(stat).html()) - 70);
+                    tpeSpentValue += tpeSpent70to80(parseInt($(stat).html()), parseInt($(minStat).html()));
                 }
                 if(parseInt($(stat).html())<=90 && parseInt($(stat).html())>80){
-                    tpeSpentValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpentValue += update40to50 * (50 - 40);
-                    tpeSpentValue += update50to60 * (60 - 50);
-                    tpeSpentValue += update60to70 * (70 - 60);
-                    tpeSpentValue += update70to80 * (80 - 70);
-                    tpeSpentValue += update80to90 * (parseInt($(stat).html()) - 80);
+                    tpeSpentValue += tpeSpent80to90(parseInt($(stat).html()), parseInt($(minStat).html()));
                 }
                 if(parseInt($(stat).html())<=115 && parseInt($(stat).html())>90){
-                    tpeSpentValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpentValue += update40to50 * (50 - 40);
-                    tpeSpentValue += update50to60 * (60 - 50);
-                    tpeSpentValue += update60to70 * (70 - 60);
-                    tpeSpentValue += update70to80 * (80 - 70);
-                    tpeSpentValue += update80to90 * (90 - 80);
-                    tpeSpentValue += update90to115 * (parseInt($(stat).html()) - 90);
+                    tpeSpentValue += tpeSpent90to115(parseInt($(stat).html()), parseInt($(minStat).html()));
                 }
             }else if(parseInt($(minStat).html())<=50 && parseInt($(minStat).html())>40){
                 if(parseInt($(stat).html())<=50 && parseInt($(stat).html())>40){
-                    tpeSpentValue = update40to50 * (parseInt($(stat).html()) - parseInt($(minStat).html()));
+                    tpeSpentValue += tpeSpent40to50(parseInt($(stat).html()), parseInt($(minStat).html()));
                 }
                 if(parseInt($(stat).html())<=60 && parseInt($(stat).html())>50){
-                    tpeSpentValue = update40to50 * (50 - parseInt($(minStat).html()));
-                    tpeSpentValue += update50to60 * (parseInt($(stat).html()) - 50);
+                    tpeSpentValue += tpeSpent50to60(parseInt($(stat).html()), parseInt($(minStat).html()));
                 }
                 if(parseInt($(stat).html())<=70 && parseInt($(stat).html())>60){
-                    tpeSpentValue = update40to50 * (50 - parseInt($(minStat).html()));
-                    tpeSpentValue += update50to60 * (60 - 50);
-                    tpeSpentValue += update60to70 * (parseInt($(stat).html()) - 60);
+                    tpeSpentValue += tpeSpent60to70(parseInt($(stat).html()), parseInt($(minStat).html()));
                 }
                 if(parseInt($(stat).html())<=80 && parseInt($(stat).html())>70){
-                    tpeSpentValue = update40to50 * (50 - parseInt($(minStat).html()));
-                    tpeSpentValue += update50to60 * (60 - 50);
-                    tpeSpentValue += update60to70 * (70 - 60);
-                    tpeSpentValue += update70to80 * (parseInt($(stat).html()) - 70);
+                    tpeSpentValue += tpeSpent70to80(parseInt($(stat).html()), parseInt($(minStat).html()));
                 }
                 if(parseInt($(stat).html())<=90 && parseInt($(stat).html())>80){
-                    tpeSpentValue = update40to50 * (50 - parseInt($(minStat).html()));
-                    tpeSpentValue += update50to60 * (60 - 50);
-                    tpeSpentValue += update60to70 * (70 - 60);
-                    tpeSpentValue += update70to80 * (80 - 70);
-                    tpeSpentValue += update80to90 * (parseInt($(stat).html()) - 80);
+                    tpeSpentValue += tpeSpent80to90(parseInt($(stat).html()), parseInt($(minStat).html()));
                 }
                 if(parseInt($(stat).html())<=115 && parseInt($(stat).html())>90){
-                    tpeSpentValue = update40to50 * (50 - parseInt($(minStat).html()));
-                    tpeSpentValue += update50to60 * (60 - 50);
-                    tpeSpentValue += update60to70 * (70 - 60);
-                    tpeSpentValue += update70to80 * (80 - 70);
-                    tpeSpentValue += update80to90 * (90 - 80);
-                    tpeSpentValue += update90to115 * (parseInt($(stat).html()) - 90);
+                    tpeSpentValue += tpeSpent90to115(parseInt($(stat).html()), parseInt($(minStat).html()));
                 }
             }else if(parseInt($(minStat).html())<=60 && parseInt($(minStat).html())>50){
                 if(parseInt($(stat).html())<=60 && parseInt($(stat).html())>50){
-                    tpeSpentValue += update50to60 * (parseInt($(stat).html()) - parseInt($(minStat).html()));
+                    tpeSpentValue += tpeSpent50to60(parseInt($(stat).html()), parseInt($(minStat).html()));
                 }
                 if(parseInt($(stat).html())<=70 && parseInt($(stat).html())>60){
-                    tpeSpentValue += update50to60 * (60 - parseInt($(minStat).html()));
-                    tpeSpentValue += update60to70 * (parseInt($(stat).html()) - 60);
+                    tpeSpentValue += tpeSpent60to70(parseInt($(stat).html()), parseInt($(minStat).html()));
                 }
                 if(parseInt($(stat).html())<=80 && parseInt($(stat).html())>70){
-                    tpeSpentValue += update50to60 * (60 - parseInt($(minStat).html()));
-                    tpeSpentValue += update60to70 * (70 - 60);
-                    tpeSpentValue += update70to80 * (parseInt($(stat).html()) - 70);
+                    tpeSpentValue += tpeSpent70to80(parseInt($(stat).html()), parseInt($(minStat).html()));
                 }
                 if(parseInt($(stat).html())<=90 && parseInt($(stat).html())>80){
-                    tpeSpentValue += update50to60 * (60 - parseInt($(minStat).html()));
-                    tpeSpentValue += update60to70 * (70 - 60);
-                    tpeSpentValue += update70to80 * (80 - 70);
-                    tpeSpentValue += update80to90 * (parseInt($(stat).html()) - 80);
+                    tpeSpentValue += tpeSpent80to90(parseInt($(stat).html()), parseInt($(minStat).html()));
                 }
                 if(parseInt($(stat).html())<=115 && parseInt($(stat).html())>90){
-                    tpeSpentValue += update50to60 * (60 - parseInt($(minStat).html()));
-                    tpeSpentValue += update60to70 * (70 - 60);
-                    tpeSpentValue += update70to80 * (80 - 70);
-                    tpeSpentValue += update80to90 * (90 - 80);
-                    tpeSpentValue += update90to115 * (parseInt($(stat).html()) - 90);
+                    tpeSpentValue += tpeSpent90to115(parseInt($(stat).html()), parseInt($(minStat).html()));
                 }
             }
             if(parseInt($(minStat).html()) == 44 || parseInt($(minStat).html()) == 43 || parseInt($(minStat).html()) == 51 || parseInt($(minStat).html()) == 54 || parseInt($(minStat).html()) == 53 || parseInt($(maxStat).html()) == 64){
@@ -155,112 +110,66 @@ function updateTPESpent(){
                     else if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==35){
                         tpeSpendingValue += -15;
                     }
-                    tpeSpendingValue += update1to40 * (parseInt($(newStat).val()) - parseInt($(minStat).html()));
+                    tpeSpendingValue += tpeSpent1to40(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=50 && parseInt($(newStat).val())>40){
-                    tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update40to50 * (parseInt($(newStat).val()) - 40);
+                    tpeSpendingValue += tpeSpent40to50(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=60 && parseInt($(newStat).val())>50){
-					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update40to50 * (50 - 40);
-                    tpeSpendingValue += update50to60 * (parseInt($(newStat).val()) - 50);
+					tpeSpendingValue += tpeSpent50to60(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=70 && parseInt($(newStat).val())>60){
-                    tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update40to50 * (50 - 40);
-                    tpeSpendingValue += update50to60 * (60 - 50);
-                    tpeSpendingValue += update60to70 * (parseInt($(newStat).val()) - 60);
+                    tpeSpendingValue += tpeSpent60to70(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=80 && parseInt($(newStat).val())>70){
-                    tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update40to50 * (50 - 40);
-                    tpeSpendingValue += update50to60 * (60 - 50);
-                    tpeSpendingValue += update60to70 * (70 - 60);
-                    tpeSpendingValue += update70to80 * (parseInt($(newStat).val()) - 70);
+                    tpeSpendingValue += tpeSpent70to80(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=90 && parseInt($(newStat).val())>80){
-                    tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update40to50 * (50 - 40);
-                    tpeSpendingValue += update50to60 * (60 - 50);
-                    tpeSpendingValue += update60to70 * (70 - 60);
-                    tpeSpendingValue += update70to80 * (80 - 70);
-                    tpeSpendingValue += update80to90 * (parseInt($(newStat).val()) - 80);
+                    tpeSpendingValue += tpeSpent80to90(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=115 && parseInt($(newStat).val())>90){
-                    tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update40to50 * (50 - 40);
-                    tpeSpendingValue += update50to60 * (60 - 50);
-                    tpeSpendingValue += update60to70 * (70 - 60);
-                    tpeSpendingValue += update70to80 * (80 - 70);
-                    tpeSpendingValue += update80to90 * (90 - 80);
-                    tpeSpendingValue += update90to115 * (parseInt($(newStat).val()) - 90);
+                    tpeSpendingValue += tpeSpent90to115(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
             }else if(parseInt($(minStat).html())<=50 && parseInt($(minStat).html())>40){
                 if(parseInt($(newStat).val())===0){
                     tpeSpendingValue += -50;
                 }
                 if(parseInt($(newStat).val())<=50 && parseInt($(newStat).val())>40){
-                    tpeSpendingValue += update40to50 * (parseInt($(newStat).val()) - parseInt($(minStat).html()));
+                    tpeSpendingValue += tpeSpent40to50(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=60 && parseInt($(newStat).val())>50){
-                    tpeSpendingValue += update40to50 * (50 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update50to60 * (parseInt($(newStat).val()) - 50);
+                    tpeSpendingValue += tpeSpent50to60(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=70 && parseInt($(newStat).val())>60){
-                    tpeSpendingValue += update40to50 * (50 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update50to60 * (60 - 50);
-                    tpeSpendingValue += update60to70 * (parseInt($(newStat).val()) - 60);
+                    tpeSpendingValue += tpeSpent60to70(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=80 && parseInt($(newStat).val())>70){
-                    tpeSpendingValue += update40to50 * (50 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update50to60 * (60 - 50);
-                    tpeSpendingValue += update60to70 * (70 - 60);
-                    tpeSpendingValue += update70to80 * (parseInt($(newStat).val()) - 70);
+                    tpeSpendingValue += tpeSpent70to80(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=90 && parseInt($(newStat).val())>80){
-                    tpeSpendingValue += update40to50 * (50 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update50to60 * (60 - 50);
-                    tpeSpendingValue += update60to70 * (70 - 60);
-                    tpeSpendingValue += update70to80 * (80 - 70);
-                    tpeSpendingValue += update80to90 * (parseInt($(newStat).val()) - 80);
+                    tpeSpendingValue += tpeSpent80to90(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=115 && parseInt($(newStat).val())>90){
-                    tpeSpendingValue += update40to50 * (50 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update50to60 * (60 - 50);
-                    tpeSpendingValue += update60to70 * (70 - 60);
-                    tpeSpendingValue += update70to80 * (80 - 70);
-                    tpeSpendingValue += update80to90 * (90 - 80);
-                    tpeSpendingValue += update90to115 * (parseInt($(newStat).val()) - 90);
+                    tpeSpendingValue += tpeSpent90t0115(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
             }else if(parseInt($(minStat).html())<=60 && parseInt($(minStat).html())>50){
                 if(parseInt($(newStat).val())===0){
                     tpeSpendingValue += -50;
                 }
                 if(parseInt($(newStat).val())<=60 && parseInt($(newStat).val())>50){
-                    tpeSpendingValue += update50to60 * (parseInt($(newStat).val()) - parseInt($(minStat).html()));
+                    tpeSpendingValue += tpeSpent50to60(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=70 && parseInt($(newStat).val())>60){
-                    tpeSpendingValue += update50to60 * (60 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update60to70 * (parseInt($(newStat).val()) - 60);
+                    tpeSpendingValue += tpeSpent60to70(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=80 && parseInt($(newStat).val())>70){
-                    tpeSpendingValue += update50to60 * (60 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update60to70 * (70 - 60);
-                    tpeSpendingValue += update70to80 * (parseInt($(newStat).val()) - 70);
+                    tpeSpendingValue += tpeSpent70to80(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=90 && parseInt($(newStat).val())>80){
-                    tpeSpendingValue += update50to60 * (60 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update60to70 * (70 - 60);
-                    tpeSpendingValue += update70to80 * (80 - 70);
-                    tpeSpendingValue += update80to90 * (parseInt($(newStat).val()) - 80);
+                    tpeSpendingValue += tpeSpent80to90(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=115 && parseInt($(newStat).val())>90){
-                    tpeSpendingValue += update50to60 * (60 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update60to70 * (70 - 60);
-                    tpeSpendingValue += update70to80 * (80 - 70);
-                    tpeSpendingValue += update80to90 * (90 - 80);
-                    tpeSpendingValue += update90to115 * (parseInt($(newStat).val()) - 90);
+                    tpeSpendingValue += tpeSpent90to115(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
             }
             totalTPE += tpeSpentValue;
@@ -314,99 +223,57 @@ function updateTPESpent(){
             if(parseInt($(minStat).html())<=40){
 				if(parseInt($(newStat).val()) >= parseInt($(minStat).html())){
 					tpeSpendingValue = 50;
-					tpeSpendingValue += update1to40 * (parseInt($(newStat).val()) - parseInt($(minStat).html()));
+					tpeSpendingValue += tpeSpent1to40(parseInt($(newStat).val()) - parseInt($(minStat).html()));
 				}
                 if(parseInt($(newStat).val())<=50 && parseInt($(newStat).val())>40){
 					tpeSpendingValue = 50
-					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update40to50 * (parseInt($(newStat).val()) - 40);
+					tpeSpendingValue += tpeSpent40to50(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=60 && parseInt($(newStat).val())>50){
                     tpeSpendingValue = 50
-					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update40to50 * (50 - 40);
-                    tpeSpendingValue += update50to60 * (parseInt($(newStat).val()) - 50);
+					tpeSpendingValue += tpeSpent50to60(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=70 && parseInt($(newStat).val())>60){
                     tpeSpendingValue = 50
-					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update40to50 * (50 - 40);
-                    tpeSpendingValue += update50to60 * (60 - 50);
-                    tpeSpendingValue += update60to70 * (parseInt($(newStat).val()) - 60);
+					tpeSpendingValue += tpeSpent60to70(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=80 && parseInt($(newStat).val())>70){
                     tpeSpendingValue = 50
-					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update40to50 * (50 - 40);
-                    tpeSpendingValue += update50to60 * (60 - 50);
-                    tpeSpendingValue += update60to70 * (70 - 60);
-                    tpeSpendingValue += update70to80 * (parseInt($(newStat).val()) - 70);
+					tpeSpendingValue += tpeSpent70to80(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=90 && parseInt($(newStat).val())>80){
                     tpeSpendingValue = 50
-					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update40to50 * (50 - 40);
-                    tpeSpendingValue += update50to60 * (60 - 50);
-                    tpeSpendingValue += update60to70 * (70 - 60);
-                    tpeSpendingValue += update70to80 * (80 - 70);
-                    tpeSpendingValue += update80to90 * (parseInt($(newStat).val()) - 80);
+					tpeSpendingValue += tpeSpent80to90(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=115 && parseInt($(newStat).val())>90){
                     tpeSpendingValue = 50
-					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update40to50 * (50 - 40);
-                    tpeSpendingValue += update50to60 * (60 - 50);
-                    tpeSpendingValue += update60to70 * (70 - 60);
-                    tpeSpendingValue += update70to80 * (80 - 70);
-                    tpeSpendingValue += update80to90 * (90 - 80);
-                    tpeSpendingValue += update90to115 * (parseInt($(newStat).val()) - 90);
+					tpeSpendingValue += tpeSpent90to115(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
             }
 			if(parseInt($(minStat).html())==45){
 				if(parseInt($(newStat).val())<=50 && parseInt($(newStat).val())>40){
 					tpeSpendingValue = 45
-					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update40to50 * (parseInt($(newStat).val()) - 40);
+					tpeSpendingValue += tpeSpent40to50(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=60 && parseInt($(newStat).val())>50){
                     tpeSpendingValue = 45
-					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update40to50 * (50 - 40);
-                    tpeSpendingValue += update50to60 * (parseInt($(newStat).val()) - 50);
+					tpeSpendingValue += tpeSpent50to60(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=70 && parseInt($(newStat).val())>60){
                     tpeSpendingValue = 45
-					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update40to50 * (50 - 40);
-                    tpeSpendingValue += update50to60 * (60 - 50);
-                    tpeSpendingValue += update60to70 * (parseInt($(newStat).val()) - 60);
+					tpeSpendingValue += tpeSpent60to70(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=80 && parseInt($(newStat).val())>70){
                     tpeSpendingValue = 45
-					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update40to50 * (50 - 40);
-                    tpeSpendingValue += update50to60 * (60 - 50);
-                    tpeSpendingValue += update60to70 * (70 - 60);
-                    tpeSpendingValue += update70to80 * (parseInt($(newStat).val()) - 70);
+					tpeSpendingValue += tpeSpent70to80(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=90 && parseInt($(newStat).val())>80){
                     tpeSpendingValue = 45
-					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update40to50 * (50 - 40);
-                    tpeSpendingValue += update50to60 * (60 - 50);
-                    tpeSpendingValue += update60to70 * (70 - 60);
-                    tpeSpendingValue += update70to80 * (80 - 70);
-                    tpeSpendingValue += update80to90 * (parseInt($(newStat).val()) - 80);
+					tpeSpendingValue += tpeSpent80to90(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
                 if(parseInt($(newStat).val())<=115 && parseInt($(newStat).val())>90){
                     tpeSpendingValue = 45
-					tpeSpendingValue += update1to40 * (40 - parseInt($(minStat).html()));
-                    tpeSpendingValue += update40to50 * (50 - 40);
-                    tpeSpendingValue += update50to60 * (60 - 50);
-                    tpeSpendingValue += update60to70 * (70 - 60);
-                    tpeSpendingValue += update70to80 * (80 - 70);
-                    tpeSpendingValue += update80to90 * (90 - 80);
-                    tpeSpendingValue += update90to115 * (parseInt($(newStat).val()) - 90);
+					tpeSpendingValue += tpeSpent90to115(parseInt($(newStat).val()) - parseInt($(minStat).html()));
                 }
 			}
             totalTPE += tpeSpentValue;
@@ -443,17 +310,56 @@ function tpeSpent40to50(currentValue, minValue){
 }
 
 function tpeSpent50to60(currentValue, minValue){
-	if(minValue <= 40){
-		//returnspent = tpeSpent1to40(40, minValue);
-		returnSpent = tpeSpent40to50(50, minValue);
-		returnSpent += update50to60 * (currentValue - 50);
-	}
-	else if(minValue <= 50){
+	if(minValue <= 50){
 		returnSpent = tpeSpent40to50(50, minValue);
 		returnSpent += update50to60 * (currentValue - 50);
 	}
 	else{
 		returnSpent = update50to60 * (currentValue - minValue);
+	}
+	return returnspent;
+}
+
+function tpeSpent60to70(currentValue, minValue){
+	if(minValue <= 60){
+		returnSpent = tpeSpent50to60(60, minValue);
+		returnSpent += update60to70 * (currentValue - 60);
+	}
+	else{
+		returnSpent = update60to70 * (currentValue - minValue);
+	}
+	return returnspent;
+}
+
+function tpeSpent70to80(currentValue, minValue){
+	if(minValue <= 70){
+		returnSpent = tpeSpent60to70(70, minValue);
+		returnSpent += update70to80 * (currentValue - 70);
+	}
+	else{
+		returnSpent = update70to80 * (currentValue - minValue);
+	}
+	return returnspent;
+}
+
+function tpeSpent80to90(currentValue, minValue){
+	if(minValue <= 80){
+		returnSpent = tpeSpent70to80(80, minValue);
+		returnSpent += update80to90 * (currentValue - 80);
+	}
+	else{
+		returnSpent = update80to90 * (currentValue - minValue);
+	}
+	return returnspent;
+}
+
+function tpeSpent90to115(currentValue, minValue){
+	if(minValue <= 90){
+		returnSpent = tpeSpent80to90(90, minValue);
+		returnSpent += update90to115 * (currentValue - 90);
+	}
+	else{
+		returnSpent = update90to115 * (currentValue - minValue);
 	}
 	return returnspent;
 }
