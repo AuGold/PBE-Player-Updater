@@ -47,7 +47,6 @@ function updateTPESpent(){
 				tpeSpentValue += checkingSpendage(parseInt($(stat).html()), parseInt($(minStat).html()));
 			}
 			
-			
             if(parseInt($(minStat).html()) == 44 || parseInt($(minStat).html()) == 43 || parseInt($(minStat).html()) == 51 || parseInt($(minStat).html()) == 54 || parseInt($(minStat).html()) == 53 || parseInt($(maxStat).html()) == 64){
 				tpeSpendingValue = 25 * (parseInt($(newStat).val()) - parseInt($(minStat).html()));
 			}
@@ -104,67 +103,22 @@ function updateTPESpent(){
             for(var g = minPitchLocation;g<newPitchLocation;g++){
                 tpeSpendingValue += pitchingCost[g];
             }
+			
             totalTPE += tpeSpentValue;
             blahUsed += tpeSpendingValue;
             newtpeSpent = tpeSpendingValue - tpeSpentValue;
+			
 		}else if($(stat).html() == 0){
 			tpeSpentValue = 0;
             if(parseInt($(minStat).html())<=40){
-				if(parseInt($(newStat).val()) >= parseInt($(minStat).html())){
-					tpeSpendingValue = 50;
-					tpeSpendingValue += tpeSpent1to40(parseInt($(newStat).val()), parseInt($(minStat).html()));
-				}
-                if(parseInt($(newStat).val())<=50 && parseInt($(newStat).val())>40){
-					tpeSpendingValue = 50
-					tpeSpendingValue += tpeSpent40to50(parseInt($(newStat).val()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(newStat).val())<=60 && parseInt($(newStat).val())>50){
-                    tpeSpendingValue = 50
-					tpeSpendingValue += tpeSpent50to60(parseInt($(newStat).val()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(newStat).val())<=70 && parseInt($(newStat).val())>60){
-                    tpeSpendingValue = 50
-					tpeSpendingValue += tpeSpent60to70(parseInt($(newStat).val()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(newStat).val())<=80 && parseInt($(newStat).val())>70){
-                    tpeSpendingValue = 50
-					tpeSpendingValue += tpeSpent70to80(parseInt($(newStat).val()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(newStat).val())<=90 && parseInt($(newStat).val())>80){
-                    tpeSpendingValue = 50
-					tpeSpendingValue += tpeSpent80to90(parseInt($(newStat).val()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(newStat).val())<=115 && parseInt($(newStat).val())>90){
-                    tpeSpendingValue = 50
-					tpeSpendingValue += tpeSpent90to115(parseInt($(newStat).val()), parseInt($(minStat).html()));
-                }
+				tpeSpendingValue = 50;
+				tpeSpendingValue += checkingSpendage(parseInt($(newStat).val()), parseInt($(minStat).html()));
             }
 			if(parseInt($(minStat).html())==45){
-				if(parseInt($(newStat).val())<=50 && parseInt($(newStat).val())>40){
-					tpeSpendingValue = 45
-					tpeSpendingValue += tpeSpent40to50(parseInt($(newStat).val()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(newStat).val())<=60 && parseInt($(newStat).val())>50){
-                    tpeSpendingValue = 45
-					tpeSpendingValue += tpeSpent50to60(parseInt($(newStat).val()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(newStat).val())<=70 && parseInt($(newStat).val())>60){
-                    tpeSpendingValue = 45
-					tpeSpendingValue += tpeSpent60to70(parseInt($(newStat).val()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(newStat).val())<=80 && parseInt($(newStat).val())>70){
-                    tpeSpendingValue = 45
-					tpeSpendingValue += tpeSpent70to80(parseInt($(newStat).val()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(newStat).val())<=90 && parseInt($(newStat).val())>80){
-                    tpeSpendingValue = 45
-					tpeSpendingValue += tpeSpent80to90(parseInt($(newStat).val()), parseInt($(minStat).html()));
-                }
-                if(parseInt($(newStat).val())<=115 && parseInt($(newStat).val())>90){
-                    tpeSpendingValue = 45
-					tpeSpendingValue += tpeSpent90to115(parseInt($(newStat).val()), parseInt($(minStat).html()));
-                }
+				tpeSpendingValue = 45;
+				tpeSpendingValue += checkingSpendage(parseInt($(newStat).val()), parseInt($(minStat).html()));
 			}
+			
             totalTPE += tpeSpentValue;
             blahUsed += tpeSpendingValue;
             newtpeSpent = tpeSpendingValue - tpeSpentValue;
