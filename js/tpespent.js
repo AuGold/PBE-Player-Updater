@@ -58,9 +58,7 @@ function updateTPESpent(){
                 else if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==35){
                     tpeSpendingValue += -15;
                 }
-				else{
-					tpeSpendingValue += checkingSpendage(parseInt($(newStat).val()), parseInt($(minStat).html()));
-				}
+				tpeSpendingValue += checkingSpendage(parseInt($(newStat).val()), parseInt($(minStat).html()));
 			}
 			
             totalTPE += tpeSpentValue;
