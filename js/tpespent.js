@@ -43,14 +43,14 @@ function updateTPESpent(){
             if($(stat).html() != 0){
 				tpeSpentValue += checkingSpendage(parseInt($(stat).html()), parseInt($(minStat).html()));
 				tpeSpendingValue += checkingSpendage(parseInt($(newStat).val()), parseInt($(minStat).html()));
+				
+				if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==40){
+					tpeSpendingValue += -10;
+				}
+				else if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==35){
+					tpeSpendingValue += -15;
+				}
 			}
-			
-			if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==40){
-                tpeSpendingValue += -10;
-            }
-            else if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==35){
-                tpeSpendingValue += -15;
-            }
 			
 			if($(stat).html() == 0 && parseInt($(newStat).val()) > 0){
 				tpeSpentValue = 0;
