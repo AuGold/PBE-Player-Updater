@@ -19,6 +19,7 @@ var pitchingCost = [30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30];
 //Note: For some reason going down in velocity levels doesn't work *sometimes*? I'll look into that eventually
 function updateTPESpent(){
     
+	//establish the variables used
     var tpeSpentValue = 0;
     var tpeSpendingValue = 0;
     var newtpeSpent = 0;
@@ -26,19 +27,32 @@ function updateTPESpent(){
     var tpeSpentTotal = 0;
     var totalTPE = 0 + banked + tpeEarned;
     var blahUsed = 0;
-    
-    
     var tableRows = document.getElementById("countTable").rows.length;
     
+	//Establish the for loop for the entire table
     for(var i=1;i<tableRows;i++){
+		
+		//reset variables back to 0 upon loop
 		tpeSpentValue = 0;
         tpeSpendingValue = 0;
 		newtpeSpent = 0;
+		
+		//establish loop specific variables
         var minStat = "#minStat" + i;
         var stat = "#stat" + i;
         var maxStat = "#maxStat" + i;
         var newStat = "#newStat" + i;
         var tpeSpent = "#tpeSpent" + i;
+		
+		//If the stat we are looking at is less than 4 characters long, we enter this
+		//Here we check for stats not equaling to 0. We send the information to checkingSpendage
+		//
+		//If the new stat is being reduced from >0 to ==0, then we need to account for value offset equaling up to 50
+		//
+		//If the stat started at 0 and is now greater than 0, we need to account for value offset equaling up to 50
+		//
+		//If the stat we are looking at is 4 characters or more, we enter the second if statement
+		//Here find the offset of the current level to the new level
 		if($(stat).html().length<=3){
             if($(stat).html() != 0){
 				tpeSpentValue += checkingSpendage(parseInt($(stat).html()), parseInt($(minStat).html()));
@@ -103,15 +117,19 @@ function updateTPESpent(){
 			
 		}
 		
+		//Add all our values above to here, used to finalize the arithmatic
 		totalTPE += tpeSpentValue;
         blahUsed += tpeSpendingValue;
         newtpeSpent = tpeSpendingValue - tpeSpentValue;
 		
+		//Set the values in HTML
         $(tpeSpent).html(newtpeSpent);
         tpeSpentTotal += newtpeSpent;
 		tpeSpendingValue = 0;
 		
     }
+	
+	//Set all the values in the HTML to the correct numbers after all the calculations are completed.
     var totalPlusPitches = totalTPE + window.pitchesBought;
     var usedPlusPitches = blahUsed + window.pitchesBought;
     $("#totalTPE").html("Total TPE: " + totalPlusPitches);
@@ -120,6 +138,9 @@ function updateTPESpent(){
     $("#tpeToUse").html("TPE to Spend: " + newTPEtoSpend);
 }
 
+//Functions tpeSpent1to40 through tpeSpent90t0115 all do basic subtraction
+//However, the step above calls the step below when required.
+//This can continue from start to finish, allowing for all the arithmatic to be completed at once.
 function tpeSpent1to40(currentValue, minValue){
 	returnSpent = update1to40 * (currentValue - minValue);
 	return returnSpent;
@@ -191,7 +212,10 @@ function tpeSpent90to115(currentValue, minValue){
 	return returnSpent;
 }
 
+//This function simply calls the tpeSpent functions based on the values we are needing to check against. 
 function checkingSpendage(checkValue, minValue){
+	
+	//This if section is the only major difference. This is used purely for GB% whose cost is 25 per stat. 
 	if(minValue == 44 || minValue == 43 || minValue == 51 || minValue == 45 || minValue == 53 || minValue == 64){
 		returnSpendage = 25 * (checkValue - minValue);
 	}
