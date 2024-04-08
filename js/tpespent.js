@@ -42,13 +42,13 @@ function updateTPESpent(){
 		if($(stat).html().length<=3){
             if($(stat).html() != 0){
 				tpeSpentValue += checkingSpendage(parseInt($(stat).html()), parseInt($(minStat).html()));
+				console.log("Calculated " + $(stat).html() + " cost " + tpeSpentValue);
 			}
 			
 			if($(stat).html() == 0 && parseInt($(newStat).val()) > 0){
 				tpeSpentValue = 0;
 				if(parseInt($(minStat).html())<=40){
 					tpeSpendingValue = 50;
-					console.log("Entering here for some reason.")
 				}
 				if(parseInt($(minStat).html())==45){
 					tpeSpendingValue = 45;
