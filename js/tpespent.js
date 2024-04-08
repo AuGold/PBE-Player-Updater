@@ -42,7 +42,6 @@ function updateTPESpent(){
 		if($(stat).html().length<=3){
             if($(stat).html() != 0){
 				tpeSpentValue += checkingSpendage(parseInt($(stat).html()), parseInt($(minStat).html()));
-				console.log("Calculated " + $(stat).html() + " cost " + tpeSpentValue);
 			}
 			
 			if($(stat).html() == 0 && parseInt($(newStat).val()) > 0){
@@ -56,9 +55,11 @@ function updateTPESpent(){
 			}
 			else if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==40){
                 tpeSpendingValue += -10;
+				console.log("Calculated " + $(stat).html() + " cost " + tpeSpentValue);
             }
             else if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==35){
                 tpeSpendingValue += -15;
+				console.log("Calculated " + $(stat).html() + " cost " + tpeSpentValue);
             }
 			tpeSpendingValue += checkingSpendage(parseInt($(newStat).val()), parseInt($(minStat).html()));
 			
