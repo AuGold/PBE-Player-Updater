@@ -42,7 +42,15 @@ function updateTPESpent(){
 		if($(stat).html().length<=3){
             if($(stat).html() != 0){
 				tpeSpentValue += checkingSpendage(parseInt($(stat).html()), parseInt($(minStat).html()));
+				tpeSpendingValue += checkingSpendage(parseInt($(newStat).val()), parseInt($(minStat).html()));
 			}
+			
+			if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==40){
+                tpeSpendingValue += -10;
+            }
+            else if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==35){
+                tpeSpendingValue += -15;
+            }
 			
 			if($(stat).html() == 0 && parseInt($(newStat).val()) > 0){
 				tpeSpentValue = 0;
@@ -53,15 +61,6 @@ function updateTPESpent(){
 					tpeSpendingValue = 45;
 				}
 			}
-			else if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==40){
-                tpeSpendingValue += -10;
-				console.log("Calculated " + $(stat).html() + " cost " + tpeSpentValue);
-            }
-            else if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==35){
-                tpeSpendingValue += -15;
-				console.log("Calculated " + $(stat).html() + " cost " + tpeSpentValue);
-            }
-			tpeSpendingValue += checkingSpendage(parseInt($(newStat).val()), parseInt($(minStat).html()));
 			
             totalTPE += tpeSpentValue;
             blahUsed += tpeSpendingValue;
