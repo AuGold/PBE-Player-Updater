@@ -61,11 +61,6 @@ function updateTPESpent(){
 					tpeSpendingValue = 45;
 				}
 			}
-			
-            totalTPE += tpeSpentValue;
-            blahUsed += tpeSpendingValue;
-            newtpeSpent = tpeSpendingValue - tpeSpentValue;
-            
         }else if($(stat).html().length>3){
             tpeSpendingValue = 0;
             var minPitchLocation = 0;
@@ -106,11 +101,11 @@ function updateTPESpent(){
                 tpeSpendingValue += pitchingCost[g];
             }
 			
-            totalTPE += tpeSpentValue;
-            blahUsed += tpeSpendingValue;
-            newtpeSpent = tpeSpendingValue - tpeSpentValue;
-			
 		}
+		
+		totalTPE += tpeSpentValue;
+        blahUsed += tpeSpendingValue;
+        newtpeSpent = tpeSpendingValue - tpeSpentValue;
 		
         $(tpeSpent).html(newtpeSpent);
         tpeSpentTotal += newtpeSpent;
