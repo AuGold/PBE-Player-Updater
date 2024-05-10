@@ -239,7 +239,7 @@ function checkingSpendage(checkValue, minValue){
 			returnSpendage = tpeSpent80to90(checkValue, minValue);
 		}
 		else if(checkValue <= 115 && checkValue > 90){
-			returnSpendage = tpeSpent90t0115(checkValue, minValue);
+			returnSpendage = tpeSpent90to115(checkValue, minValue);
 		}
 	}
 	else if(minValue <= 50 && minValue > 40){
@@ -259,7 +259,7 @@ function checkingSpendage(checkValue, minValue){
 			returnSpendage = tpeSpent80to90(checkValue, minValue);
 		}
 		else if(checkValue <= 115 && checkValue > 90){
-			returnSpendage = tpeSpent90t0115(checkValue, minValue);
+			returnSpendage = tpeSpent90to115(checkValue, minValue);
 		}
 	}
 	else if(minValue <= 60 && minValue > 50){
@@ -276,7 +276,7 @@ function checkingSpendage(checkValue, minValue){
 			returnSpendage = tpeSpent80to90(checkValue, minValue);
 		}
 		else if(checkValue <= 115 && checkValue > 90){
-			returnSpendage = tpeSpent90t0115(checkValue, minValue);
+			returnSpendage = tpeSpent90t0o15(checkValue, minValue);
 		}
 	}
 	
