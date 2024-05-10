@@ -55,8 +55,8 @@ function updateTPESpent(){
 		//Here find the offset of the current level to the new level
 		if($(stat).html().length<=3){
             if($(stat).html() != 0){
-				tpeSpentValue += checkingSpendage(parseInt($(stat).html()), parseInt($(minStat).html()), parseInt($(maxStat)).html());
-				tpeSpendingValue += checkingSpendage(parseInt($(newStat).val()), parseInt($(minStat).html()), parseInt($(maxStat)).html());
+				tpeSpentValue += checkingSpendage(parseInt($(stat).html()), parseInt($(minStat).html()), parseInt($(maxStat).html()));
+				tpeSpendingValue += checkingSpendage(parseInt($(newStat).val()), parseInt($(minStat).html()), parseInt($(maxStat).html()));
 				
 				if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==40){
 					tpeSpendingValue += -10;
