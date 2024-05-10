@@ -55,8 +55,8 @@ function updateTPESpent(){
 		//Here find the offset of the current level to the new level
 		if($(stat).html().length<=3){
             if($(stat).html() != 0){
-				tpeSpentValue += checkingSpendage(parseInt($(stat).html()), parseInt($(minStat).html()));
-				tpeSpendingValue += checkingSpendage(parseInt($(newStat).val()), parseInt($(minStat).html()));
+				tpeSpentValue += checkingSpendage(parseInt($(stat).html()), parseInt($(minStat).html()), parseInt($(maxStat)));
+				tpeSpendingValue += checkingSpendage(parseInt($(newStat).val()), parseInt($(minStat).html()), parseInt($(maxStat)));
 				
 				if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==40){
 					tpeSpendingValue += -10;
@@ -213,10 +213,10 @@ function tpeSpent90to115(currentValue, minValue){
 }
 
 //This function simply calls the tpeSpent functions based on the values we are needing to check against. 
-function checkingSpendage(checkValue, minValue){
+function checkingSpendage(checkValue, minValue, maxValue){
 	
 	//This if section is the only major difference. This is used purely for GB% whose cost is 25 per stat. 
-	if(minValue == 43 || minValue == 51 || minValue == 54 || minValue == 44 || minValue == 53 || minValue == 55){
+	if(minValue == 43 || minValue == 51 || minValue == 54 || minValue == 44 || minValue == 53 || (minValue == 55 && maxValue == 64)){
 		returnSpendage = 25 * (checkValue - minValue);
 	}
 	else if(minValue <= 40){
