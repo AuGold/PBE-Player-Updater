@@ -72,7 +72,6 @@ function updateTPESpent(){
 					tpeSpendingValue = 50;
 				}
 				if(parseInt($(minStat).html())==45){
-					console.log("This should be 50?")
 					tpeSpendingValue = 50;
 				}
 			}
