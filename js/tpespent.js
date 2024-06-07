@@ -72,7 +72,7 @@ function updateTPESpent(){
 					tpeSpendingValue = 50;
 				}
 				if(parseInt($(minStat).html())==45){
-					tpeSpendingValue = 50;
+					tpeSpendingValue = 45;
 				}
 			}
         }else if($(stat).html().length>3){
