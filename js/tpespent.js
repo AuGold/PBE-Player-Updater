@@ -65,8 +65,7 @@ function updateTPESpent(){
 					tpeSpendingValue += -15;
 				}
 				else if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==45){
-					console.log("Entered here")
-					//tpeSpendingValue += -50;
+					tpeSpendingValue += -5;
 				}
 			}
 			
@@ -247,7 +246,10 @@ function checkingSpendage(checkValue, minValue, maxValue){
 		}
 	}
 	else if(minValue <= 50 && minValue > 40){
-		if(checkValue <= 50 && checkValue > 40){
+		if(checkValue <= 40){
+			returnSpendage = tpeSpent1to40(checkValue, minValue);
+		}
+		else if(checkValue <= 50 && checkValue > 40){
 			returnSpendage = tpeSpent40to50(checkValue, minValue);
 		}
 		else if(checkValue <= 60 && checkValue > 50){
