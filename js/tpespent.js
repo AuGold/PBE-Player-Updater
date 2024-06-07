@@ -66,7 +66,7 @@ function updateTPESpent(){
 				}
 				else if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==45){
 					console.log("Entered here")
-					tpeSpendingValue += -50;
+					//tpeSpendingValue += -50;
 				}
 			}
 			
