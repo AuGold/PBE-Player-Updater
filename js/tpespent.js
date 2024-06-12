@@ -72,10 +72,10 @@ function updateTPESpent(){
 			if($(stat).html() == 0 && parseInt($(newStat).val()) > 0){
 				tpeSpentValue = 0;
 				if(parseInt($(minStat).html())<=40){
-					tpeSpendingValue = 50;
+					tpeSpendingValue += 50;
 				}
 				if(parseInt($(minStat).html())==45){
-					tpeSpendingValue = 50;
+					tpeSpendingValue += 50;
 				}
 			}
         }else if($(stat).html().length>3){
@@ -225,6 +225,7 @@ function checkingSpendage(checkValue, minValue, maxValue){
 	else if(minValue <= 40){
 		if(checkValue <= 40){
 			returnSpendage = tpeSpent1to40(checkValue, minValue);
+			console.log("Checking here");
 		}
 		else if(checkValue <= 50 && checkValue > 40){
 			returnSpendage = tpeSpent40to50(checkValue, minValue);
@@ -248,6 +249,7 @@ function checkingSpendage(checkValue, minValue, maxValue){
 	else if(minValue <= 50 && minValue > 40){
 		if(checkValue <= 40){
 			returnSpendage = tpeSpent1to40(checkValue, minValue);
+			console.log("Checking there");
 		}
 		else if(checkValue <= 50 && checkValue > 40){
 			returnSpendage = tpeSpent40to50(checkValue, minValue);
