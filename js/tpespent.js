@@ -58,7 +58,7 @@ function updateTPESpent(){
 				tpeSpentValue += checkingSpendage(parseInt($(stat).html()), parseInt($(minStat).html()), parseInt($(maxStat).html()));
 				tpeSpendingValue += checkingSpendage(parseInt($(newStat).val()), parseInt($(minStat).html()), parseInt($(maxStat).html()));
 				
-				console.log("tpeSpendingValue for " + stat + " is " + tpeSpendingValue.toString())
+				//console.log("tpeSpendingValue for " + stat + " is " + tpeSpendingValue.toString())
 				
 				if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==40){
 					tpeSpendingValue += -10;
@@ -71,19 +71,21 @@ function updateTPESpent(){
 				}
 			}
 			
-			console.log("tpeSpendingValue for " + stat + " is " + tpeSpendingValue.toString())
+			//console.log("tpeSpendingValue for " + stat + " is " + tpeSpendingValue.toString())
 			
 			if($(stat).html() == 0 && parseInt($(newStat).val()) > 0){
 				tpeSpentValue = 0;
 				if(parseInt($(minStat).html())<=40){
 					tpeSpendingValue += 50;
+					tpeSpendingValue += checkingSpendage(parseInt($(newStat).val()), parseInt($(minStat).html()), parseInt($(maxStat).html()));
 				}
 				if(parseInt($(minStat).html())==45){
 					tpeSpendingValue += 50;
+					tpeSpendingValue += checkingSpendage(parseInt($(newStat).val()), parseInt($(minStat).html()), parseInt($(maxStat).html()));
 				}
 			}
 			
-			console.log("tpeSpendingValue for " + stat + " is " + tpeSpendingValue.toString())
+			//console.log("tpeSpendingValue for " + stat + " is " + tpeSpendingValue.toString())
 			
         }else if($(stat).html().length>3){
             tpeSpendingValue = 0;
