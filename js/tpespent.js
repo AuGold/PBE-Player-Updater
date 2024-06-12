@@ -64,6 +64,9 @@ function updateTPESpent(){
 				else if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==35){
 					tpeSpendingValue += -15;
 				}
+				else if(parseInt($(newStat).val())===0 && parseInt($(minStat).html())==45){
+					tpeSpendingValue += -5;
+				}
 			}
 			
 			if($(stat).html() == 0 && parseInt($(newStat).val()) > 0){
@@ -72,7 +75,7 @@ function updateTPESpent(){
 					tpeSpendingValue = 50;
 				}
 				if(parseInt($(minStat).html())==45){
-					tpeSpendingValue = 45;
+					tpeSpendingValue = 50;
 				}
 			}
         }else if($(stat).html().length>3){
@@ -243,7 +246,10 @@ function checkingSpendage(checkValue, minValue, maxValue){
 		}
 	}
 	else if(minValue <= 50 && minValue > 40){
-		if(checkValue <= 50 && checkValue > 40){
+		if(checkValue <= 40){
+			returnSpendage = tpeSpent1to40(checkValue, minValue);
+		}
+		else if(checkValue <= 50 && checkValue > 40){
 			returnSpendage = tpeSpent40to50(checkValue, minValue);
 		}
 		else if(checkValue <= 60 && checkValue > 50){
