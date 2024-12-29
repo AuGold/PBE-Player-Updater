@@ -49,6 +49,7 @@ Send that information back to pullData.js
         else{
             $start = strpos($data, 'Player Information');
             $length = strpos($data, 'This post has been') - $start;
+            debug_to_console($length)
             $src = substr($data, $start, $length);
             echo $src;
         }
@@ -74,5 +75,13 @@ Send that information back to pullData.js
             $js_code = '<script>' . $js_code . '</script>';
         }
         echo $js_code;
+    }
+
+    function debug_to_console($data) {
+        $output = $data;
+        if (is_array($output))
+            $output = implode(',', $output);
+
+        echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
     }
 ?>
