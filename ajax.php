@@ -37,6 +37,8 @@ Send that information back to pullData.js
         $err = curl_errno($curl_session);
         $errmsg = curl_error($curl_session);
         curl_close($curl_session);
+        
+        console_log($data)
         if (empty($data)){
             echo $errmsg;
         }
@@ -53,7 +55,6 @@ Send that information back to pullData.js
                 $length = strpos($data, 'Reply') - $start;
             }
             $src = substr($data, $start, $length);
-            console_log($data)
             echo $src;
         }
     }
