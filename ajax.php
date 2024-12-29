@@ -49,7 +49,7 @@ Send that information back to pullData.js
         else{
             $start = strpos($data, 'Player Information');
             $length = strpos($data, 'This post has been') - $start;
-            debug_to_console($length)
+            debug_to_console($start)
             $src = substr($data, $start, $length);
             echo $src;
         }
