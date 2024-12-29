@@ -159,6 +159,9 @@ function getStatsBatter(postGET){
 	eyeVsLHP = findString(postGET, "Eye/Patience vs LHP: ", null);
 	eyeVsRHP = findString(postGET, "Eye/Patience vs RHP: ", null);
 	speed = findString(postGET, "Speed (Base &amp; Run): ", null);
+	if(isNaN(speed)){
+		speed = findString(postGET, "Speed (Base & Run): ", null);
+	}
 	steal = findString(postGET, "Stealing Ability: ", null);
 	bunt = findString(postGET, "Bunting (Both): ", null);
 	
