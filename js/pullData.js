@@ -10,6 +10,7 @@ function ajaxCall(){
     data = {'action': clickBtnValue, 'urlValue': linkValue};
     $.post(ajaxurl, data, function (response){
         var spacesRemoved = $.trim(response);
+	console.log(spacesRemoved)
         getStats(spacesRemoved);
     });
 }
