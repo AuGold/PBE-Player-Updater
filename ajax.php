@@ -16,8 +16,6 @@ Send that information back to pullData.js
 */
 
     function getBatter($urlValue) {
-
-        console_log($urlValue)
         
         $options = array(
 
