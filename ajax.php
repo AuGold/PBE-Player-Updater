@@ -16,6 +16,8 @@ Send that information back to pullData.js
 */
 
     function getBatter($urlValue) {
+
+        console_log($urlValue)
         
         $options = array(
 
@@ -38,7 +40,6 @@ Send that information back to pullData.js
         $errmsg = curl_error($curl_session);
         curl_close($curl_session);
         
-        console_log($data)
         if (empty($data)){
             echo $errmsg;
         }
