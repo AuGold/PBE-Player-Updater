@@ -49,9 +49,9 @@ Send that information back to pullData.js
         }
         else{
             $start = strpos($data, 'Player Information');
-            $endPosition = strpos($data, 'This post has been')
+            $endPosition = strpos($data, 'This post has been');
             if($endPosition === FALSE){
-                $endPosition = strpos($data, 'Reply') - $start;
+                $endPosition = strpos($data, 'Reply');
             }
             $length = $endPosition - $start;
             $src = substr($data, $start, $length);
