@@ -53,6 +53,7 @@ Send that information back to pullData.js
                 $length = strpos($data, 'Reply') - $start;
             }
             $src = substr($data, $start, $length);
+            debug_to_console($data)
             echo $src;
         }
     }
