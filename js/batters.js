@@ -148,16 +148,15 @@ function getStatsBatter(postGET){
 	//Look for attribute, look for a range of 3 values
 	//save to variable
 
-	console.log(postGET)
 	babipVsLHP = findString(postGET, "BABIP vs LHP: ", null);
 	babipVsRHP = findString(postGET, "BABIP vs RHP: ", null);
 	avoidKLHP = findString(postGET, "Avoid K&#39;s vs LHP: ", null);
 	if(isNaN(avoidKLHP)){
-		speed = findString(postGET, "Avoid K's vs LHP: ", null);
+		avoidKLHP = findString(postGET, "Avoid K's vs LHP: ", null);
 	}
 	avoidKRHP = findString(postGET, "Avoid K&#39;s vs RHP: ", null);
 	if(isNaN(avoidKRHP)){
-		speed = findString(postGET, "Avoid K's vs RHP: ", null);
+		avoidKRHP = findString(postGET, "Avoid K's vs RHP: ", null);
 	}
 	gapVsLHP = findString(postGET, "Gap vs LHP: ", null);
 	gapVsRHP = findString(postGET, "Gap vs RHP: ", null);
