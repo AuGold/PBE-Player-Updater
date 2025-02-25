@@ -147,7 +147,8 @@ function getStatsBatter(postGET){
     //these should all look familar
 	//Look for attribute, look for a range of 3 values
 	//save to variable
-	
+
+	console.log(postGET)
 	babipVsLHP = findString(postGET, "BABIP vs LHP: ", null);
 	babipVsRHP = findString(postGET, "BABIP vs RHP: ", null);
 	avoidKLHP = findString(postGET, "Avoid K&#39;s vs LHP: ", null);
