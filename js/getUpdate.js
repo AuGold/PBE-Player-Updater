@@ -9,7 +9,6 @@ function addHighlight(username, url) {
 	username = username.replaceAll(" ", "%20");
 	hl = "#:~:text=" + username;
 	url += hl
-	alert(url)
     }
     return url;
 }
