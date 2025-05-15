@@ -5,11 +5,11 @@ function addHighlight(username, url) {
     var h1 = ""
     //hl = `#:~:text=${username.replaceAll(" ", "%20")}`;
     if(username!="nopity nope"){
-	alert(url)
-	//hl = `#:~:text=${username.replaceAll(" ", "%20")}`;
-	//url = url.concat(h1)
-	url += username
-	alert(url)
+	//alert(url)
+	hl = `#:~:text=${username.replaceAll(" ", "%20")}`;
+	url += h1
+	//url += username
+	//alert(url)
     }
     return url;
 }
