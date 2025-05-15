@@ -49,7 +49,7 @@ Send that information back to pullData.js
         }
         else{
             $start = strpos($data, 'Player Information');
-            $endPosition = strpos($data, 'This post has been');
+            $endPosition = strpos($data, 'This post was last');
             if($endPosition === FALSE){
                 $endPosition = strpos($data, '</div>');
             }
