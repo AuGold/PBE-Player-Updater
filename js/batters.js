@@ -39,7 +39,7 @@ function getStats(longString){
 		}
 	}
 
-	const username = findStringButActuallyString(longString, "<b>Username:</b> ");
+	const username = findStringButActuallyString(longString, ">Username:</span> ");
 	
 	if(!isNaN(banked)){
 	    $('#error').html("");
