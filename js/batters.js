@@ -115,7 +115,7 @@ function findString(htmlCode, stringToFind, secondaryString){
 // Return the rest of the first line containing the specified string
 // Provided by Khuldraeseth
 function findStringButActuallyString(htmlCode, stringToFind) {
-	htmlCode = htmlCode.replaceAll("<br />", "\n");
+	htmlCode = htmlCode.replaceAll("<br", "\n");
 	const re = new RegExp(`${stringToFind}(.+)`);
 	const match = re.exec(htmlCode);
 	return match ? match[1] : "nopity nope";
@@ -147,11 +147,17 @@ function getStatsBatter(postGET){
     //these should all look familar
 	//Look for attribute, look for a range of 3 values
 	//save to variable
-	
+
 	babipVsLHP = findString(postGET, "BABIP vs LHP: ", null);
 	babipVsRHP = findString(postGET, "BABIP vs RHP: ", null);
 	avoidKLHP = findString(postGET, "Avoid K&#39;s vs LHP: ", null);
+	if(isNaN(avoidKLHP)){
+		avoidKLHP = findString(postGET, "Avoid K's vs LHP: ", null);
+	}
 	avoidKRHP = findString(postGET, "Avoid K&#39;s vs RHP: ", null);
+	if(isNaN(avoidKRHP)){
+		avoidKRHP = findString(postGET, "Avoid K's vs RHP: ", null);
+	}
 	gapVsLHP = findString(postGET, "Gap vs LHP: ", null);
 	gapVsRHP = findString(postGET, "Gap vs RHP: ", null);
 	powerVsLHP = findString(postGET, "Power vs LHP: ", null);
@@ -159,6 +165,9 @@ function getStatsBatter(postGET){
 	eyeVsLHP = findString(postGET, "Eye/Patience vs LHP: ", null);
 	eyeVsRHP = findString(postGET, "Eye/Patience vs RHP: ", null);
 	speed = findString(postGET, "Speed (Base &amp; Run): ", null);
+	if(isNaN(speed)){
+		speed = findString(postGET, "Speed (Base & Run): ", null);
+	}
 	steal = findString(postGET, "Stealing Ability: ", null);
 	bunt = findString(postGET, "Bunting (Both): ", null);
 	

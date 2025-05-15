@@ -123,7 +123,7 @@ function findString(htmlCode, stringToFind, secondaryString){
 // Return the rest of the first line containing the specified string
 // Provided by Khuldraeseth
 function findStringButActuallyString(htmlCode, stringToFind) {
-	htmlCode = htmlCode.replaceAll("<br />", "\n");
+	htmlCode = htmlCode.replaceAll("<br", "\n");
 	const re = new RegExp(`${stringToFind}(.+)`);
 	const match = re.exec(htmlCode);
 	return match ? match[1] : "nopity nope";

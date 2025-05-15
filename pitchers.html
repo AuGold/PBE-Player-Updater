@@ -50,7 +50,7 @@
     				<!--    TO DO HERE: Sanitize text box to check for error urls -->
     				<form id="linkSubmit" onsubmit="ajaxCall(); return false">
         				<label for="link">Link:</label>
-        				<input type="url" form="linkSubmit" id="link" name="link" pattern="https?://probaseballexperience.+" required><br><br>
+        				<input type="url" form="linkSubmit" id="link" name="link" pattern="https?://probaseballexperience.+|https?://forum.pbesim.+" required><br><br>
         				<button type="submit" class="getButton" name="getBatter">Get Link</button>
         			</form>
     				<p id="error"></p>

@@ -37,6 +37,7 @@ Send that information back to pullData.js
         $err = curl_errno($curl_session);
         $errmsg = curl_error($curl_session);
         curl_close($curl_session);
+        
         if (empty($data)){
             echo $errmsg;
         }
@@ -48,7 +49,11 @@ Send that information back to pullData.js
         }
         else{
             $start = strpos($data, 'Player Information');
-            $length = strpos($data, 'This post has been') - $start;
+            $endPosition = strpos($data, 'This post was last');
+            if($endPosition === FALSE){
+                $endPosition = strpos($data, '</div>');
+            }
+            $length = $endPosition - $start;
             $src = substr($data, $start, $length);
             echo $src;
         }
@@ -74,5 +79,13 @@ Send that information back to pullData.js
             $js_code = '<script>' . $js_code . '</script>';
         }
         echo $js_code;
+    }
+
+    function debug_to_console($data) {
+        $output = $data;
+        if (is_array($output))
+            $output = implode(',', $output);
+
+        echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
     }
 ?>
