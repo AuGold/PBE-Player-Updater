@@ -3,12 +3,11 @@
 // freaking Rabid and Simo with their periods still break things
 function addHighlight(username, url) {
     var h1 = ""
-    hl = `#:~:text=${username.replaceAll(" ", "%20")}`;
-    /*if(username!="nopity nope"){
-        hl = `#:~:text=${username.replaceAll(" ", "%20")}`;
+    //hl = `#:~:text=${username.replaceAll(" ", "%20")}`;
+    if(username!="nopity nope"){
+        alert("Nopity Nope!")
+	hl = `#:~:text=${username.replaceAll(" ", "%20")}`;
     }
-    else{
-	h1 = "";*/
     return url.replace(/(?:#entry\d+)?$/, (m) => `${hl}${m}`);
 }
 
