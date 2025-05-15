@@ -2,7 +2,11 @@
 // Works for both `&view=findpost&p=XXXXXX` and `#entryXXXXXX` links
 // freaking Rabid and Simo with their periods still break things
 function addHighlight(username, url) {
-    const hl = `&hl=${username.replaceAll(" ", "%20")}`;
+    if(username!="nopity nope"){
+        const hl = `#:~:text=${username.replaceAll(" ", "%20")}`;
+    }
+    else{
+	const h1 = "";
     return url.replace(/(?:#entry\d+)?$/, (m) => `${hl}${m}`);
 }
 
@@ -148,7 +152,7 @@ function getUpdate(){
         codeBlock += "[color=green][b]+" + $("#PCTPE").val() + " TPE[/b][/color] | [url=" + $("#PCLink").val() + "]Forum Game " + $("#PCNumber").val() + "-" + $("#PCWeek").val() + "[/url]<br/>";
     }
     if(primetimeCheckbox == true){
-        codeBlock += "[color=green][b]+" + $("#PrimetimeTPE").val() + " TPE[/b][/color] | [url=" + $("#PrimetimeLink").val() + "]PT Claim " + $("#PrimetimeNumber").val() + "-" + $("#PrimetimeWeek").val() + "[/url]<br/>";
+        codeBlock += "[color=green][b]+" + $("#PrimetimeTPE").val() + " TPE[/b][/color] | [url=" + addHighlight(username, $("#PrimetimeLink").val()) + "]PT Claim " + $("#PrimetimeNumber").val() + "-" + $("#PrimetimeWeek").val() + "[/url]<br/>";
     }
     if(other1Checkbox == true){
         codeBlock += "[color=green][b]+" + $("#other1TPE").val() + " TPE[/b][/color] | [url=" + $("#other1Link").val() + "]" + $("#other1Name").val() + "[/url]<br/>";
