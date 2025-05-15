@@ -7,8 +7,9 @@ function addHighlight(username, url) {
     if(username!="nopity nope"){
 	//alert(url)
 	username = username.replaceAll("<br>","");
+	username = username.replaceAll(" ", "%20");
 	alert(username)
-	hl = `#:~:text=${username.replaceAll(" ", "%20")}`;
+	hl = "#:~:text=" + username;
 	alert(h1)
 	url += h1
 	//url += username
