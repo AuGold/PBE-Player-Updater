@@ -117,7 +117,7 @@ function findString(htmlCode, stringToFind, secondaryString){
 function findStringButActuallyString(htmlCode, stringToFind) {
 	//htmlCode = htmlCode.replaceAll("<br", "\n");
 	htmlCode = htmlCode.replaceAll('<span style="font-weight: bold;" class="mycode_b"', "\n");
-	alert(htmlCode)
+	//alert(htmlCode)
 	const re = new RegExp(`${stringToFind}(.+)`);
 	const match = re.exec(htmlCode);
 	return match ? match[1] : "nopity nope";
