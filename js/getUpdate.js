@@ -2,17 +2,13 @@
 // Works for both `&view=findpost&p=XXXXXX` and `#entryXXXXXX` links
 // freaking Rabid and Simo with their periods still break things
 function addHighlight(username, url) {
-    var h1 = ""
+    var hl = ""
     //hl = `#:~:text=${username.replaceAll(" ", "%20")}`;
     if(username!="nopity nope"){
-	//alert(url)
 	username = username.replaceAll("<br>","");
 	username = username.replaceAll(" ", "%20");
-	alert(username)
-	hl = "#:~:text="
-	alert(h1)
-	url += h1
-	//url += username
+	hl = "#:~:text=" + username;
+	url += hl
 	alert(url)
     }
     return url;
