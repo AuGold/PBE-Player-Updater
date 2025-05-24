@@ -1,15 +1,14 @@
-// Add a query to highlight the specified username
-// Works for both `&view=findpost&p=XXXXXX` and `#entryXXXXXX` links
-// freaking Rabid and Simo with their periods still break things
+// mybb doesn't like this at all
+// we'll fix it one day
 function addHighlight(username, url) {
-    var hl = ""
+    /*var hl = ""
     //hl = `#:~:text=${username.replaceAll(" ", "%20")}`;
     if(username!="nopity nope"){
 	username = username.replaceAll("<br>","");
 	username = username.replaceAll(" ", "%20");
 	hl = "#:~:text=" + username;
 	url += hl
-    }
+    }*/
     return url;
 }
 
