@@ -227,8 +227,10 @@ function fillStats(){
     $('#stat15').html(fError);
     $('#stat16').html(arm);
     $('#stat17').html(turnDP);
-    $('#stat18').html(catchAB);
-    
+    $('#stat18').html(block);
+    $('#stat19').html(frame);
+    $('#stat20').html(catchArm);
+	
 	for(var goThrough = 0; goThrough < mins.length ; goThrough++){
 		var goThroughOne = goThrough + 1;
 		$('#minStat' + goThroughOne).html(mins[goThrough]);
@@ -251,7 +253,10 @@ function fillStats(){
     $('#newStat15').attr({min: mins[14],max: max[14],value: fError});
     $('#newStat16').attr({min: mins[15],max: max[15],value: arm});
     $('#newStat17').attr({min: mins[16],max: max[16],value: turnDP});
-    $('#newStat18').attr({min: mins[17],max: max[17],value: catchAB});
+    $('#newStat18').attr({min: mins[17],max: max[17],value: block});
+    $('#newStat18').attr({min: mins[17],max: max[17],value: frame});
+    $('#newStat18').attr({min: mins[17],max: max[17],value: catchArm});
+	
 	
     //calls tpespent.js
     updateTPESpent();
