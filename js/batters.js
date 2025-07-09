@@ -1,6 +1,7 @@
 //declare global variables
 
 var banked;
+
 var fError;
 var range;
 var arm;
@@ -19,6 +20,10 @@ var eyeVsLHP;
 var speed;
 var steal;
 var bunt;
+var block;
+var frame;
+var catchArm;
+
 var tpeEarned;
 var tpeToSpend;
 var pitchesBought = 0;
@@ -134,14 +139,20 @@ function getStatsFielding(postGET){
 	range = findString(postGET, "Fielding Range: ", "Range: ");
 	arm = findString(postGET, "Fielding/Catching Arm: ", "Arm: ");
 	turnDP = findString(postGET, "Turn Double Play: ", "Turn Double Play ");	    
-	catchAB = findString(postGET, "Catcher Ability: ", null);
+	//catchAB = findString(postGET, "Catcher Ability: ", null);
+	block = findString(postGET, "Blocking: ", null);;
+	frame = findString(postGET, "Framing: ", null);;
+	catchArm = findString(postGET, "Catcher Arm: ", null);;
 	
 	//HTML part to place all values correctly
 	$('#putERR').html("Fielding Error: " + fError);
 	$('#putRNG').html("Fielding Range: " + range);
 	$('#putARM').html("Fielding/Catching Arm: " + arm);
 	$('#putTDP').html("Turn Double Play: " + turnDP);
-	$('#putCAB').html("Catcher Ability: " + catchAB);
+	//$('#putCAB').html("Catcher Ability: " + catchAB);
+	$('#putBLK').html("Blocking: " + block);
+	$('#putFRM').html("Framing: " + frame);
+	$('#putCAR').html("Catcher Arm: " + catchArm);
 }
 
 //Function designed to pull batting stats from the string in GetStats()
