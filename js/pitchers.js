@@ -171,8 +171,8 @@ function getStatsPitcher(postGET){
 	$('#putVEL').html("Velocity: " + velo);
 	$('#putMVL').html("Movement vs LHB: " + moveVsLHB);
 	$('#putMVR').html("Movement vs RHB: " + moveVsRHB);
-	$('#putBVL').html("BABIP vs LHB: " + moveVsLHB);
-	$('#putBVR').html("BABIP vs RHB: " + moveVsRHB);
+	$('#putBVL').html("BABIP vs LHB: " + babipVsLHB);
+	$('#putBVR').html("BABIP vs RHB: " + babipVsRHB);
 	$('#putCVL').html("Control vs LHB: " + conVsLHB);
 	$('#putCVR').html("Control vs RHB: " + conVsRHB);
 	$('#putSTA').html("Stamina: " + stamina);
