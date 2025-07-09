@@ -630,52 +630,59 @@ function fillStats(){
     
     $('#stat1').html(moveVsLHB);
     $('#stat2').html(moveVsRHB);
-    $('#stat3').html(conVsLHB);
-    $('#stat4').html(conVsRHB);
-    $('#stat5').html(stamina);
-    $('#stat6').html(holdRun);
-    $('#stat7').html(pitch1);
-    $('#stat8').html(pitch2);
-    $('#stat9').html(pitch3);
-    $('#stat10').html(pitch4);
-    $('#stat11').html(pitch5);
-    $('#stat12').html(gbPer);
-    $('#statName7').html(pitch1Name);
-    $('#statName8').html(pitch2Name);
-    $('#statName9').html(pitch3Name);
-    $('#statName10').html(pitch4Name);
-    $('#statName11').html(pitch5Name);
-	$('#stat13').html(velo);
+    $('#stat3').html(babipVsLHB);
+    $('#stat4').html(babipVsRHB);
+    $('#stat5').html(conVsLHB);
+    $('#stat6').html(conVsRHB);
+    $('#stat7').html(stamina);
+    $('#stat8').html(holdRun);
+    $('#stat9').html(pitch1);
+    $('#stat10').html(pitch2);
+    $('#stat11').html(pitch3);
+    $('#stat12').html(pitch4);
+    $('#stat13').html(pitch5);
+    $('#stat14').html(gbPer);
+    $('#statName9').html(pitch1Name);
+    $('#statName10').html(pitch2Name);
+    $('#statName11').html(pitch3Name);
+    $('#statName12').html(pitch4Name);
+    $('#statName13').html(pitch5Name);
+    $('#stat15').html(velo);
     
 	for(var goThrough = 1; goThrough < mins.length ; goThrough++){
 		$('#minStat' + goThrough).html(mins[goThrough]);
 		$('#maxStat' + goThrough).html(max[goThrough]);
 	}
-	$('#minStat13').html(mins[0]);
-	$('#maxStat13').html(max[0]);
-	$('#newStat1').attr({min: mins[1],max: max[1],value: moveVsLHB});
+	$('#minStat15').html(mins[0]);
+	$('#maxStat15').html(max[0]);
+	
+    $('#newStat1').attr({min: mins[1],max: max[1],value: moveVsLHB});
     $('#newStat2').attr({min: mins[2],max: max[2],value: moveVsRHB});
-    $('#newStat3').attr({min: mins[3],max: max[3],value: conVsLHB});
-    $('#newStat4').attr({min: mins[4],max: max[4],value: conVsRHB});
-    $('#newStat5').attr({min: mins[5],max: max[5],value: stamina});
-    $('#newStat6').attr({min: mins[6],max: max[6],value: holdRun});
-    $('#newStat7').attr({min: mins[7],max: max[7],value: pitch1});
-    $('#newStat8').attr({min: mins[8],max: max[8],value: pitch2});
-    $('#newStat9').attr({min: mins[9],max: max[9],value: pitch3});
-    $('#newStat10').attr({min: mins[10],max: max[10],value: pitch4});
-    $('#newStat11').attr({min: mins[11],max: max[11],value: pitch5});
-	$('#newStat12').attr({min: mins[12],max: max[12], value: gbPer});
-	var currentPitchLocation;
+    $('#newStat3').attr({min: mins[3],max: max[3],value: babipVsLHB});
+    $('#newStat4').attr({min: mins[4],max: max[4],value: babipVsRHB});
+
+	
+    $('#newStat5').attr({min: mins[3],max: max[3],value: conVsLHB});
+    $('#newStat6').attr({min: mins[4],max: max[4],value: conVsRHB});
+    $('#newStat7').attr({min: mins[5],max: max[5],value: stamina});
+    $('#newStat8').attr({min: mins[6],max: max[6],value: holdRun});
+    $('#newStat9').attr({min: mins[7],max: max[7],value: pitch1});
+    $('#newStat10').attr({min: mins[8],max: max[8],value: pitch2});
+    $('#newStat11').attr({min: mins[9],max: max[9],value: pitch3});
+    $('#newStat12').attr({min: mins[10],max: max[10],value: pitch4});
+    $('#newStat13').attr({min: mins[11],max: max[11],value: pitch5});
+    $('#newStat14').attr({min: mins[12],max: max[12], value: gbPer});
+    var currentPitchLocation;
     for(var c = 0;c<=pitchingLevels.length;c++){
-            if($('#stat13').html().trim().localeCompare(pitchingLevels[c]) == 0){
-                currentPitchLocation = c;
-            }
+        if($('#stat15').html().trim().localeCompare(pitchingLevels[c]) == 0){
+            currentPitchLocation = c;
         }
+    }
     if(typeof currentPitchLocation === 'undefined'){
         for(var z = 0;z<pitchingLevels.length;z++){
             var str = pitchingLevels[z];
             str = str.replace(/\s/g, '');
-            if($('#stat13').html().trim().localeCompare(str) == 0){
+            if($('#stat15').html().trim().localeCompare(str) == 0){
                 currentPitchLocation = z;
             }
         }
