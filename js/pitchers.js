@@ -1,9 +1,12 @@
 //declare global variables
 
 var banked;
+
 var velo;
 var moveVsLHB;
 var moveVsRHB;
+var babipVsLHB;
+var babipVsRHB;
 var conVsLHB;
 var conVsRHB;
 var stamina;
@@ -21,6 +24,7 @@ var pitch3Name = "Pitch 3";
 var pitch4Name = "Pitch 4";
 var pitch5Name = "Pitch 5";
 var gbPer;
+
 var pitchesBought = 0;
 var mins=[];
 var max=[];
@@ -150,6 +154,8 @@ function getStatsPitcher(postGET){
 	
 	moveVsLHB = findString(postGET, "Movement vs. LHB: ", "Movement vs LHB: ");
 	moveVsRHB = findString(postGET, "Movement vs. RHB: ", "Movement vs RHB: ");
+	babipVsLHB = findString(postGET, "BABIP vs. LHB: ", "pBABIP vs LHB: ");
+	babipVsRHB = findString(postGET, "BABIP vs. RHB: ", "pBABIP vs RHB: ");
 	conVsLHB = findString(postGET, "Control vs. LHB: ", "Control vs LHB: ");
 	conVsRHB = findString(postGET, "Control vs. RHB: ", "Control vs RHB: ");
 	stamina = findString(postGET, "Stamina: ", null);
@@ -165,6 +171,8 @@ function getStatsPitcher(postGET){
 	$('#putVEL').html("Velocity: " + velo);
 	$('#putMVL').html("Movement vs LHB: " + moveVsLHB);
 	$('#putMVR').html("Movement vs RHB: " + moveVsRHB);
+	$('#putBVL').html("BABIP vs LHB: " + moveVsLHB);
+	$('#putBVR').html("BABIP vs RHB: " + moveVsRHB);
 	$('#putCVL').html("Control vs LHB: " + conVsLHB);
 	$('#putCVR').html("Control vs RHB: " + conVsRHB);
 	$('#putSTA').html("Stamina: " + stamina);
