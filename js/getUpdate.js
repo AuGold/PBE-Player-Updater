@@ -1,9 +1,15 @@
-// Add a query to highlight the specified username
-// Works for both `&view=findpost&p=XXXXXX` and `#entryXXXXXX` links
-// freaking Rabid and Simo with their periods still break things
+// mybb doesn't like this at all
+// we'll fix it one day
 function addHighlight(username, url) {
-    const hl = `&hl=${username.replaceAll(" ", "%20")}`;
-    return url.replace(/(?:#entry\d+)?$/, (m) => `${hl}${m}`);
+    /*var hl = ""
+    //hl = `#:~:text=${username.replaceAll(" ", "%20")}`;
+    if(username!="nopity nope"){
+	username = username.replaceAll("<br>","");
+	username = username.replaceAll(" ", "%20");
+	hl = "#:~:text=" + username;
+	url += hl
+    }*/
+    return url;
 }
 
 function getUpdate(){
@@ -76,7 +82,7 @@ function getUpdate(){
         $("#outputTotal").html("Total TPE: " + oldTotalTPE + " -> " + outputTotal);
     }
     
-    var codeBlock = "";
+    var codeBlock = "USE CTRL-SHIFT-V AS PASTING UNTIL WE CAN EXPLORE THIS MORE<br/><br/><br/>";
     var weeklyTrainingCheckbox = document.getElementById('WTCheck').checked;
     var activityCheckCheckbox = document.getElementById('ACCheck').checked;
     var pictureChainCheckbox = document.getElementById('PCCheck').checked;
@@ -93,47 +99,47 @@ function getUpdate(){
 	var other9Checkbox = document.getElementById('other9Check').checked;
     
     if(regressionCheckbox == true){
-        codeBlock += "[color=red][b]" + $("#RegressionTPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#RegressionLink").val()) + "]Regression S" + $("#RegressionNumber").val() + "[/URL]<br/>";
+        codeBlock += "[color=red][b]" + $("#RegressionTPE").val() + " TPE[/b][/color] | [url=" + addHighlight(username, $("#RegressionLink").val()) + "]Regression S" + $("#RegressionNumber").val() + "[/url]<br/>";
     }
 	if(activityCheckCheckbox == true){
-        codeBlock += "[color=green][b]+" + $("#ACTPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#ACLink").val()) + "]AC #" + $("#ACNumber").val() + "[/URL]<br/>";
+        codeBlock += "[color=green][b]+" + $("#ACTPE").val() + " TPE[/b][/color] | [url=" + addHighlight(username, $("#ACLink").val()) + "]AC #" + $("#ACNumber").val() + "[/url]<br/>";
     }
 	if(weeklyTrainingCheckbox == true){
-        codeBlock += "[color=green][b]+" + $("#WTTPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#WTLink").val()) + "]WT #" + $("#WTNumber").val() + "[/URL]<br/>";
+        codeBlock += "[color=green][b]+" + $("#WTTPE").val() + " TPE[/b][/color] | [url=" + addHighlight(username, $("#WTLink").val()) + "]WT #" + $("#WTNumber").val() + "[/url]<br/>";
     }
     if(pictureChainCheckbox == true){
-        codeBlock += "[color=green][b]+" + $("#PCTPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#PCLink").val()) + "]Forum Game " + $("#PCNumber").val() + "-" + $("#PCWeek").val() + "[/URL]<br/>";
+        codeBlock += "[color=green][b]+" + $("#PCTPE").val() + " TPE[/b][/color] | [url=" + addHighlight(username, $("#PCLink").val()) + "]Forum Game " + $("#PCNumber").val() + "-" + $("#PCWeek").val() + "[/url]<br/>";
     }
     if(primetimeCheckbox == true){
-        codeBlock += "[color=green][b]+" + $("#PrimetimeTPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#PrimetimeLink").val()) + "]PT Claim " + $("#PrimetimeNumber").val() + "-" + $("#PrimetimeWeek").val() + "[/URL]<br/>";
+        codeBlock += "[color=green][b]+" + $("#PrimetimeTPE").val() + " TPE[/b][/color] | [url=" + addHighlight(username, $("#PrimetimeLink").val()) + "]PT Claim " + $("#PrimetimeNumber").val() + "-" + $("#PrimetimeWeek").val() + "[/url]<br/>";
     }
     if(other1Checkbox == true){
-        codeBlock += "[color=green][b]+" + $("#other1TPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#other1Link").val()) + "]" + $("#other1Name").val() + "[/URL]<br/>";
+        codeBlock += "[color=green][b]+" + $("#other1TPE").val() + " TPE[/b][/color] | [url=" + addHighlight(username, $("#other1Link").val()) + "]" + $("#other1Name").val() + "[/url]<br/>";
     }
     if(other2Checkbox == true){
-        codeBlock += "[color=green][b]+" + $("#other2TPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#other2Link").val()) + "]" + $("#other2Name").val() + "[/URL]<br/>";
+        codeBlock += "[color=green][b]+" + $("#other2TPE").val() + " TPE[/b][/color] | [url=" + addHighlight(username, $("#other2Link").val()) + "]" + $("#other2Name").val() + "[/url]<br/>";
     }
     if(other3Checkbox == true){
-        codeBlock += "[color=green][b]+" + $("#other3TPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#other3Link").val()) + "]" + $("#other3Name").val() + "[/URL]<br/>";
+        codeBlock += "[color=green][b]+" + $("#other3TPE").val() + " TPE[/b][/color] | [url=" + addHighlight(username, $("#other3Link").val()) + "]" + $("#other3Name").val() + "[/url]<br/>";
     }
     if(other4Checkbox == true){
-        codeBlock += "[color=green][b]+" + $("#other4TPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#other4Link").val()) + "]" + $("#other4Name").val() + "[/URL]<br/>";
+        codeBlock += "[color=green][b]+" + $("#other4TPE").val() + " TPE[/b][/color] | [url=" + addHighlight(username, $("#other4Link").val()) + "]" + $("#other4Name").val() + "[/url]<br/>";
     }
 	if(other5Checkbox == true){
-        codeBlock += "[color=green][b]+" + $("#other5TPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#other5Link").val()) + "]" + $("#other5Name").val() + "[/URL]<br/>";
+        codeBlock += "[color=green][b]+" + $("#other5TPE").val() + " TPE[/b][/color] | [url=" + addHighlight(username, $("#other5Link").val()) + "]" + $("#other5Name").val() + "[/url]<br/>";
     }
 	if(other6Checkbox == true){
-        codeBlock += "[color=green][b]+" + $("#other6TPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#other6Link").val()) + "]" + $("#other6Name").val() + "[/URL]<br/>";
+        codeBlock += "[color=green][b]+" + $("#other6TPE").val() + " TPE[/b][/color] | [url=" + addHighlight(username, $("#other6Link").val()) + "]" + $("#other6Name").val() + "[/url]<br/>";
     }
 	if(other7Checkbox == true){
-        codeBlock += "[color=green][b]+" + $("#other7TPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#other7Link").val()) + "]" + $("#other7Name").val() + "[/URL]<br/>";
+        codeBlock += "[color=green][b]+" + $("#other7TPE").val() + " TPE[/b][/color] | [url=" + addHighlight(username, $("#other7Link").val()) + "]" + $("#other7Name").val() + "[/url]<br/>";
     }
 	if(other8Checkbox == true){
-        codeBlock += "[color=green][b]+" + $("#other8TPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#other8Link").val()) + "]" + $("#other8Name").val() + "[/URL]<br/>";
+        codeBlock += "[color=green][b]+" + $("#other8TPE").val() + " TPE[/b][/color] | [url=" + addHighlight(username, $("#other8Link").val()) + "]" + $("#other8Name").val() + "[/url]<br/>";
     }
 	if(other9Checkbox == true){
-        codeBlock += "[color=green][b]+" + $("#other9TPE").val() + " TPE[/b][/color] | [URL=" + addHighlight(username, $("#other9Link").val()) + "]" + $("#other9Name").val() + "[/URL]<br/>";
+        codeBlock += "[color=green][b]+" + $("#other9TPE").val() + " TPE[/b][/color] | [url=" + addHighlight(username, $("#other9Link").val()) + "]" + $("#other9Name").val() + "[/url]<br/>";
     }
-            
+    
     $("#outCode").html(codeBlock);
 }
