@@ -69,19 +69,20 @@
                 			<p id="putGVR"></p>
                 			<p id="putPVL"></p>
                 			<p id="putPVR"></p>
-							<p id="putCAB"></p>
-                			
+					<p id="putEVL"></p>
+					<p id="putEVR"></p>
                 		</div>
                 		<div class="column">
-							<p id="putEVL"></p>
-                			<p id="putEVR"></p>
-							<p id="putSPD"></p>
+					<p id="putSPD"></p>
                 			<p id="putSTL"></p>
                 			<p id="putBNT"></p>
-                		    <p id="putRNG"></p>
-                		    <p id="putERR"></p>
-                		    <p id="putARM"></p>
-                		    <p id="putTDP"></p>
+                		   	<p id="putRNG"></p>
+                		    	<p id="putERR"></p>
+                		    	<p id="putARM"></p>
+                		    	<p id="putTDP"></p>
+					<p id="putBLK"></p>
+					<p id="putFRM"></p>
+					<p id="putCAR"></p>
                 		</div>
     				</div>
     				<p>Something look wrong? First, check your link to make sure you are using the correct roster page.</p>
@@ -426,13 +427,37 @@
     				        <td><input type="number" id="newStat17" onchange="updateTPESpent();"></td>
     				        <td id="tpeSpent17">0</td>
     				    </tr>
-    				    <tr>
+    				    <!--<tr>
     				        <td id="statName18">Catcher Ability</td>
     				        <td id="minStat18"></td>
     				        <td id="stat18"></td>
     				        <td id="maxStat18"></td>
     				        <td><input type="number" id="newStat18" onchange="updateTPESpent();"></td>
     				        <td id="tpeSpent18">0</td>
+    				    </tr>-->
+				    <tr>
+    				        <td id="statName18">Blocking</td>
+    				        <td id="minStat18"></td>
+    				        <td id="stat18"></td>
+    				        <td id="maxStat18"></td>
+    				        <td><input type="number" id="newStat18" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent18">0</td>
+    				    </tr>
+				    <tr>
+    				        <td id="statName19">Framing</td>
+    				        <td id="minStat19"></td>
+    				        <td id="stat19"></td>
+    				        <td id="maxStat19"></td>
+    				        <td><input type="number" id="newStat19" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent19">0</td>
+    				    </tr>
+				    <tr>
+    				        <td id="statName20">Catcher Arm</td>
+    				        <td id="minStat20"></td>
+    				        <td id="stat20"></td>
+    				        <td id="maxStat20"></td>
+    				        <td><input type="number" id="newStat20" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent20">0</td>
     				    </tr>
     				</table>
     				<p id="error2"></p>
