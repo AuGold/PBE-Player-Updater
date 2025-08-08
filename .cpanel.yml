@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/augoeuaa/tpeupdater.com/
+    - export DEPLOYPATH=/home/augoeuaa/ootp26.tpeupdater.com/
     - /bin/cp -R * $DEPLOYPATH
