@@ -244,5 +244,5 @@ function fillStats(){
 	}*/
 	
     //calls tpespent.js
-    updateTPESpent();
+    //updateTPESpent();
 }
