@@ -227,13 +227,13 @@ function fillStats(){
     $('#stat15').html(fError);
     $('#stat16').html(arm);
     $('#stat17').html(turnDP);
-    //$('#stat18').html(catchBLK);
-	//$('#stat19').html(catchFRM);
+    $('#stat18').html(catchBLK);
+	$('#stat19').html(catchFRM);
 
 	
-	//var allStatsArray = [babipVsLHP, babipVsRHP, avoidKLHP, avoidKRHP, gapVsLHP, gapVsRHP, powerVsLHP, powerVsRHP, eyeVsLHP, eyeVsRHP, spped, steal, bunt, range, fError, arm, turnDP, catchBLK, catchFRM]
+	var allStatsArray = [babipVsLHP, babipVsRHP, avoidKLHP, avoidKRHP, gapVsLHP, gapVsRHP, powerVsLHP, powerVsRHP, eyeVsLHP, eyeVsRHP, spped, steal, bunt, range, fError, arm, turnDP, catchBLK, catchFRM]
 
-	/*for(var i = 0 ; i < allStatsArray.length ; i++){
+	for(var i = 0 ; i < allStatsArray.length ; i++){
 		var statNumber = i+1;
 		for(var j = 0 ; j < allStatsLevels.length ; j++){			
 			if(allStatsArray[i] == allStatsLevels[j]){
@@ -241,7 +241,7 @@ function fillStats(){
 				break;
 			}
 		}
-	}*/
+	}
 	
     //calls tpespent.js
     //updateTPESpent();
