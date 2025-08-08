@@ -203,10 +203,10 @@ function fillStats(){
     //tpeToSpend = banked + tpeEarned;
     //$('#tpeToUse').html("TPE to Spend: " + tpeToSpend);
 	//for now to test
-	if(catchBLK == NaN){
+	if(isNaN(catchBLK)){
 		catchBLK = 20
 	}
-	if(catchFRM == NaN){
+	if(isNaN(catchFRM)){
 		catchFRM = 20
 	}
     
