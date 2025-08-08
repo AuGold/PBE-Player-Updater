@@ -67,11 +67,12 @@
                 			<p id="putMVR"></p>
                 			<p id="putCVL"></p>
                 			<p id="putCVR"></p>
+							<p id="putPBA"></p>
                 			<p id="putSTA"></p>
-							<p id="putGB"></p>
                 		</div>
                 		<div class="column">
-                		    <p id="putHRN"></p>
+                		    <p id="putGB"></p>
+							<p id="putHRN"></p>
                 		    <p id="putPI1"></p>
                 		    <p id="putPI2"></p>
                 		    <p id="putPI3"></p>
@@ -88,181 +89,6 @@
     				</form>
     			</div>
     			<div class="step3">
-    			    <h2>Step 3: TPE earned</h2>
-                    
-                    <p>Now we need to know how much TPE you earned this week.</p>
-					<P>First, do you want to input your activity links into this website?
-					<button type="submit" onclick="makeVisible('.withLinks','.withoutLinks')">Yes</button>
-					<button type="submit" onclick="makeVisible('.withoutLinks','.withLinks')">No</button>
-					<div class="withLinks">
-						<p>Click the checkbox next to the activity you completed and have the link for.</p>
-						<p>Enter the information for each row (the week number, the season number, how much TPE, and the link of your post).</p>
-						<table>
-							<tr>
-								<td><input type="checkbox" id="ACCheck" name="ACCheck" value="AC" onchange="countTPE()"></td>
-								<td><label for="ACNumber">Activity Check #</label></td>
-								<td><input type="number" min="0" max="1000" id="ACNumber" name="ACNumber"></td>
-								<td><label for="ACLink">Link: </label></td>
-								<td><input type="url" id="ACLink" name="ACLink" pattern="http://probaseballexperience.+"></td>
-								<td><label for="ACTPE">TPE: </label></td>
-								<td><input type="number" max="3" min="3" id="ACTPE" name="ACTPE" value="3" onchange="countTPE()"></td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" id="WTCheck" name="WTCheck" value="WT" onchange="countTPE()"></td>
-								<td><label for="WTNumber">Weekly Training #</label></td>
-								<td><input type="number" min="0" max="1000" id="WTNumber" name="WTNumber"></td>
-								<td><label for="WTLink">Link: </label></td>
-								<td><input type="url" id="WTLink" name="WTLink" pattern="http://probaseballexperience.+"></td>
-								<td><label for="WTTPE">TPE: </label></td>
-								<td><input type="number" max="5" min="0" id="WTTPE" name="WTTPE" value="5" onchange="countTPE()"></td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" id="PCCheck" name="PCCheck" value="PC" onchange="countTPE()"></td>
-								<td><label for="PCNumber">Forum Game Season/Week: </label></td>
-								<td>
-									<input type="number" min="0" max="100" id="PCNumber" name="PCNumber"> - 
-									<input type="number" min="0" max="5" id="PCWeek" name="PCWeek">
-								</td>
-								<td><label for="PCLink">Link: </label></td>
-								<td><input type="url" id="PCLink" name="PCLink" pattern="http://probaseballexperience.+"></td>
-								<td><label for="PCTPE">TPE: </label></td>
-								<td><input type="number" max="2" min="2" id="PCTPE" name="JPTTPE" value="2" onchange="countTPE()"></td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" id="PrimetimeCheck" name="PrimetimeCheck" value="Primetime" onchange="countTPE()"></td>
-								<td><label for="PrimetimeNumber">PT Claim Season/Week: </label></td>
-								<td>
-									<input type="number" min="0" max="100" id="PrimetimeNumber" name="PrimetimeNumber"> - 
-									<input type="number" min="0" max="5" id="PrimetimeWeek" name="PrimetimeWeek">
-								</td>
-								<td><label for="PrimetimeLink">Link: </label></td>
-								<td><input type="url" id="PrimetimeLink" name="PrimetimeLink" pattern="http://probaseballexperience.+"></td>
-								<td><label for="PrimetimeTPE">TPE: </label></td>
-								<td><input type="number" max="15" min="1" id="PrimetimeTPE" name="PrimetimeTPE" value="1" onchange="countTPE()"></td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" id="RegressionCheck" name="RegressionCheck" value="Regression" onchange="countTPE()"></td>
-								<td><label for="RegressionNumber">Regression Season: </label></td>
-								<td>
-									<input type="number" min="0" max="100" id="RegressionNumber" name="RegressionNumber">
-								</td>
-								<td><label for="RegressionLink">Link: </label></td>
-								<td><input type="url" id="RegressionLink" name="RegressionLink" pattern="http://probaseballexperience.+"></td>
-								<td><label for="RegressionTPE">TPE Loss: </label></td>
-								<td><input type="number" max="-1" id="RegressionTPE" name="RegressionTPE" value="-1" onchange="countTPE()"></td>
-							</tr>
-							<tr class="other1">
-								<td><input type="checkbox" id="other1Check" name="other1Check" value="other1" onchange="countTPE()"></td>
-								<td><label for="other1Name">Other: </label></td>
-								<td><input type="text" id="other1Name" name="other1Name"></td>
-								<td><label for="other1Link">Link: </label></td>
-								<td><input type="url" id="other1Link" name="other1Link" pattern="http://probaseballexperience.+"></td>
-								<td><label for="other1TPE">TPE: </label></td>
-								<td><input type="number" max="56" min="0" id="other1TPE" name="other1TPE" value="0" onchange="countTPE()"></td>
-							</tr>
-							<tr class="other2">
-								<td><input type="checkbox" id="other2Check" name="other2Check" value="other2" onchange="countTPE()"></td>
-								<td><label for="other2Name">Other: </label></td>
-								<td><input type="text" id="other2Name" name="other2Name"></td>
-								<td><label for="other2Link">Link: </label></td>
-								<td><input type="url" id="other2Link" name="other2Link" pattern="http://probaseballexperience.+"></td>
-								<td><label for="other2TPE">TPE: </label></td>
-								<td><input type="number" max="56" min="0" id="other2TPE" name="other2TPE" value="0" onchange="countTPE()"></td>
-							</tr>
-							<tr class="other3">
-								<td><input type="checkbox" id="other3Check" name="other3Check" value="other3" onchange="countTPE()"></td>
-								<td><label for="other3Name">Other: </label></td>
-								<td><input type="text" id="other3Name" name="other3Name"></td>
-								<td><label for="other3Link">Link: </label></td>
-								<td><input type="url" id="other3Link" name="other3Link" pattern="http://probaseballexperience.+"></td>
-								<td><label for="other3TPE">TPE: </label></td>
-								<td><input type="number" max="56" min="0" id="other3TPE" name="other3TPE" value="0" onchange="countTPE()"></td>
-							</tr>
-							<tr class="other4">
-								<td><input type="checkbox" id="other4Check" name="other4Check" value="other4" onchange="countTPE()"></td>
-								<td><label for="other4Name">Other: </label></td>
-								<td><input type="text" id="other4Name" name="other4Name"></td>
-								<td><label for="other4Link">Link: </label></td>
-								<td><input type="url" id="other4Link" name="other4Link" pattern="http://probaseballexperience.+"></td>
-								<td><label for="other4TPE">TPE: </label></td>
-								<td><input type="number" max="56" min="0" id="other4TPE" name="other4TPE" value="0" onchange="countTPE()"></td>
-							</tr>
-							<tr class="other5">
-								<td><input type="checkbox" id="other5Check" name="other5Check" value="other5" onchange="countTPE()"></td>
-								<td><label for="other5Name">Other: </label></td>
-								<td><input type="text" id="other5Name" name="other5Name"></td>
-								<td><label for="other5Link">Link: </label></td>
-								<td><input type="url" id="other5Link" name="other5Link" pattern="http://probaseballexperience.+"></td>
-								<td><label for="other5TPE">TPE: </label></td>
-								<td><input type="number" max="56" min="0" id="other5TPE" name="other5TPE" value="0" onchange="countTPE()"></td>
-							</tr>
-							<tr class="other6">
-								<td><input type="checkbox" id="other6Check" name="other6Check" value="other6" onchange="countTPE()"></td>
-								<td><label for="other6Name">Other: </label></td>
-								<td><input type="text" id="other6Name" name="other6Name"></td>
-								<td><label for="other6Link">Link: </label></td>
-								<td><input type="url" id="other6Link" name="other6Link" pattern="http://probaseballexperience.+"></td>
-								<td><label for="other6TPE">TPE: </label></td>
-								<td><input type="number" max="56" min="0" id="other6TPE" name="other6TPE" value="0" onchange="countTPE()"></td>
-							</tr>
-							<tr class="other7">
-								<td><input type="checkbox" id="other7Check" name="other7Check" value="other7" onchange="countTPE()"></td>
-								<td><label for="other7Name">Other: </label></td>
-								<td><input type="text" id="other7Name" name="other7Name"></td>
-								<td><label for="other7Link">Link: </label></td>
-								<td><input type="url" id="other7Link" name="other7Link" pattern="http://probaseballexperience.+"></td>
-								<td><label for="other7TPE">TPE: </label></td>
-								<td><input type="number" max="56" min="0" id="other7TPE" name="other7TPE" value="0" onchange="countTPE()"></td>
-							</tr>
-							<tr class="other8">
-								<td><input type="checkbox" id="other8Check" name="other8Check" value="other8" onchange="countTPE()"></td>
-								<td><label for="other8Name">Other: </label></td>
-								<td><input type="text" id="other8Name" name="other8Name"></td>
-								<td><label for="other8Link">Link: </label></td>
-								<td><input type="url" id="other8Link" name="other8Link" pattern="http://probaseballexperience.+"></td>
-								<td><label for="other8TPE">TPE: </label></td>
-								<td><input type="number" max="56" min="0" id="other8TPE" name="other8TPE" value="0" onchange="countTPE()"></td>
-							</tr>
-							<tr class="other9">
-								<td><input type="checkbox" id="other9Check" name="other9Check" value="other9" onchange="countTPE()"></td>
-								<td><label for="other9Name">Other: </label></td>
-								<td><input type="text" id="other9Name" name="other9Name"></td>
-								<td><label for="other9Link">Link: </label></td>
-								<td><input type="url" id="other9Link" name="other9Link" pattern="http://probaseballexperience.+"></td>
-								<td><label for="other9TPE">TPE: </label></td>
-								<td><input type="number" max="56" min="0" id="other9TPE" name="other9TPE" value="0" onchange="countTPE()"></td>
-							</tr>
-						</table>
-						<button class="other1" id="button1" onclick="showRow('.other2','#button1')">Add another row</button>
-						<button class="other2" id="button2" onclick="showRow('.other3','#button2')">Add another row</button>
-						<button class="other3" id="button3" onclick="showRow('.other4','#button3')">Add another row</button>
-						<button class="other4" id="button4" onclick="showRow('.other5','#button4')">Add another row</button>
-						<button class="other5" id="button5" onclick="showRow('.other6','#button5')">Add another row</button>
-						<button class="other6" id="button6" onclick="showRow('.other7','#button6')">Add another row</button>
-						<button class="other7" id="button7" onclick="showRow('.other8','#button7')">Add another row</button>
-						<button class="other8" id="button8" onclick="showRow('.other9','#button8')">Add another row</button>
-						
-						<!-- Setup for TPE earned links -->
-						
-						<p>Check the value of the TPE Earned and make sure it equals the sum of the table above.</p>
-						<form id="earnedTPEsubmitLinks" onsubmit="stepFour(); return false">
-							<div>
-								<label>TPE Earned:</label>
-								<span id="tpeEarnedLinks" style="display:inline">0</span>
-							</div>
-							<button type="submit" form="earnedTPEsubmit">Submit</button>
-						</form>
-					</div>
-					<div class="withoutLinks">
-						<p>Remember to be honest. If an auditor finds any problems in your update, there may be consequences!</p>
-						<form id="earnedTPEsubmit" onsubmit="stepFour(); return false">
-							<label>TPE Earned:</label>
-							<input type="number" id="tpeEarned" name="tpeEarned" value="0" required>
-							<button type="submit" form="earnedTPEsubmit">Submit</button>
-						</form>
-					</div>
-    			</div>
-    			<div class="step4">
     			    <h2>Step 4: Create your update!</h2>
     			    <p>Now the fun part of creating your update!</p>
     			    <div class="twoColumns">
@@ -279,137 +105,78 @@
     				<table id="countTable">
     				    <tr>
     				        <th>Attribute</th>
-    				        <th>Minimum</th>
     				        <th>Current</th>
-    				        <th>Maximum</th>
-    				        <th>New</th>
-    				        <th>TPE Spent</th>
+    				        <th>OOTP26</th>
     				    </tr>
     				    <tr>
     				        <td id="statName1">Movement Vs. LHB</td>
-    				        <td id="minStat1"></td>
     				        <td id="stat1"></td>
     				        <td id="maxStat1"></td>
-    				        <td><input type="number" id="newStat1" onchange="updateTPESpent();"></td>
-    				        <td id="tpeSpent1">0</td>
     				    </tr>
     				    <tr>
     				        <td id="statName2">Movement Vs. RHB</td>
-    				        <td id="minStat2"></td>
     				        <td id="stat2"></td>
     				        <td id="maxStat2"></td>
-    				        <td><input type="number" id="newStat2" onchange="updateTPESpent();"></td>
-    				        <td id="tpeSpent2">0</td>
     				    </tr>
     				    <tr>
     				        <td id="statName3">Control Vs. LHB</td>
-    				        <td id="minStat3"></td>
     				        <td id="stat3"></td>
     				        <td id="maxStat3"></td>
-    				        <td><input type="number" id="newStat3" onchange="updateTPESpent();"></td>
-    				        <td id="tpeSpent3">0</td>
     				    </tr>
     				    <tr>
     				        <td id="statName4">Control Vs. RHB</td>
-    				        <td id="minStat4"></td>
     				        <td id="stat4"></td>
     				        <td id="maxStat4"></td>
-    				        <td><input type="number" id="newStat4" onchange="updateTPESpent();"></td>
-    				        <td id="tpeSpent4">0</td>
     				    </tr>
     				    <tr>
-    				        <td id="statName5">Stamina</td>
-    				        <td id="minStat5"></td>
+    				        <td id="statName5">pBABIP</td>
     				        <td id="stat5"></td>
     				        <td id="maxStat5"></td>
-    				        <td><input type="number" id="newStat5" onchange="updateTPESpent();"></td>
-    				        <td id="tpeSpent5">0</td>
     				    </tr>
     				    <tr>
-    				        <td id="statName6">Holding Runners</td>
-    				        <td id="minStat6"></td>
+    				        <td id="statName6">Stamina/td>
     				        <td id="stat6"></td>
     				        <td id="maxStat6"></td>
-    				        <td><input type="number" id="newStat6" onchange="updateTPESpent();"></td>
-    				        <td id="tpeSpent6">0</td>
     				    </tr>
     				    <tr>
-    				        <td id="statName7">Pitch 1</td>
-    				        <td id="minStat7"></td>
+    				        <td id="statName7">Holding Runners</td>
     				        <td id="stat7"></td>
     				        <td id="maxStat7"></td>
-    				        <td><input type="number" id="newStat7" onchange="updateTPESpent();"></td>
-    				        <td id="tpeSpent7">0</td>
     				    </tr>
     				    <tr>
-    				        <td id="statName8">Pitch 2</td>
-    				        <td id="minStat8"></td>
+    				        <td id="statName8">Pitch 1</td>
     				        <td id="stat8"></td>
     				        <td id="maxStat8"></td>
-    				        <td><input type="number" id="newStat8" onchange="updateTPESpent();"></td>
-    				        <td id="tpeSpent8">0</td>
     				    </tr>
     				    <tr>
-    				        <td id="statName9">Pitch 3</td>
-    				        <td id="minStat9"></td>
+    				        <td id="statName9">Pitch 2</td>
     				        <td id="stat9"></td>
     				        <td id="maxStat9"></td>
-    				        <td><input type="number" id="newStat9" onchange="updateTPESpent();"></td>
-    				        <td id="tpeSpent9">0</td>
     				    </tr>
     				    <tr>
-    				        <td id="statName10">Pitch 4</td>
-    				        <td id="minStat10"></td>
+    				        <td id="statName10">Pitch 3</td>
     				        <td id="stat10"></td>
     				        <td id="maxStat10"></td>
-    				        <td><input type="number" id="newStat10" onchange="updateTPESpent();"></td>
-    				        <td id="tpeSpent10">0</td>
     				    </tr>
     				    <tr>
-    				        <td id="statName11">Pitch 5</td>
-    				        <td id="minStat11"></td>
+    				        <td id="statName11">Pitch 4</td>
     				        <td id="stat11"></td>
     				        <td id="maxStat11"></td>
-    				        <td><input type="number" id="newStat11" onchange="updateTPESpent();"></td>
-    				        <td id="tpeSpent11">0</td>
     				    </tr>
 						<tr>
-    				        <td id="statName12">GB%</td>
-    				        <td id="minStat12"></td>
+    				        <td id="statName12">Pitch 5</td>
     				        <td id="stat12"></td>
     				        <td id="maxStat12"></td>
-    				        <td><input type="number" id="newStat12" onchange="updateTPESpent();"></td>
-    				        <td id="tpeSpent12">0</td>
     				    </tr>
     				    <tr>
-    				        <td id="statName13">Velocity</td>
-    				        <td id="minStat13"></td>
+    				        <td id="statName13">GB%</td>
     				        <td id="stat13"></td>
     				        <td id="maxStat13"></td>
-    				        <td>
-    				            <select id="newStat13" onchange="updateTPESpent();">
-									<option value="75 - 80" id="velo0">75 - 80</option>
-    				                <option value="80 - 83" id="velo1">80 - 83</option>
-    				                <option value="83 - 85" id="velo2">83 - 85</option>
-    				                <option value="84 - 86" id="velo3">84 - 86</option>
-    				                <option value="85 - 87" id="velo4">85 - 87</option>
-    				                <option value="86 - 88" id="velo5">86 - 88</option>
-    				                <option value="87 - 89" id="velo6">87 - 89</option>
-    				                <option value="88 - 90" id="velo7">88 - 90</option>
-    				                <option value="89 - 91" id="velo8">89 - 91</option>
-    				                <option value="90 - 92" id="velo9">90 - 92</option>
-    				                <option value="91 - 93" id="velo10">91 - 93</option>
-    				                <option value="92 - 94" id="velo11">92 - 94</option>
-    				                <option value="93 - 95" id="velo12">93 - 95</option>
-    				                <option value="94 - 96" id="velo13">94 - 96</option>
-    				                <option value="95 - 97" id="velo14">95 - 97</option>
-    				                <option value="96 - 98" id="velo15">96 - 98</option>
-    				                <option value="97 - 99" id="velo16">97 - 99</option>
-    				                <option value="98 - 100" id="velo17">98 - 100</option>
-    				                <option value="99 - 101" id="velo18">99 - 101</option>
-    				            </select>
-    				        </td>
-    				        <td id="tpeSpent13">0</td>
+    				    </tr>
+						<tr>
+    				        <td id="statName14">Velocity</td>
+    				        <td id="stat14"></td>
+    				        <td id="maxStat14"></td>
     				    </tr>
     				</table>
     				<p id="error2"></p>
