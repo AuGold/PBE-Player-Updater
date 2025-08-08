@@ -5,7 +5,8 @@ var conversionStats = [212, 218, 224, 230, 236, 242, 248, 254, 260, 266, 272, 27
 var range;
 var arm;
 var turnDP;
-var catchAB;
+var catchBLK;
+var catchFRM;
 var babipVsLHP;
 var babipVsRHP;
 var avoidKLHP;
@@ -134,14 +135,16 @@ function getStatsFielding(postGET){
 	range = findString(postGET, "Fielding Range: ", "Range: ");
 	arm = findString(postGET, "Fielding/Catching Arm: ", "Arm: ");
 	turnDP = findString(postGET, "Turn Double Play: ", "Turn Double Play ");	    
-	catchAB = findString(postGET, "Catcher Ability: ", null);
+	catchBLK = findString(postGET, "Catcher Blocking: ", null);
+	catchFRM = findString(postGET, "Catcher Framing: ", null);
 	
 	//HTML part to place all values correctly
 	$('#putERR').html("Fielding Error: " + fError);
 	$('#putRNG').html("Fielding Range: " + range);
 	$('#putARM').html("Fielding/Catching Arm: " + arm);
 	$('#putTDP').html("Turn Double Play: " + turnDP);
-	$('#putCAB').html("Catcher Ability: " + catchAB);
+	$('#putCBLK').html("Catcher Blocking: " + catchBLK);
+	$('#putCFRM').html("Catcher Framing: " + catchFRM);
 }
 
 //Function designed to pull batting stats from the string in GetStats()
@@ -216,9 +219,10 @@ function fillStats(){
     $('#stat15').html(fError);
     $('#stat16').html(arm);
     $('#stat17').html(turnDP);
-    $('#stat18').html(catchAB);
+    $('#stat18').html(catchBLK);
+	$('#stat19').html(catchFRM);
 
-	var allStatsArray = [babipVsLHP, babipVsRHP, avoidKLHP, avoidKRHP, gapVsLHP, gapVsRHP, powerVsLHP, powerVsRHP, eyeVsLHP, eyeVsRHP, spped, steal, bunt, range, FError, arm, turnDP, catchAB]
+	var allStatsArray = [babipVsLHP, babipVsRHP, avoidKLHP, avoidKRHP, gapVsLHP, gapVsRHP, powerVsLHP, powerVsRHP, eyeVsLHP, eyeVsRHP, spped, steal, bunt, range, FError, arm, turnDP, catchBLK, catchFRM]
 
 	for(var i = 0 ; i < allStatsArray.length ; i++){
 		var statNumber = i+1;
