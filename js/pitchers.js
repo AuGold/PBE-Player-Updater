@@ -1,5 +1,4 @@
 //declare global variables
-
 var allStatsLevels = [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54 ,55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115]
 var conversionStats = [212, 218, 224, 230, 236, 242, 248, 254, 260, 266, 272, 278, 284, 290, 296, 302, 308, 314, 320, 326, 332, 338, 344, 350, 357, 363, 369, 375, 381, 387, 393, 399, 403, 406, 409, 411, 414, 417, 420, 423, 426, 429, 432, 435, 437, 438, 440, 442, 444, 445, 447, 449, 451, 452, 454, 456, 458, 459, 461, 463, 464, 466, 468, 469, 471, 473, 475, 476, 478, 480, 481, 483, 485, 486, 488, 490, 492, 493, 495, 497, 498, 500, 504, 508, 512, 516, 520, 524, 528, 532, 536, 540, 544, 548, 554, 557]
 
@@ -11,6 +10,7 @@ var conVsLHB;
 var conVsRHB;
 var stamina;
 var holdRun;
+var pBABIP;
 var pitch1;
 var pitch2;
 var pitch3;
@@ -163,6 +163,7 @@ function getStatsPitcher(postGET){
 	pitch4 = findString(postGET, "Pitch 4:", null);
 	pitch5 = findString(postGET, "Pitch 5:", null);
 	gbPer = findString(postGET, "GB%: ", "GB: ");
+	pBABIP = findString(postGET, "pBABIP: ", null);
 	
 	//Put things into HTML
 	$('#putVEL').html("Velocity: " + velo);
@@ -173,6 +174,7 @@ function getStatsPitcher(postGET){
 	$('#putSTA').html("Stamina: " + stamina);
 	$('#putHRN').html("Holding Runners: " + holdRun);
 	$('#putGB').html("GB%: " + gbPer);
+	$('#putPBA').html("pBABIP: " + pBABIP);
 	
 	$('#putPI5').html("Pitch 5: " + pitch5);
 	$('#putPI1').html("Pitch 1: " + pitch1);
@@ -627,39 +629,36 @@ function fillStats(){
     $('#stat2').html(moveVsRHB);
     $('#stat3').html(conVsLHB);
     $('#stat4').html(conVsRHB);
-    $('#stat5').html(stamina);
-    $('#stat6').html(holdRun);
-    $('#stat7').html(pitch1);
-    $('#stat8').html(pitch2);
-    $('#stat9').html(pitch3);
-    $('#stat10').html(pitch4);
-    $('#stat11').html(pitch5);
-    $('#stat12').html(gbPer);
-    $('#statName7').html(pitch1Name);
-    $('#statName8').html(pitch2Name);
-    $('#statName9').html(pitch3Name);
-    $('#statName10').html(pitch4Name);
-    $('#statName11').html(pitch5Name);
-	$('#stat13').html(velo);
-    
-	for(var goThrough = 1; goThrough < mins.length ; goThrough++){
-		$('#minStat' + goThrough).html(mins[goThrough]);
-		$('#maxStat' + goThrough).html(max[goThrough]);
+	$('#stat5').html(pBABIP);
+    $('#stat6').html(stamina);
+    $('#stat7').html(holdRun);
+    $('#stat8').html(pitch1);
+    $('#stat9').html(pitch2);
+    $('#stat10').html(pitch3);
+    $('#stat11').html(pitch4);
+    $('#stat12').html(pitch5);
+    $('#stat13').html(gbPer);
+    $('#statName8').html(pitch1Name);
+    $('#statName9').html(pitch2Name);
+    $('#statName10').html(pitch3Name);
+    $('#statName11').html(pitch4Name);
+    $('#statName12').html(pitch5Name);
+	$('#stat14').html(velo);
+
+	var allStatsArray = [moveVsLHB, moveVsRHB, conVsLHB, conVsRHB, pBABIP, stamina, holdRun, pitch1, pitch2, pitch3, pitch4, pitch5]
+
+	for(var i = 0 ; i < allStatsArray.length ; i++){
+		var statNumber = i+1;
+		for(var j = 0 ; j < allStatsLevels.length ; j++){
+			if(allStatsArray[i] == allStatsLevels[j]){
+				$('#maxStat' + statNumber).html(conversionStats[j]);
+				break;
+			}
+		}
 	}
-	$('#minStat13').html(mins[0]);
-	$('#maxStat13').html(max[0]);
-	$('#newStat1').attr({min: mins[1],max: max[1],value: moveVsLHB});
-    $('#newStat2').attr({min: mins[2],max: max[2],value: moveVsRHB});
-    $('#newStat3').attr({min: mins[3],max: max[3],value: conVsLHB});
-    $('#newStat4').attr({min: mins[4],max: max[4],value: conVsRHB});
-    $('#newStat5').attr({min: mins[5],max: max[5],value: stamina});
-    $('#newStat6').attr({min: mins[6],max: max[6],value: holdRun});
-    $('#newStat7').attr({min: mins[7],max: max[7],value: pitch1});
-    $('#newStat8').attr({min: mins[8],max: max[8],value: pitch2});
-    $('#newStat9').attr({min: mins[9],max: max[9],value: pitch3});
-    $('#newStat10').attr({min: mins[10],max: max[10],value: pitch4});
-    $('#newStat11').attr({min: mins[11],max: max[11],value: pitch5});
-	$('#newStat12').attr({min: mins[12],max: max[12], value: gbPer});
+
+	//$('#maxStat13').html(max[0]);
+
 	var currentPitchLocation;
     for(var c = 0;c<=pitchingLevels.length;c++){
             if($('#stat13').html().trim().localeCompare(pitchingLevels[c]) == 0){
@@ -675,15 +674,6 @@ function fillStats(){
             }
         }
     }
-    var selectedVelo = '#velo' + currentPitchLocation;
-    $(selectedVelo).attr("selected","selected");
-	pitchesBought = 0;
-	if(pitch4>0){
-		pitchesBought += 50;
-	}
-	if(pitch5>0){
-		pitchesBought += 50;
-	}
     //calls tpespent.js
-    updateTPESpent();
+    //updateTPESpent();
 }
