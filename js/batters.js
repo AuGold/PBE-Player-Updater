@@ -227,8 +227,8 @@ function fillStats(){
     $('#stat15').html(fError);
     $('#stat16').html(arm);
     $('#stat17').html(turnDP);
-    $('#stat18').html(catchBLK);
-	$('#stat19').html(catchFRM);
+    //$('#stat18').html(catchBLK);
+	//$('#stat19').html(catchFRM);
 
 	
 	//var allStatsArray = [babipVsLHP, babipVsRHP, avoidKLHP, avoidKRHP, gapVsLHP, gapVsRHP, powerVsLHP, powerVsRHP, eyeVsLHP, eyeVsRHP, spped, steal, bunt, range, fError, arm, turnDP, catchBLK, catchFRM]
