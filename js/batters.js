@@ -223,11 +223,18 @@ function fillStats(){
     $('#stat18').html(catchBLK);
 	$('#stat19').html(catchFRM);
 
+	//for now to test
+	if(catchBLK == NaN){
+		catchBLK = 20
+	}
+	if(catchFRM == NaN){
+		catchFRM = 20
+	}
 	var allStatsArray = [babipVsLHP, babipVsRHP, avoidKLHP, avoidKRHP, gapVsLHP, gapVsRHP, powerVsLHP, powerVsRHP, eyeVsLHP, eyeVsRHP, spped, steal, bunt, range, fError, arm, turnDP, catchBLK, catchFRM]
 
 	for(var i = 0 ; i < allStatsArray.length ; i++){
 		var statNumber = i+1;
-		for(var j = 0 ; j < allStatsLevels.length ; j++){
+		for(var j = 0 ; j < allStatsLevels.length ; j++){			
 			if(allStatsArray[i] == allStatsLevels[j]){
 				$('#maxStat' + statNumber).html(conversionStats[j]);
 				break;
