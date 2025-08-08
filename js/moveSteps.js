@@ -13,6 +13,7 @@ function stepThree(){
     $('.step3').css("display","block");
     $('.step3').animate({opacity: 1},1000);
     $(document).scrollTo('.step3',1000);
+	fillStats();
 }
 
 function stepFive(){
