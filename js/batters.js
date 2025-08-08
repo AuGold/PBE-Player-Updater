@@ -198,10 +198,17 @@ function getStatsBatter(postGET){
 //Also fills in minimums and maximums from the roster page
 
 function fillStats(){
-    $('#bankedTPE').html("Banked TPE: " + banked);
-    $('#tpeEarn').html("Earned TPE: " + tpeEarned);
-    tpeToSpend = banked + tpeEarned;
-    $('#tpeToUse').html("TPE to Spend: " + tpeToSpend);
+    //$('#bankedTPE').html("Banked TPE: " + banked);
+    //$('#tpeEarn').html("Earned TPE: " + tpeEarned);
+    //tpeToSpend = banked + tpeEarned;
+    //$('#tpeToUse').html("TPE to Spend: " + tpeToSpend);
+	//for now to test
+	if(catchBLK == NaN){
+		catchBLK = 20
+	}
+	if(catchFRM == NaN){
+		catchFRM = 20
+	}
     
     $('#stat1').html(babipVsLHP);
     $('#stat2').html(babipVsRHP);
@@ -223,13 +230,7 @@ function fillStats(){
     $('#stat18').html(catchBLK);
 	$('#stat19').html(catchFRM);
 
-	//for now to test
-	if(catchBLK == NaN){
-		catchBLK = 20
-	}
-	if(catchFRM == NaN){
-		catchFRM = 20
-	}
+	
 	//var allStatsArray = [babipVsLHP, babipVsRHP, avoidKLHP, avoidKRHP, gapVsLHP, gapVsRHP, powerVsLHP, powerVsRHP, eyeVsLHP, eyeVsRHP, spped, steal, bunt, range, fError, arm, turnDP, catchBLK, catchFRM]
 
 	/*for(var i = 0 ; i < allStatsArray.length ; i++){
