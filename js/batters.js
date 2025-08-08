@@ -20,6 +20,7 @@ var eyeVsLHP;
 var speed;
 var steal;
 var bunt;
+var fError; 
 var tpeEarned;
 var tpeToSpend;
 var pitchesBought = 0;
@@ -222,7 +223,7 @@ function fillStats(){
     $('#stat18').html(catchBLK);
 	$('#stat19').html(catchFRM);
 
-	var allStatsArray = [babipVsLHP, babipVsRHP, avoidKLHP, avoidKRHP, gapVsLHP, gapVsRHP, powerVsLHP, powerVsRHP, eyeVsLHP, eyeVsRHP, spped, steal, bunt, range, FError, arm, turnDP, catchBLK, catchFRM]
+	var allStatsArray = [babipVsLHP, babipVsRHP, avoidKLHP, avoidKRHP, gapVsLHP, gapVsRHP, powerVsLHP, powerVsRHP, eyeVsLHP, eyeVsRHP, spped, steal, bunt, range, fError, arm, turnDP, catchBLK, catchFRM]
 
 	for(var i = 0 ; i < allStatsArray.length ; i++){
 		var statNumber = i+1;
