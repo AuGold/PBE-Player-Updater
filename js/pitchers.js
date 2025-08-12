@@ -649,8 +649,8 @@ function fillStats(){
 		$('#minStat' + goThrough).html(mins[goThrough]);
 		$('#maxStat' + goThrough).html(max[goThrough]);
 	}
-	$('#minStat15').html(mins[0]);
-	$('#maxStat15').html(max[0]);
+	$('#minStat14').html(mins[0]);
+	$('#maxStat14').html(max[0]);
 	
     $('#newStat1').attr({min: mins[1],max: max[1],value: moveVsLHB});
     $('#newStat2').attr({min: mins[2],max: max[2],value: moveVsRHB});
