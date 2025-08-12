@@ -150,7 +150,6 @@ function getStatsFielding(postGET){
 	//$('#putCAB').html("Catcher Ability: " + catchAB);
 	$('#putBLK').html("Blocking: " + block);
 	$('#putFRM').html("Framing: " + frame);
-	$('#putCAR').html("Catcher Arm: " + catchArm);
 }
 
 //Function designed to pull batting stats from the string in GetStats()
