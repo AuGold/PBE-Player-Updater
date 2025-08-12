@@ -228,7 +228,7 @@ function tpeSpent90to115(currentValue, minValue){
 function checkingSpendage(checkValue, minValue, maxValue){
 	
 	//This if section is the only major difference. This is used purely for GB% whose cost is 25 per stat. 
-	if(minValue == 43 || minValue == 51 || minValue == 54 || minValue == 44 || minValue == 53 || (minValue == 55 && maxValue == 64)){
+	if(minValue == 43 || minValue == 44 || minValue == 53 || minValue == 57){
 		returnSpendage = 25 * (checkValue - minValue);
 	}
 	else if(minValue <= 40){
