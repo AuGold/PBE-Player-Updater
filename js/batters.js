@@ -173,7 +173,7 @@ function getStatsBatter(postGET){
 	eyeVsRHP = findString(postGET, "Eye/patience vs RHP: ", null);
 	speed = findString(postGET, "Speed: ", null);
 	steal = findString(postGET, "Stealing ability: ", null);
-	bunt = findString(postGET, "Bunting (Both): ", null);
+	bunt = findString(postGET, "Bunting: ", null);
 	
 	//HTML part to place all values correctly
 	$('#putBVL').html("BABIP VS LHP: " + babipVsLHP);
