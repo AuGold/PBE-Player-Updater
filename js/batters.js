@@ -247,7 +247,7 @@ function fillStats(){
     $('#newStat16').attr({min: mins[15],max: max[15],value: arm});
     $('#newStat17').attr({min: mins[16],max: max[16],value: turnDP});
     $('#newStat18').attr({min: mins[17],max: max[17],value: block});
-    $('#newStat18').attr({min: mins[18],max: max[18],value: frame});
+    $('#newStat19').attr({min: mins[18],max: max[18],value: frame});
 	
 	
     //calls tpespent.js
