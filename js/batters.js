@@ -173,8 +173,8 @@ function getStatsBatter(postGET){
 	gapVsRHP = findString(postGET, "Gap vs RHP: ", "Gap vs RHP ");
 	powerVsLHP = findString(postGET, "Power vs LHP: ", "Power vs LHP ");
 	powerVsRHP = findString(postGET, "Power vs RHP: ", "Power vs RHP ");
-	eyeVsLHP = findString(postGET, "Eye/Patience vs LHP: ", "Eye/Patience vs LHP ");
-	eyeVsRHP = findString(postGET, "Eye/Patience vs RHP: ", "Eye/Patience vs RHP ");
+	eyeVsLHP = findString(postGET, "Eye/patience vs LHP: ", "Eye/patience vs LHP ");
+	eyeVsRHP = findString(postGET, "Eye/patience vs RHP: ", "Eye/patience vs RHP ");
 	speed = findString(postGET, "Speed: ", "Speed ");
 	steal = findString(postGET, "Stealing ability: ", "Stealing ability ");
 	bunt = findString(postGET, "Bunting: ", "Bunting ");
