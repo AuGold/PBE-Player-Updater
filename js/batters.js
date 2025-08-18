@@ -131,7 +131,7 @@ function getStatsFielding(postGET){
 	//postGET is the roster page info
 	
 	fError = findString(postGET, "Fielding Error: ", "Error: ");
-	range = findString(postGET, "Fielding range: ", "Range: ");
+	range = findString(postGET, "Fielding Range: ", "Range: ");
 	arm = findString(postGET, "Fielding/Catching Arm: ", "Arm: ");
 	turnDP = findString(postGET, "Turn Double Play: ", "Turn Double Play ");	    
 	catchAB = findString(postGET, "Catcher Ability: ", null);
@@ -165,11 +165,14 @@ function getStatsBatter(postGET){
 	gapVsRHP = findString(postGET, "Gap vs RHP: ", null);
 	powerVsLHP = findString(postGET, "Power vs LHP: ", null);
 	powerVsRHP = findString(postGET, "Power vs RHP: ", null);
-	eyeVsLHP = findString(postGET, "Eye/patience vs LHP: ", null);
-	eyeVsRHP = findString(postGET, "Eye/patience vs RHP: ", null);
-	speed = findString(postGET, "Speed: ", null);
-	steal = findString(postGET, "Stealing ability: ", null);
-	bunt = findString(postGET, "Bunting: ", null);
+	eyeVsLHP = findString(postGET, "Eye/Patience vs LHP: ", null);
+	eyeVsRHP = findString(postGET, "Eye/Patience vs RHP: ", null);
+	speed = findString(postGET, "Speed (Base &amp; Run): ", null);
+	if(isNaN(speed)){
+		speed = findString(postGET, "Speed (Base & Run): ", null);
+	}
+	steal = findString(postGET, "Stealing Ability: ", null);
+	bunt = findString(postGET, "Bunting (Both): ", null);
 	
 	//HTML part to place all values correctly
 	$('#putBVL').html("BABIP VS LHP: " + babipVsLHP);
