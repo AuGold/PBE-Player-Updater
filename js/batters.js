@@ -1,7 +1,6 @@
 //declare global variables
 
 var banked;
-
 var fError;
 var range;
 var arm;
@@ -20,9 +19,6 @@ var eyeVsLHP;
 var speed;
 var steal;
 var bunt;
-var block;
-var frame;
-
 var tpeEarned;
 var tpeToSpend;
 var pitchesBought = 0;
@@ -134,22 +130,18 @@ function findStringButActuallyString(htmlCode, stringToFind) {
 function getStatsFielding(postGET){
 	//postGET is the roster page info
 	
-	fError = findString(postGET, "Fielding Error: ", "Fielding Error ");
-	range = findString(postGET, "Fielding range: ", "Fielding range ");
-	arm = findString(postGET, "Fielding/Catching Arm: ", "Fielding/Catching Arm ");
+	fError = findString(postGET, "Fielding Error: ", "Error: ");
+	range = findString(postGET, "Fielding Range: ", "Range: ");
+	arm = findString(postGET, "Fielding/Catching Arm: ", "Arm: ");
 	turnDP = findString(postGET, "Turn Double Play: ", "Turn Double Play ");	    
-	//catchAB = findString(postGET, "Catcher Ability: ", null);
-	block = findString(postGET, "Catcher Blocking: ", "Catcher Blocking ");
-	frame = findString(postGET, "Catcher Framing: ", "Catcher Framing ");
+	catchAB = findString(postGET, "Catcher Ability: ", null);
 	
 	//HTML part to place all values correctly
 	$('#putERR').html("Fielding Error: " + fError);
 	$('#putRNG').html("Fielding Range: " + range);
 	$('#putARM').html("Fielding/Catching Arm: " + arm);
 	$('#putTDP').html("Turn Double Play: " + turnDP);
-	//$('#putCAB').html("Catcher Ability: " + catchAB);
-	$('#putBLK').html("Blocking: " + block);
-	$('#putFRM').html("Framing: " + frame);
+	$('#putCAB').html("Catcher Ability: " + catchAB);
 }
 
 //Function designed to pull batting stats from the string in GetStats()
@@ -159,25 +151,28 @@ function getStatsBatter(postGET){
 	//Look for attribute, look for a range of 3 values
 	//save to variable
 
-	babipVsLHP = findString(postGET, "BABIP vs LHP: ", "BABIP vs LHP ");
-	babipVsRHP = findString(postGET, "BABIP vs RHP: ", "BABIP vs RHP ");
-	avoidKLHP = findString(postGET, "Avoid K&#39;s vs LHP: ", "Avoid K&#39;s vs LHP ");
+	babipVsLHP = findString(postGET, "BABIP vs LHP: ", null);
+	babipVsRHP = findString(postGET, "BABIP vs RHP: ", null);
+	avoidKLHP = findString(postGET, "Avoid K&#39;s vs LHP: ", null);
 	if(isNaN(avoidKLHP)){
-		avoidKLHP = findString(postGET, "Avoid K's vs LHP: ", "Avoid K's vs LHP ");
+		avoidKLHP = findString(postGET, "Avoid K's vs LHP: ", null);
 	}
-	avoidKRHP = findString(postGET, "Avoid K&#39;s vs RHP: ", "Avoid K&#39;s vs RHP ");
+	avoidKRHP = findString(postGET, "Avoid K&#39;s vs RHP: ", null);
 	if(isNaN(avoidKRHP)){
-		avoidKRHP = findString(postGET, "Avoid K's vs RHP: ", "Avoid K's vs RHP ");
+		avoidKRHP = findString(postGET, "Avoid K's vs RHP: ", null);
 	}
-	gapVsLHP = findString(postGET, "Gap vs LHP: ", "Gap vs LHP ");
-	gapVsRHP = findString(postGET, "Gap vs RHP: ", "Gap vs RHP ");
-	powerVsLHP = findString(postGET, "Power vs LHP: ", "Power vs LHP ");
-	powerVsRHP = findString(postGET, "Power vs RHP: ", "Power vs RHP ");
-	eyeVsLHP = findString(postGET, "Eye/patience vs LHP: ", "Eye/patience vs LHP ");
-	eyeVsRHP = findString(postGET, "Eye/patience vs RHP: ", "Eye/patience vs RHP ");
-	speed = findString(postGET, "Speed: ", "Speed ");
-	steal = findString(postGET, "Stealing ability: ", "Stealing ability ");
-	bunt = findString(postGET, "Bunting: ", "Bunting ");
+	gapVsLHP = findString(postGET, "Gap vs LHP: ", null);
+	gapVsRHP = findString(postGET, "Gap vs RHP: ", null);
+	powerVsLHP = findString(postGET, "Power vs LHP: ", null);
+	powerVsRHP = findString(postGET, "Power vs RHP: ", null);
+	eyeVsLHP = findString(postGET, "Eye/Patience vs LHP: ", null);
+	eyeVsRHP = findString(postGET, "Eye/Patience vs RHP: ", null);
+	speed = findString(postGET, "Speed (Base &amp; Run): ", null);
+	if(isNaN(speed)){
+		speed = findString(postGET, "Speed (Base & Run): ", null);
+	}
+	steal = findString(postGET, "Stealing Ability: ", null);
+	bunt = findString(postGET, "Bunting (Both): ", null);
 	
 	//HTML part to place all values correctly
 	$('#putBVL').html("BABIP VS LHP: " + babipVsLHP);
@@ -221,9 +216,8 @@ function fillStats(){
     $('#stat15').html(fError);
     $('#stat16').html(arm);
     $('#stat17').html(turnDP);
-    $('#stat18').html(block);
-    $('#stat19').html(frame);
-	
+    $('#stat18').html(catchAB);
+    
 	for(var goThrough = 0; goThrough < mins.length ; goThrough++){
 		var goThroughOne = goThrough + 1;
 		$('#minStat' + goThroughOne).html(mins[goThrough]);
@@ -246,9 +240,7 @@ function fillStats(){
     $('#newStat15').attr({min: mins[14],max: max[14],value: fError});
     $('#newStat16').attr({min: mins[15],max: max[15],value: arm});
     $('#newStat17').attr({min: mins[16],max: max[16],value: turnDP});
-    $('#newStat18').attr({min: mins[17],max: max[17],value: block});
-    $('#newStat19').attr({min: mins[18],max: max[18],value: frame});
-	
+    $('#newStat18').attr({min: mins[17],max: max[17],value: catchAB});
 	
     //calls tpespent.js
     updateTPESpent();

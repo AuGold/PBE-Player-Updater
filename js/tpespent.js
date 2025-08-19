@@ -10,8 +10,8 @@ var update80to90 = 7;
 var update90to115 = 8;
 
 //these are arrays for pitching velocity and the update scale for velocity changes
-var pitchingLevels = ["75 - 80","80 - 83","83 - 85","84 - 86","85 - 87", "86 - 88","87 - 89","88 - 90","89 - 91","90 - 92","91 - 93","92 - 94","93 - 95","94 - 96","95 - 97","96 - 98","97 - 99","98 - 100", "99 - 101", "100+"];
-var pitchingCost = [15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15];
+var pitchingLevels = ["75 - 80","80 - 83","83 - 85","84 - 86","85 - 87", "86 - 88","87 - 89","88 - 90","89 - 91","90 - 92","91 - 93","92 - 94","93 - 95","94 - 96","95 - 97","96 - 98","97 - 99","98 - 100", "99 - 101"];
+var pitchingCost = [30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30];
 
 //every time a user changes values in Step Four of pitchers.html or batters.html this function is called
 //this is the majority of the arithmetic - the weird part that people have to do MATH for
@@ -228,7 +228,7 @@ function tpeSpent90to115(currentValue, minValue){
 function checkingSpendage(checkValue, minValue, maxValue){
 	
 	//This if section is the only major difference. This is used purely for GB% whose cost is 25 per stat. 
-	if(minValue == 43 || minValue == 44 || minValue == 53 || minValue == 57){
+	if(minValue == 43 || minValue == 51 || minValue == 54 || minValue == 44 || minValue == 53 || (minValue == 55 && maxValue == 64)){
 		returnSpendage = 25 * (checkValue - minValue);
 	}
 	else if(minValue <= 40){
