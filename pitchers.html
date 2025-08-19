@@ -67,8 +67,9 @@
                 			<p id="putMVR"></p>
                 			<p id="putCVL"></p>
                 			<p id="putCVR"></p>
+							<p id="putBVL"></p>
                 			<p id="putSTA"></p>
-							<p id="putGB"></p>
+							
                 		</div>
                 		<div class="column">
                 		    <p id="putHRN"></p>
@@ -77,6 +78,7 @@
                 		    <p id="putPI3"></p>
                 		    <p id="putPI4"></p>
                 		    <p id="putPI5"></p>
+				   			<p id="putGB"></p>
                 		</div>
     				</div>
     				<p>Something look wrong? First, check your link to make sure you are using the correct roster page.</p>
@@ -317,8 +319,8 @@
     				        <td><input type="number" id="newStat4" onchange="updateTPESpent();"></td>
     				        <td id="tpeSpent4">0</td>
     				    </tr>
-    				    <tr>
-    				        <td id="statName5">Stamina</td>
+						<tr>
+    				        <td id="statName5">pBABIP</td>
     				        <td id="minStat5"></td>
     				        <td id="stat5"></td>
     				        <td id="maxStat5"></td>
@@ -326,7 +328,7 @@
     				        <td id="tpeSpent5">0</td>
     				    </tr>
     				    <tr>
-    				        <td id="statName6">Holding Runners</td>
+    				        <td id="statName6">Stamina</td>
     				        <td id="minStat6"></td>
     				        <td id="stat6"></td>
     				        <td id="maxStat6"></td>
@@ -334,7 +336,7 @@
     				        <td id="tpeSpent6">0</td>
     				    </tr>
     				    <tr>
-    				        <td id="statName7">Pitch 1</td>
+    				        <td id="statName7">Holding Runners</td>
     				        <td id="minStat7"></td>
     				        <td id="stat7"></td>
     				        <td id="maxStat7"></td>
@@ -342,7 +344,7 @@
     				        <td id="tpeSpent7">0</td>
     				    </tr>
     				    <tr>
-    				        <td id="statName8">Pitch 2</td>
+    				        <td id="statName8">Pitch 1</td>
     				        <td id="minStat8"></td>
     				        <td id="stat8"></td>
     				        <td id="maxStat8"></td>
@@ -350,7 +352,7 @@
     				        <td id="tpeSpent8">0</td>
     				    </tr>
     				    <tr>
-    				        <td id="statName9">Pitch 3</td>
+    				        <td id="statName9">Pitch 2</td>
     				        <td id="minStat9"></td>
     				        <td id="stat9"></td>
     				        <td id="maxStat9"></td>
@@ -358,7 +360,7 @@
     				        <td id="tpeSpent9">0</td>
     				    </tr>
     				    <tr>
-    				        <td id="statName10">Pitch 4</td>
+    				        <td id="statName10">Pitch 3</td>
     				        <td id="minStat10"></td>
     				        <td id="stat10"></td>
     				        <td id="maxStat10"></td>
@@ -366,28 +368,36 @@
     				        <td id="tpeSpent10">0</td>
     				    </tr>
     				    <tr>
-    				        <td id="statName11">Pitch 5</td>
+    				        <td id="statName11">Pitch 4</td>
     				        <td id="minStat11"></td>
     				        <td id="stat11"></td>
     				        <td id="maxStat11"></td>
     				        <td><input type="number" id="newStat11" onchange="updateTPESpent();"></td>
     				        <td id="tpeSpent11">0</td>
     				    </tr>
-						<tr>
-    				        <td id="statName12">GB%</td>
+    				    <tr>
+    				        <td id="statName12">Pitch 5</td>
     				        <td id="minStat12"></td>
     				        <td id="stat12"></td>
     				        <td id="maxStat12"></td>
     				        <td><input type="number" id="newStat12" onchange="updateTPESpent();"></td>
     				        <td id="tpeSpent12">0</td>
     				    </tr>
-    				    <tr>
-    				        <td id="statName13">Velocity</td>
+						<tr>
+    				        <td id="statName13">GB%</td>
     				        <td id="minStat13"></td>
     				        <td id="stat13"></td>
     				        <td id="maxStat13"></td>
+    				        <td><input type="number" id="newStat13" onchange="updateTPESpent();"></td>
+    				        <td id="tpeSpent13">0</td>
+    				    </tr>
+    				    <tr>
+    				        <td id="statName14">Velocity</td>
+    				        <td id="minStat14"></td>
+    				        <td id="stat14"></td>
+    				        <td id="maxStat14"></td>
     				        <td>
-    				            <select id="newStat13" onchange="updateTPESpent();">
+    				            <select id="newStat14" onchange="updateTPESpent();">
 									<option value="75 - 80" id="velo0">75 - 80</option>
     				                <option value="80 - 83" id="velo1">80 - 83</option>
     				                <option value="83 - 85" id="velo2">83 - 85</option>
@@ -407,9 +417,10 @@
     				                <option value="97 - 99" id="velo16">97 - 99</option>
     				                <option value="98 - 100" id="velo17">98 - 100</option>
     				                <option value="99 - 101" id="velo18">99 - 101</option>
+									<option value="100+" id="velo19">100+</option>
     				            </select>
     				        </td>
-    				        <td id="tpeSpent13">0</td>
+    				        <td id="tpeSpent14">0</td>
     				    </tr>
     				</table>
     				<p id="error2"></p>

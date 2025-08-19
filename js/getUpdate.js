@@ -82,7 +82,7 @@ function getUpdate(){
         $("#outputTotal").html("Total TPE: " + oldTotalTPE + " -> " + outputTotal);
     }
     
-    var codeBlock = "USE CTRL-SHIFT-V AS PASTING UNTIL WE CAN EXPLORE THIS MORE<br/><br/><br/>";
+    var codeBlock = "<br/>";
     var weeklyTrainingCheckbox = document.getElementById('WTCheck').checked;
     var activityCheckCheckbox = document.getElementById('ACCheck').checked;
     var pictureChainCheckbox = document.getElementById('PCCheck').checked;
