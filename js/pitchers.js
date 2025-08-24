@@ -656,7 +656,7 @@ function fillStats(){
     $('#newStat2').attr({min: mins[2],max: max[2],value: moveVsRHB});
     $('#newStat3').attr({min: mins[3],max: max[3],value: conVsLHB});
     $('#newStat4').attr({min: mins[4],max: max[4],value: conVsRHB});
-	$('#newStat5').attr({min: mins[5],max: max[5],value: conVsRHB});
+	$('#newStat5').attr({min: mins[5],max: max[5],value: pBabip});
     $('#newStat6').attr({min: mins[6],max: max[6],value: stamina});
     $('#newStat7').attr({min: mins[7],max: max[7],value: holdRun});
     $('#newStat8').attr({min: mins[8],max: max[8],value: pitch1});
